@@ -1,0 +1,119 @@
+php artisan
+	Muestra todas las opciones de comandos que hay para artisan.
+
+php artisan make:model Nombre_Modelo
+
+
+<select name="perfil" id="perfil" class="span12 input-mini" required>
+	<option value="">Seleccione</option>
+	<?php	foreach($tu as $campo)
+		{
+	?>
+		<option value="<?php echo $campo['id_tipo_usuario']; ?>" <?php if ($field['perfil'] == $campo['id_tipo_usuario']) echo "selected"?>>
+			<?php echo $campo['nombre_tipo_usuario']; ?>
+		</option>
+
+	<?php
+		}
+	?>
+</select>
+
+$roles = Rol::lists('name', 'id');
+        $types = Tipo::lists('name', 'id');
+                
+        return View::make("usuarios.update", array("id" => $id,"user" => $user,"roles" => $roles, "types" => $types ));
+});
+
+
+
+
+
+
+para los radio buttons:
+
+<style type="text/css">
+    .box{
+        padding: 20px;
+        display: none;
+        margin-top: 20px;
+        border: 1px solid #000;
+    }
+    .red{ background: #ff0000; }
+    .green{ background: #00ff00; }
+    .blue{ background: #0000ff; }
+
+    .daniel{ background: #00ff00; }
+
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('input[type="radio"]').click(function(){
+            if($(this).attr("value")=="1"){
+                $(".box").hide();
+                $(".red").show();
+                //alert('camara');
+            }
+            if($(this).attr("value")=="2"){
+                $(".box").hide();
+                //$(".green").show();
+                //alert('lente');
+            }
+            if($(this).attr("value")=="3"){
+                $(".box").hide();
+                //$(".blue").show();
+                $(".nuevo").hide();
+                //alert('montura');
+            }
+            if($(this).attr("value")=="4"){
+            	$(".box").hide();
+                $(".nuevo").show();
+                //alert('Alimentacion');
+            }
+        });
+    });
+</script>
+
+<div> Es una camara: <br>
+	{!! Form::radio('cat', '1') !!} Si <br>
+	{!! Form::radio('cat', '2') !!} No <br>
+	{!! Form::radio('cat', '3') !!} Montura <br>
+	{!! Form::radio('cat', '4') !!} Fuente 
+</div>
+<br> <br> <br>
+
+<div class="red box">You have selected <strong>red radio button</strong> so i am here</div>
+<div class="green box">You have selected <strong>green radio button</strong> so i am here</div>
+<div class="blue box">You have selected <strong>blue radio button</strong> so i am here</div>
+
+
+
+
+
+
+Cotizacion form
+<div class="camara">
+	{!! Form::label('cmb_camara', 'Seleccione...') !!}
+	{!! Form::select('tipo', $camaras, 0) !!}
+
+		@foreach ($camaras1 as $dato)
+
+			<div class="large-3 columns">
+				
+				<div class="large-12 columns productos cams" style="width: 100%;">
+					<!--img src="img/m15-slide-300x175.png"-->
+					{!! Form::image($dato->imagen, $dato->id) !!}
+				</div>
+				<a class="button large btn_crear" style="font-size: 12px;" href="13.html">
+					{!! $dato->nombre !!}
+				</a>
+				<p>{!! $dato->descripcion_basica !!}</p>
+
+			</div>
+
+		@endforeach
+
+	</table>
+	{!! $camaras1->render() !!}
+
+</div>
