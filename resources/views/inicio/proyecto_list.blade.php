@@ -6,7 +6,7 @@
 
 @section('contentInicio')
 
-	<div class="large-8 columns" id="panel_central" style="padding-top: 30px;">
+	
 		<div class="row panel" style="font-weight: bold; background-color: #ffffff;">
 			<div class="large-12 columns" style="font-weight: bold !important;"><h3>Proyectos</h3></div>
 			<div class="large-12 columns prueba">
@@ -54,6 +54,6 @@
 	
 			</div>
 		</div>
-	</div>
+	
 	
 @endsection

@@ -43,9 +43,9 @@
 				</ul>
 			</div>
 		</div>
-		
+		<div class="large-8 columns" id="panel_central" style="padding-top: 30px;">
 		@yield('contentInicio')
-
+		</div>
 		<div class="large-2 columns" id="panel_der" style="padding-top: 30px;">
 			<div class="row panel" style="background-color: #E3E3E3;">
 				<div class="row">
