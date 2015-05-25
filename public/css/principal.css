@@ -161,6 +161,7 @@ h1,h2,h3,h4,h4,h5,h6,a,p {
 	padding-right: 0px; 
 	height: 100% !important;
 	font-weight: bold !important;
+	
 }
 
 #items_izq{
@@ -189,7 +190,6 @@ h1,h2,h3,h4,h4,h5,h6,a,p {
 	height: 100% !important;
 	background-color: #F0F0F0;
 	color: 	#014CA7 !important;
-	overflow: auto;
 }
 #panel_central strong{
 	
@@ -266,9 +266,9 @@ table thead {
 .detalle{
 	padding: 0px;
 }
-.prueba{
-	overflow: auto;
- 	height: 420px;
+.prueba form{
+	width: 100%;
+	max-width: 400px; 
  	
 }
 .prueba2{
