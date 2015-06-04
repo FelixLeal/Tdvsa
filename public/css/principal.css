@@ -42,9 +42,8 @@ ul#avmenu li.current a {
 
 
 #principal{
-
-	height: 100vh !important;
 	font-family: 'Open Sans', sans-serif !important;
+	max-width: initial;
 }
 h1,h2,h3,h4,h4,h5,h6,a,p {
 	font-family: 'Open Sans', sans-serif !important;
@@ -141,6 +140,7 @@ h1,h2,h3,h4,h4,h5,h6,a,p {
 	background-color: #D10927;
 	font-weight: bold;
 	font-size: 16px !important;
+	
 }
 #buttona:hover{
 	transition: all 0.75s;
@@ -156,12 +156,12 @@ h1,h2,h3,h4,h4,h5,h6,a,p {
 	background-color: #43D9E8;
 }
 #panel_izq{
+
 	background-color: #6A8B99;
 	padding-left: 0px; 
 	padding-right: 0px; 
 	height: 100% !important;
 	font-weight: bold !important;
-	
 }
 
 #items_izq{
@@ -190,6 +190,7 @@ h1,h2,h3,h4,h4,h5,h6,a,p {
 	height: 100% !important;
 	background-color: #F0F0F0;
 	color: 	#014CA7 !important;
+	padding: 30px;
 }
 #panel_central strong{
 	
@@ -209,7 +210,7 @@ h1,h2,h3,h4,h4,h5,h6,a,p {
 	background-color: #E3E3E3;
 }
 .btn_crear{
-	width: 100%;
+	width: 20%;
 }
 #panel_central li a{
 	font-size: 15px;
@@ -221,7 +222,6 @@ table th{
 	text-align: center !important;
 	background-color: #01C8F1;
 	color: #fff !important;
-	width: 25%;
 }
 
 table td{
@@ -281,5 +281,20 @@ table thead {
 	text-align: right; 
 	margin-right: 2%; 
 	color: #C72C36;
-
+}
+.marco{
+	position: relative;
+	padding: 0px;
+	
+}
+.side_fixed{
+	position: fixed;
+	padding: 0px;
+	background-color: #6A8B99;
+	height: 100% !important;
+}
+.side_fixed2{
+	position: fixed;
+	padding: 0px;
+	height: 100% !important;
 }

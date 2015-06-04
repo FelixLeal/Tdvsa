@@ -7,7 +7,7 @@
 @section('contentInicio')
 
 	
-		<div class="row panel" style="font-weight: bold; background-color: #ffffff;">
+		<div class="row panel" style="font-weight: bold; background-color: #ffffff; padding-top: 30px; height: 1000px;">
 			<div class="large-12 columns" style="font-weight: bold !important;"><h3>Editar Proyecto: {{ $datos->nombre }}</h3></div>
 			<div class="large-12 columns prueba">
 

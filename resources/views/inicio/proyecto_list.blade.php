@@ -14,7 +14,7 @@
 				<!--p>Hay {{ $datos->lastPage() }} pagina(s)</p-->
 				<p>Hay {{ $datos->total() }} registro(s)</p>
 
-				<table  class="responsive">
+				<table cellspacing="0">
 
 					<tr>
 						<th>#</th>
