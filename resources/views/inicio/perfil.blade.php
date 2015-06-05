@@ -6,29 +6,85 @@
 
 @section('contentInicio')
 
-	<div class="row" style="margin-top: 15px;">
+	<div class="row panel" style="font-weight: bold; background-color: #ffffff;">
 
-		<div class="small-11 large-6 large-centered columns hide-for-small-only" > 
+        <div class="large-12 columns" style="font-weight: bold !important;"><h3>Responsable</h3></div>
 
-			<div class="row" style="margin-top: 20%;">
+        <div class="large-4 columns">
+            Nombre y Apellido
+            <input type="text" style="margin-top: 10px;">
+        </div>
 
-				<div id="leyenda_2" style="font-size: 18px;">
+        <div class="large-4 columns">
+            Telefono
+            <input type="text" style="margin-top: 10px;">
+        </div>
 
-					<h3 style="font-weight: bold; color: #264A96;">Perfil!</h3>
-					Estas en la ventana principal de nuestra pagina,<br>
-					en donde podras realizar operaciones sencillas<br>
-					sobre tu perfil, gestionar proyectos y<br>
-					gestionar cotizaciones.<br>
-					<br><br>
+        <div class="large-4 columns">
+            Correo Electrónico
+            <input type="text" style="margin-top: 10px;">
+        </div>
 
-				</div>
+        <div class="large-4 columns">
+            Empresa
+            <input type="text" style="margin-top: 10px;">
+        </div>
 
-			</div>
+        <div class="large-4 columns">
+            Codigo de afiliación
+            <input type="text" style="margin-top: 10px;">
+        </div>
 
-			<!--a href="{{ url('/auth/logout') }}" id="buttona"class="button large" style="text-transform: uppercase;">Aceptar</a-->
+        <div class="large-12 columns" style="font-weight: bold !important;"><h3>Empresa</h3></div>
+        <div class="large-4 columns">
+            Razon Social
+            <input type="text" style="margin-top: 10px;">
+        </div>
 
-		</div>
+        <div class="large-4 columns">
+            RIF
+            <input type="text" style="margin-top: 10px;">
+        </div>
 
-	</div>
+        <div class="large-4 columns">
+        	Correo Electronico
+            <input type="text" style="margin-top: 10px;">
+        </div>
+
+        <div class="large-4 columns">
+            Direccion
+            <input type="text" style="margin-top: 10px;">
+        </div>
+
+        <div class="large-4 columns">
+            Telefono
+            <input type="text" style="margin-top: 10px;">
+        </div>
+
+        <div class="large-4 columns">
+            Registro Mercantil
+            <input type="text" style="margin-top: 10px;">
+        </div>
+
+    </div>
+
+    <div class="row panel" style="font-weight: bold; background-color: #ffffff;">
+    
+        <div class="large-12 columns" style="font-weight: bold !important;"><h3>Usuario</h3></div>
+        <div class="large-4 columns">
+            Nombre de Usuario
+            <input type="text" style="margin-top: 10px;">
+        </div>
+
+        <div class="large-4 columns">
+            Correo Electronico
+            <input type="text" style="margin-top: 10px;">
+        </div>
+
+        <div class="large-12 columns">
+            <div class="large-3 button">Editar Clave</div>
+        </div>
+
+    </div>
 	
 @endsection

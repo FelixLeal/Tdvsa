@@ -7,24 +7,10 @@
 @section('contentInicio')
 
 	<style type="text/css">
-	    .box{
-	        padding: 20px;
-	        display: none;
-	        margin-top: 20px;
-	        border: 1px solid #000;
-	    }
-	    .red{ background: #ff0000; }
-	    .green{ background: #00ff00; }
-	    .blue{ background: #0000ff; }
-
-	    .daniel{ background: #00ff00; }
-
-
 	    .camara {display: none;}
 	    .lente {display: none;}
 	    .montura {display: none;}
 	    .alimentacion {display: none;}
-
 	</style>
 
 	<script type="text/javascript">

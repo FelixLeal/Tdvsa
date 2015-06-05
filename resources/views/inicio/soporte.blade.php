@@ -6,29 +6,42 @@
 
 @section('contentInicio')
 
-	<div class="row" style="margin-top: 15px;">
+	<div class="row panel" style="font-weight: bold; background-color: #ffffff;">
+		<div class="large-12 columns" style="font-weight: bold !important;"><h3>Files Support</h3></div>
+		<div class="large-12 columns prueba">
 
-		<div class="small-11 large-6 large-centered columns hide-for-small-only" > 
+			<!--p>Hay {{ $datos->lastPage() }} pagina(s)</p-->
+			<p>Hay {{ $datos->total() }} registro(s)</p>
 
-			<div class="row" style="margin-top: 20%;">
+			<table cellspacing="0">
 
-				<div id="leyenda_2" style="font-size: 18px;">
+				<tr>
+					<th>#</th>
+					<th>Name</th>
+					<th>Address</th>
+					<th>Action</th>
+				</tr>
 
-					<h3 style="font-weight: bold; color: #264A96;">Soporte!</h3>
-					Estas en la ventana principal de nuestra pagina,<br>
-					en donde podras realizar operaciones sencillas<br>
-					sobre tu perfil, gestionar proyectos y<br>
-					gestionar cotizaciones.<br>
-					<br><br>
+				@foreach ($datos as $dato)
+				<tr>
+					<td>{{ $dato->id }}</td>
+					<td>{{ $dato->name }}</td>
+					<td>{{ $dato->address_file }}</td>
+					<td>
 
-				</div>
+						<a href="{{ url('download?path='.$dato->address_file) }}">
+						    {{ $dato->name }}
+						</a>
 
-			</div>
+					</td>
+					
+				</tr>
+				@endforeach
 
-			<!--a href="{{ url('/auth/logout') }}" id="buttona"class="button large" style="text-transform: uppercase;">Aceptar</a-->
+			</table>
+			{!! $datos->render() !!}
 
 		</div>
-
 	</div>
 	
 @endsection

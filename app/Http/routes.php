@@ -61,5 +61,11 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
+Route::get('soporte', 'Inicio\UserController@getSoporte');
+
+Route::get('download', function() {
+	return Response::download(Input::get('path'));
+});
+
 
 

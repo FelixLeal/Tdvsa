@@ -3,6 +3,7 @@
 use Tdvsa\Http\Requests;
 use Tdvsa\Http\Controllers\Controller;
 
+use Tdvsa\Producto; //para el modelo
 use Tdvsa\Proyecto; //para el modelo
 use Tdvsa\Empresa; //para el modelo
 use Tdvsa\User; //para el modelo
@@ -108,7 +109,21 @@ class InicioController extends Controller {
 
 	public function catalogo()
 	{
-		return view('inicio.catalogo');
+		//return view('inicio.catalogo');
+
+		$camaras 		= Producto::where('tipo', 1)->lists('nombre', 'id');
+		$lentes 		= Producto::where('tipo', 2)->lists('nombre', 'id');
+		$monturas 		= Producto::where('tipo', 3)->lists('nombre', 'id');
+		$fuentes		= Producto::where('tipo', 4)->lists('nombre', 'id');
+
+		$camaras1 		= Producto::where('tipo', 1)->select('id', 'nombre', 'descripcion_basica', 'imagen')->get();
+		$lentes1		= Producto::where('tipo', 2)->select('id', 'nombre', 'descripcion_basica', 'imagen')->get();
+		$monturas1 		= Producto::where('tipo', 3)->select('id', 'nombre', 'descripcion_basica', 'imagen')->get();
+		$fuentes1		= Producto::where('tipo', 4)->select('id', 'nombre', 'descripcion_basica', 'imagen')->get();
+
+		$felix = 1;
+
+		return view("inicio.catalogo", compact('felix', 'camaras', 'lentes', 'monturas', 'fuentes', 'camaras1', 'lentes1', 'monturas1', 'fuentes1'));
 	}
 
 	public function reporte_pago()
