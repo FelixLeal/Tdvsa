@@ -32,7 +32,7 @@
 								<!--li class="sub-menus sub_menu"><a href="{{ url('/proyecto_hand') }}"><h5>Nuevo proyecto</h5></a></li-->
 								<li class="sub-menus sub_menu"><a href="{{ url('inte/proyecto/create') }}"><h5>Nuevo proyecto</h5></a></li>
 								<li class="sub-menus sub_menu"><a href="{{ url('/cotizacion_list') }}"><h5>Mis cotizaciones</h5></a></li>
-								<li class="sub-menus sub_menu"><a href="{{ url('inte/cotiz/create') }}"><h5>Nueva cotizacion</h5></a></li>
+								<li class="sub-menus sub_menu"><a href="{{ url('/cotiz_create') }}"><h5>Nueva cotizacion</h5></a></li>
 							</ul>
 						</li>
 
@@ -63,6 +63,32 @@
 						</div>
 						<br>
 						<div class="large-12" style="font-weight: bold;">Mi presupuesto</div>
+
+						{{-- @if ($var_cot == 1)
+
+							<p>Hay {{ $datos_cot->total() }} registro(s)</p>
+
+							<table cellspacing="0">
+
+								<tr>
+									<th>#</th>
+									<th>Descripcion</th>
+									<th>Cant * Precio</th>
+								</tr>
+								{{ $i=0 }}
+								@foreach ($datos_cot as $dato)
+								<tr>
+									<td>{{ $i = $i + 1 }}</td>
+									<td>{{ $dato->id_producto }}</td>
+									<td>{{ $dato->cantidad * $dato->precio_unitario }}</td>							
+								</tr>
+								@endforeach
+
+							</table>
+							{!! $datos_cot->render() !!}
+
+						@endif --}}
+
 						<!--div class="large-12" style="font-size: 14px;">No hay items añadidos por el momento</div-->
 					</div>
 					<div class="row">

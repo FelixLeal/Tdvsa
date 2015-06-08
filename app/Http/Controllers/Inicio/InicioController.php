@@ -43,6 +43,9 @@ class InicioController extends Controller {
 	 */
 	public function index()
 	{
+		$var_cot = 0;
+		$datos_cot = "";
+		return view('inicio.bienvenido', compact('datos_cot', 'var_cot'));
 		return view('inicio.bienvenido');
 	}
 
@@ -98,7 +101,11 @@ class InicioController extends Controller {
 	/* Funciones de Cotizacion */
 		public function cotizacion_list()
 		{
-			return view('inicio.cotizacion_list');
+			$var_cot = 0;
+			$datos_cot = "";
+			
+			return view('inicio.cotizacion_list', compact('datos_cot', 'var_cot'));
+			//return view('inicio.cotizacion_list');
 		}
 
 		public function cotizacion_hand()
@@ -123,22 +130,38 @@ class InicioController extends Controller {
 
 		$felix = 1;
 
-		return view("inicio.catalogo", compact('felix', 'camaras', 'lentes', 'monturas', 'fuentes', 'camaras1', 'lentes1', 'monturas1', 'fuentes1'));
+
+		$var_cot = 0;
+		$datos_cot = "";
+
+		return view("inicio.catalogo", compact('datos_cot', 'var_cot', 'felix', 'camaras', 'lentes', 'monturas', 'fuentes', 'camaras1', 'lentes1', 'monturas1', 'fuentes1'));
 	}
 
 	public function reporte_pago()
 	{
-		return view('inicio.reporte_pago');
+		$var_cot = 0;
+		$datos_cot = "";
+		
+		return view('inicio.reporte_pago', compact('datos_cot', 'var_cot'));
+		//return view('inicio.reporte_pago');
 	}
 
 	public function perfil()
 	{
-		return view('inicio.perfil');
+		$var_cot = 0;
+		$datos_cot = "";
+		
+		return view('inicio.perfil', compact('datos_cot', 'var_cot'));
+		//return view('inicio.perfil');
 	}
 
 	public function soporte()
 	{
-		return view('inicio.soporte');
+		$var_cot = 0;
+		$datos_cot = "";
+		
+		return view('inicio.soporte', compact('datos_cot', 'var_cot'));
+		//return view('inicio.soporte');
 	}
 
 }

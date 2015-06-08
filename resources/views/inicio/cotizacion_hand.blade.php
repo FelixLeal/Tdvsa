@@ -45,13 +45,10 @@
 	    });
 	</script>
 
-	<div class="large-8 columns" id="panel_central" style="padding-top: 30px;">
 		<div class="row panel" style="font-weight: bold; background-color: #ffffff;">
 			<div class="large-12 columns" style="font-weight: bold !important;">
 				<h3>Cotizacion</h3>
 			</div>
-			<!--div class="large-12 columns prueba"-->
-
             	<div class="large-4 columns" style="font-weight: bold !important;">
             		<h7><strong>Seleccione una categoria: </strong></h7>
             	</div>
@@ -63,18 +60,11 @@
 						{!! Form::radio('cat', '4') !!} Alimentacion <br>
 					</div>
 				</div>
-
 				<br>
-
-
 				<div class="camara">
-
 					<div class="tabs-content">
-
 						<div class="large-12 columns" style="margin-bottom: 50px;"></div>
-
 						@foreach ($camaras1 as $dato)
-
 							<div class="large-3 columns">
 								<div class="large-12 columns productos cams" style="width: 100%;">
 									<!--img src="img/m15-slide-300x175.png"-->
@@ -86,23 +76,13 @@
 								</a>
 								{!! $dato->descripcion_basica !!}
 							</div>
-
 						@endforeach
-
 					</div>
-
 				</div>
-
-
-
 				<div class="lente">
-
 					<div class="tabs-content">
-
 						<div class="large-12 columns" style="margin-bottom: 50px;"></div>
-
 						@foreach ($lentes1 as $dato)
-
 							<div class="large-3 columns">
 								<div class="large-12 columns productos cams" style="width: 100%;">
 									<!--img src="img/m15-slide-300x175.png"-->
@@ -113,11 +93,8 @@
 								</a>
 								{!! $dato->descripcion_basica !!}
 							</div>
-
 						@endforeach
-
 					</div>
-
 				</div>
 
 

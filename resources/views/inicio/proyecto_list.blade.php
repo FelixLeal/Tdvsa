@@ -17,14 +17,16 @@
 
 				<tr>
 					<th>#</th>
+					<th># :)</th>
 					<th>Nombre</th>
 					<th>Descripcion</th>
 					<th>Acciones</th>
 				</tr>
-
+				{{ $i=0 }}
 				@foreach ($datos as $dato)
 				<tr>
 					<td>{{ $dato->id }}</td>
+					<td>{{ $i = $i + 1 }}</td>
 					<td>{{ $dato->nombre }}</td>
 					<td>{{ $dato->descripcion }}</td>
 					<td>

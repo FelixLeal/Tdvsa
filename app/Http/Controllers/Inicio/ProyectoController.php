@@ -49,7 +49,11 @@ class ProyectoController extends Controller {
 		//$datos = Proyecto::paginate(); // para la Pagincion de datos
 		//dd($datos);
 
-		return view('inicio.proyecto_list', compact('datos'));
+		$var_cot = 0;
+		$datos_cot = "";
+
+		//return view('inicio.proyecto_list', compact('datos'));
+		return view('inicio.proyecto_list', compact('datos', 'datos_cot', 'var_cot'));
 	}
 
 	/**
@@ -59,7 +63,11 @@ class ProyectoController extends Controller {
 	 */
 	public function create()
 	{
-		return view('inicio.proyecto_hand');
+		$var_cot = 0;
+		$datos_cot = "";
+		
+		return view('inicio.proyecto_hand', compact('datos_cot', 'var_cot'));
+		//return view('inicio.proyecto_hand');
 	}
 
 	/**

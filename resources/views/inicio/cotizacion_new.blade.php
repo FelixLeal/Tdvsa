@@ -46,33 +46,42 @@
 				<div class="large-12 columns">
 
 					@if ($felix == 1)
-						<div class="large-4 columns">
-							<strong>Lentes</strong>
-							<div class="large-12 columns" style="padding: 0px; ">
-								<select style="font-weight: bold; background-color: #ffffff; ">
-									<option value=""></option>
-									<option value=""></option>
-								</select>
+
+						@if ($nro_lentes == 2)
+
+							<div class="large-4 columns">
+								<strong>Lente 1</strong>
+								<div class="large-12 columns" style="padding: 0px; ">
+									{!! Form::select('id_lente', ['0' => 'Seleccione...'] + $lentes, 0) !!}
+								</div>
+								<strong>Lente 2</strong>
+								<div class="large-12 columns" style="padding: 0px; ">
+									{!! Form::select('id_lente1', ['0' => 'Seleccione...'] + $lentes, 0) !!}
+								</div>
 							</div>
-						</div>
+
+						@else
+
+							<div class="large-4 columns">
+								<strong>Lente</strong>
+								<div class="large-12 columns" style="padding: 0px; ">
+									{!! Form::select('id_lente', ['0' => 'Seleccione...'] + $lentes, 0) !!}
+								</div>
+							</div>
+
+						@endif
 
 						<div class="large-4 columns">
 							<strong>Montura</strong>
 							<div class="large-12 columns" style="padding: 0px;">
-								<select style="font-weight: bold; background-color: #ffffff; ">
-									<option value=""></option>
-									<option value=""></option>
-								</select>
+								{!! Form::select('id_montura', ['0' => 'Seleccione...'] + $monturas, 0) !!}
 							</div>
 						</div>
 
 						<div class="large-4 columns">
 							<strong>Accesorios</strong>
 							<div class="large-12 columns" style="padding: 0px;">
-								<select style="font-weight: bold; background-color: #ffffff; ">
-									<option value=""></option>
-									<option value=""></option>
-								</select>
+								{!! Form::select('id_fuente', ['0' => 'Seleccione...'] + $fuentes, 0) !!}
 							</div>
 						</div>
 					@endif
@@ -83,8 +92,6 @@
 						</div>
 						<div class="large-2 columns" >
 							<strong>Cantidad</strong>
-							<input type="number" value="01" style="background-color: #ffffff; ">
-
 							{!! Form::number('cantidad') !!}
 						</div>
 					</div>

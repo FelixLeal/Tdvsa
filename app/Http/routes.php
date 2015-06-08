@@ -28,6 +28,28 @@ Route::get('home', 'HomeController@index');
 	Route::get('reporte_pago', 'Inicio\InicioController@reporte_pago');
 	Route::get('perfil', 'Inicio\InicioController@perfil');
 	Route::get('soporte', 'Inicio\InicioController@soporte');
+	Route::get('cotiz_create', 'Inicio\CotizacionController@getCreate');
+
+
+
+	Route::get('/example', function()
+	{
+	  // Run controller and method
+	  $app = app();
+	  $controller = $app->make('ExampleController');
+	  return $controller->callAction('index', $parameters = array());
+
+	});
+
+	Route::get('nuevo_coti', 'Inicio\CotizacionController@getCoti');
+
+	Route::get('Cotisss_nuevo', 'Inicio\CotizacionController@getCotisss');
+
+	Route::get('Cotisss_nuevo', array('as' => 'profile', 'uses' => 'Inicio\CotizacionController@getCotisss'));
+
+
+
+
 
 	Route::post('proyecto_hand', 'Inicio\InicioController@proyecto_handE');
 
