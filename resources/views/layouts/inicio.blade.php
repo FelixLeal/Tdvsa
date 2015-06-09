@@ -48,7 +48,7 @@
 			</div>
 		
 
-			<div class="large-8 columns marco" id="panel_central" style="padding-top: 30px; height: 1000px;">
+			<div class="large-8 columns marco" id="panel_central" style="padding: 30px; height: 1000px;">
 			@yield('contentInicio')
 			</div>
 		

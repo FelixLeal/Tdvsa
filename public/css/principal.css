@@ -190,7 +190,7 @@ h1,h2,h3,h4,h4,h5,h6,a,p {
 	height: 100% !important;
 	background-color: #F0F0F0;
 	color: 	#014CA7 !important;
-	padding: 30px;
+	padding: 30px !important;
 }
 #panel_central strong{
 	

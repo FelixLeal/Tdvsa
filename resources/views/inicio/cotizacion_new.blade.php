@@ -8,9 +8,9 @@
 
 	
 
-		<div class="large-8 columns" id="panel_central" style="padding-top: 30px;">
-
 			{!! Form::open( ['route' => 'inte.cotiz.store', 'id' => 'form_2', 'class' => 'small-10'] ) !!}
+
+
 
 
 				<div class="row panel" style="font-weight: bold; background-color: #ffffff;">
@@ -102,7 +102,7 @@
 
 			{!! Form::close() !!}
 
-		</div>
+		
 
 	
 	
