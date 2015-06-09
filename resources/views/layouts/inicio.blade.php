@@ -53,7 +53,7 @@
 			</div>
 		
 			<div class="large-2 columns marco" id="panel_der" >
-				<div class="large-2 columns side_fixed2" style="padding-top: 30px; background-color:#F0F0F0;">
+				<div class="large-2 columns side_fixed2" style="padding-top: 30px; background-color:#F0F0F0; padding-right: 15px;">
 				<div class="row panel large-12 columns" style="background-color: #E3E3E3;">
 					<div class="row">
 						<!--EN ESTE DIV SE RENDIZARÁ EL NOMBRE DE LA PERSONA A CONSULTAREL CUAL VENDRA DE LA BD-->

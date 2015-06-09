@@ -298,3 +298,16 @@ table thead {
 	padding: 0px;
 	height: 100% !important;
 }
+
+.in_radio{
+	padding: 0px;
+}
+.radios input[type="radio"]:checked{
+    visibility:hidden;
+}
+.in_radio input{
+	display: none;
+}
+.radios label{
+	text-align: center;
+}

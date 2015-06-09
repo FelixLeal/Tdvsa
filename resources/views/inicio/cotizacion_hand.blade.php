@@ -66,16 +66,34 @@
 			</div>
 			<!--div class="large-12 columns prueba"-->
 
-            	<div class="large-4 columns" style="font-weight: bold !important;">
+            	<div class="large-12 columns" style="font-weight: bold !important; padding:15px;">
             		<h7><strong>Seleccione una categoria: </strong></h7>
             	</div>
-            	<div class="large-8 columns" style="font-weight: bold !important;">
-					<div> Seleccione una Categoria: <br>
-						{!! Form::radio('cat', '1') !!} Camaras 
-						{!! Form::radio('cat', '2') !!} Lentes <br>
-						{!! Form::radio('cat', '3') !!} Monturas 
-						{!! Form::radio('cat', '4') !!} Alimentacion <br>
-					</div>
+            	<div class="large-12 columns" style="font-weight: bold !important;">
+					
+						<div class="large-3 columns radios in_radio" style="font-weight: bold !important;">
+							<label>
+							<div class="large-2 columns in_radio">{!! Form::radio('cat', '1', true) !!}</div>
+							Camaras
+							</label>
+						</div>
+						<div class="large-3 columns radios in_radio" style="font-weight: bold !important;">
+							<label>
+							<div class="large-2 columns in_radio ">{!! Form::radio('cat', '2') !!} </div>Lentes 
+							</label>
+						</div>
+						<div class="large-3 columns radios in_radio" style="font-weight: bold !important;">
+							<label>
+							<div class="large-2 columns in_radio">{!! Form::radio('cat', '3') !!} </div>
+							Monturas
+							</label>
+						</div> 
+						<div class="large-3 columns radios in_radio" style="font-weight: bold !important;">
+							<label>
+							<div class="large-2 columns in_radio">{!! Form::radio('cat', '4') !!} </div>Alimentacion 
+							</label>
+						</div>
+					
 				</div>
 
 				<br>
