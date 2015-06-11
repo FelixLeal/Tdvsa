@@ -310,4 +310,12 @@ table thead {
 }
 .radios label{
 	text-align: center;
+	padding: 10px;
+	background: #008CBA;
+	color: #FFFFFF;
+
+}
+.radios label:hover{
+	transition: all 0.75s;
+	background: #688895;
 }

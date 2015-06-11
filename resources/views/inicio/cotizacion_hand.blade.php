@@ -69,7 +69,7 @@
             	<div class="large-12 columns" style="font-weight: bold !important; padding:15px;">
             		<h7><strong>Seleccione una categoria: </strong></h7>
             	</div>
-            	<div class="large-12 columns" style="font-weight: bold !important;">
+            	<div class="large-12 columns" style="font-weight: bold !important; margin-bottom: 20px;">
 					
 						<div class="large-3 columns radios in_radio" style="font-weight: bold !important;">
 							<label>
@@ -113,7 +113,7 @@
 									{!! Form::image($dato->imagen, $dato->id, ['width' => '128px', 'height' => '128px']) !!}
 								</div>
 								<!--a class="button large btn_crear" style="font-size: 12px;" href="13.html"-->
-								<a class="button large btn_crear" style="font-size: 12px;" href="{{ url('inte/felix', ['id_producto' => $dato->id, 'id_cotizacion' => $cotiz->id]) }}">
+								<a class="button large large-12 columns" style="font-size: 12px;" href="{{ url('inte/felix', ['id_producto' => $dato->id, 'id_cotizacion' => $cotiz->id]) }}">
 									{!! $dato->nombre !!}<br>
 								</a>
 								{!! $dato->descripcion_basica !!}
@@ -140,7 +140,7 @@
 									<!--img src="img/m15-slide-300x175.png"-->
 									{!! Form::image($dato->imagen, $dato->id, ['width' => '128px', 'height' => '128px']) !!}
 								</div>
-								<a class="button large btn_crear" style="font-size: 12px;" href="{{ url('inte/felix', ['id_producto' => $dato->id, 'id_cotizacion' => $cotiz->id]) }}">
+								<a class="button large large-12 columns" style="font-size: 12px;" href="{{ url('inte/felix', ['id_producto' => $dato->id, 'id_cotizacion' => $cotiz->id]) }}">
 									{!! $dato->nombre !!}<br>
 								</a>
 								{!! $dato->descripcion_basica !!}
@@ -167,7 +167,7 @@
 									<!--img src="img/m15-slide-300x175.png"-->
 									{!! Form::image($dato->imagen, $dato->id, ['width' => '128px', 'height' => '128px']) !!}
 								</div>
-								<a class="button large btn_crear" style="font-size: 12px;" href="{{ url('inte/felix', ['id_producto' => $dato->id, 'id_cotizacion' => $cotiz->id]) }}">
+								<a class="button large large-12 columns" style="font-size: 12px;" href="{{ url('inte/felix', ['id_producto' => $dato->id, 'id_cotizacion' => $cotiz->id]) }}">
 									{!! $dato->nombre !!}<br>
 								</a>
 								{!! $dato->descripcion_basica !!}
@@ -194,7 +194,7 @@
 									<!--img src="img/m15-slide-300x175.png"-->
 									{!! Form::image($dato->imagen, $dato->id, ['width' => '128px', 'height' => '128px']) !!}
 								</div>
-								<a class="button large btn_crear" style="font-size: 12px;" href="{{ url('inte/felix', ['id_producto' => $dato->id, 'id_cotizacion' => $cotiz->id]) }}">
+								<a class="button large large-12 columns" style="font-size: 12px;" href="{{ url('inte/felix', ['id_producto' => $dato->id, 'id_cotizacion' => $cotiz->id]) }}">
 									{!! $dato->nombre !!}<br>
 								</a>
 								{!! $dato->descripcion_basica !!}
@@ -213,7 +213,7 @@
 
 					@if ( $felix == 0)
 
-						<a href="{{ route('inte.cotiz.create', $dato) }}">Cotizar</a>
+						<a  class="button large" id="buttona" href="{{ route('inte.cotiz.create', $dato) }}">Cotizar</a>
 
 					@elseif ($felix == 1)
 
