@@ -116,7 +116,7 @@
 								<a class="button large large-12 columns" style="font-size: 12px;" href="{{ url('inte/felix', ['id_producto' => $dato->id, 'id_cotizacion' => $cotiz->id]) }}">
 									{!! $dato->nombre !!}<br>
 								</a>
-								{!! $dato->descripcion_basica !!}
+								<!--{!! $dato->descripcion_basica !!}-->
 							</div>
 
 						@endforeach
@@ -143,7 +143,7 @@
 								<a class="button large large-12 columns" style="font-size: 12px;" href="{{ url('inte/felix', ['id_producto' => $dato->id, 'id_cotizacion' => $cotiz->id]) }}">
 									{!! $dato->nombre !!}<br>
 								</a>
-								{!! $dato->descripcion_basica !!}
+								<!--{!! $dato->descripcion_basica !!}-->
 							</div>
 
 						@endforeach
@@ -170,7 +170,7 @@
 								<a class="button large large-12 columns" style="font-size: 12px;" href="{{ url('inte/felix', ['id_producto' => $dato->id, 'id_cotizacion' => $cotiz->id]) }}">
 									{!! $dato->nombre !!}<br>
 								</a>
-								{!! $dato->descripcion_basica !!}
+								<!--{!! $dato->descripcion_basica !!}-->
 							</div>
 
 						@endforeach
@@ -197,7 +197,7 @@
 								<a class="button large large-12 columns" style="font-size: 12px;" href="{{ url('inte/felix', ['id_producto' => $dato->id, 'id_cotizacion' => $cotiz->id]) }}">
 									{!! $dato->nombre !!}<br>
 								</a>
-								{!! $dato->descripcion_basica !!}
+								<!--{!! $dato->descripcion_basica !!}-->
 							</div>
 
 						@endforeach

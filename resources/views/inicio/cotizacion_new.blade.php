@@ -8,7 +8,7 @@
 
 	
 
-			{!! Form::open( ['route' => 'inte.cotiz.store', 'id' => 'form_2', 'class' => 'small-10'] ) !!}
+			{!! Form::open( ['route' => 'inte.cotiz.store', 'id' => 'form_2', 'class' => 'small-12'] ) !!}
 
 
 
@@ -31,11 +31,11 @@
 
 					<div class="large-8 columns" style="font-weight: bold !important; margin-top: 30px; !important">
 						<div class="large-6 columns" style="font-weight: bold !important;">
-							<strong>Nombre</strong>
+							<strong>Nombre:</strong>
 							<br>{!! $perro->nombre !!}
 						</div>
 						<div class="large-6 columns" style="font-weight: bold !important;">
-						<strong>Modelo</strong>
+						<strong>Modelo:</strong>
 						<br>{!! $perro->modelo !!}
 						</div>
 
@@ -43,33 +43,33 @@
 
 				</div>
 
-				<div class="large-12 columns">
+				<div class="large-12 columns" style="padding: 0px;">
 
 					@if ($felix == 1)
-						<div class="large-4 columns">
+						<div class="large-12 columns">
 							<strong>Lentes</strong>
 							<div class="large-12 columns" style="padding: 0px; ">
-								<select style="font-weight: bold; background-color: #ffffff; ">
+								<select class="large-3 columns" style="font-weight: bold; background-color: #ffffff; ">
 									<option value=""></option>
 									<option value=""></option>
 								</select>
 							</div>
 						</div>
 
-						<div class="large-4 columns">
+						<div class="large-12 columns">
 							<strong>Montura</strong>
 							<div class="large-12 columns" style="padding: 0px;">
-								<select style="font-weight: bold; background-color: #ffffff; ">
+								<select class="large-3 columns" style="font-weight: bold; background-color: #ffffff; ">
 									<option value=""></option>
 									<option value=""></option>
 								</select>
 							</div>
 						</div>
 
-						<div class="large-4 columns">
+						<div class="large-12 columns">
 							<strong>Accesorios</strong>
 							<div class="large-12 columns" style="padding: 0px;">
-								<select style="font-weight: bold; background-color: #ffffff; ">
+								<select class="large-3 columns" style="font-weight: bold; background-color: #ffffff; ">
 									<option value=""></option>
 									<option value=""></option>
 								</select>
@@ -78,24 +78,26 @@
 					@endif
 
 					<div class="large-12 columns detalle" >
-						<div class="large-10 columns" >
-							<div class="large-12 columns" ></div>
-						</div>
+						
 						<div class="large-2 columns" >
 							<strong>Cantidad</strong>
 							<input type="number" value="01" style="background-color: #ffffff; ">
 
 							{!! Form::number('cantidad') !!}
 						</div>
+						<div class="large-10 columns" >
+							<div class="large-12 columns" ></div>
+						</div>
 					</div>
 
 					<div class="large-12 columns detalle" >
-						<div class="large-9 columns" >
-							<div class="large-12 columns" ></div>
-						</div>
+						
 						<div class="large-3 columns" >
 							<!--a href="15.html" class="button large btn_crear" id="buttona" >Cotizar</a-->
 							<button type="submit" id="buttona" class="button large" style="text-transform: uppercase;">Crear</button>
+						</div>
+						<div class="large-9 columns" >
+							<div class="large-12 columns" ></div>
 						</div>
 					</div>
 				</div>
