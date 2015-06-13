@@ -177,6 +177,10 @@ h1,h2,h3,h4,h4,h5,h6,a,p {
 	font-weight: bold;
 
 }
+#items_izq li a{
+	padding-left: 0px;
+
+}
 .select{
 	background-color: #9EC0E8;
 	height: 40px;
@@ -305,7 +309,7 @@ table thead {
 .radios input[type="radio"]:checked{
     visibility:hidden;
 }
-.in_radio input{
+.in_radio input[type="radio"]{
 	display: none;
 }
 .radios label{
@@ -317,5 +321,14 @@ table thead {
 }
 .radios label:hover{
 	transition: all 0.75s;
-	background: #688895;
+	background: #007096;
+}
+.radios input[type="radio"]:checked + label{
+    background: #007096;
+}
+#titulo{
+	padding: 0px;
+}
+.selecc{
+	background-color: #007096 !important;
 }
