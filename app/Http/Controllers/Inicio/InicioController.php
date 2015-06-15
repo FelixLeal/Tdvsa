@@ -3,6 +3,7 @@
 use Tdvsa\Http\Requests;
 use Tdvsa\Http\Controllers\Controller;
 
+use Tdvsa\Cotizacion; //para el modelo
 use Tdvsa\Producto; //para el modelo
 use Tdvsa\Proyecto; //para el modelo
 use Tdvsa\Empresa; //para el modelo
@@ -101,10 +102,13 @@ class InicioController extends Controller {
 	/* Funciones de Cotizacion */
 		public function cotizacion_list()
 		{
+
+			$datos = Cotizacion::where('id_user', Auth::id())->paginate();
+
 			$var_cot = 0;
 			$datos_cot = "";
 			
-			return view('inicio.cotizacion_list', compact('datos_cot', 'var_cot'));
+			return view('inicio.cotizacion_list', compact('datos_cot', 'var_cot', 'datos'));
 			//return view('inicio.cotizacion_list');
 		}
 

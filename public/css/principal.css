@@ -202,6 +202,7 @@ h1,h2,h3,h4,h4,h5,h6,a,p {
 	height: 100% !important;
 	background-color: #F0F0F0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	color: 	#014CA7 !important;
 	padding: 30px !important;
 }
@@ -212,6 +213,10 @@ h1,h2,h3,h4,h4,h5,h6,a,p {
 #panel_central h3{
 =======
 	color: 	#014CA7 !important; }
+=======
+	color: 	#014CA7 !important;
+	padding: 30px !important; }
+>>>>>>> 2f73615f15df49737d99b8a5325c06df01267db3
 
 #panel_central strong {
 	color: #014CA7; }
@@ -402,5 +407,38 @@ table thead {
 .side_fixed2 {
 	position: fixed;
 	padding: 0px;
+<<<<<<< HEAD
 	height: 100% !important; } 
 >>>>>>> 576b1f80d672f33d83131b6828dd3d79c532b0e5
+=======
+	height: 100% !important; }
+
+.in_radio {
+	padding: 0px; }
+
+.radios input[type="radio"]:checked {
+    visibility:hidden; }
+
+.in_radio input[type="radio"] {
+	display: none; }
+
+.radios label {
+	text-align: center;
+	padding: 10px;
+	background: #008CBA;
+	color: #FFFFFF; }
+
+.radios label:hover {
+	transition: all 0.75s;
+	background: #007096; }
+
+.radios input[type="radio"]:checked + label {
+    background: #007096; }
+
+#titulo {
+	padding: 0px; }
+	
+.selecc {
+	background-color: #007096 !important; }
+
+>>>>>>> 2f73615f15df49737d99b8a5325c06df01267db3

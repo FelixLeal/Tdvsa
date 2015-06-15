@@ -1,0 +1,67 @@
+# ayuda
+	rails -help
+
+# crear nuevo proyecto simple, y tomara SqlLite como db por defecto
+	rails new nombre_proyecto
+
+# crear nuevo proyecto, com db mysql, y -d es para seleccionar una db
+	rails new nombre_proyecto -d mysql
+
+
+# + + + parametros de rails server: daemon, config, port, environment, debugger y pid.
+# iniciar simple
+	rails server   ó   rails s
+
+# iniciar por un puerto definido
+	rails server -p 3000   ó   rails s -p 3000
+
+# iniciar en ambiente de production, development, test, por defecto es development
+	rails server -e production   ó rails s -e production
+
+
+# abrir proyeto y modificarlo por consola IRB, el --sandbox nos permite modificar e interactuar con la db sin el miedo a cambiar valores de manera definitiva
+	rails console -e production --sandbox
+
+
+
+
+
+# rails generate y destroy para buscar ayuda sobre los argumentos a incluir
+	rails generate -h
+	rails destroy -h
+
+# generar un controlador y su vista o vistas
+	rails generate controller nombre_controlador nombre_vista nombre_vista2
+
+# generar un controlador con opciones, para utilizar .sass y .js, en vez de .scss y .js.coffee que viene por defecto
+	rails g controller nombre_controlador --stylesheet-engine=sass --javascript-engine=js
+
+
+
+# comando: rake --tasks          lista las tareas que podemos hacer en nuestra aplicacion
+
+# comando: rake routes           permite ver cada una de las rutas que realiza nuestra aplicacion
+
+#
+
+
+
+#########
+
+ejemplos:
+
+puts ENV['DATABASE_URL']
+=> postgresql://localhost/blog_development?pool=5
+
+
+
+para las sesiones en ruby on rails
+
+
+
+
+
+
+
+
+
