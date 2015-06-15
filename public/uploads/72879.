@@ -1,0 +1,14 @@
+
+
+Acciones con repositorios ppa:
+
+sudo add-apt-repository ppa:nombredelrepositorio
+sudo add-apt-repository -r ppa:nombredelrepositorio
+
+tambien, instalamos el ppa-purge
+
+ # sudo apt-get install ppa-purge
+
+Para ponerlo en acción:
+
+# sudo ppa-purgue ppa:nombre_repositorio

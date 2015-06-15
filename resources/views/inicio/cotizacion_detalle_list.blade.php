@@ -10,40 +10,38 @@
 		<div class="large-12 columns" style="font-weight: bold !important;"><h3>Cotizaciones</h3></div>
 		<div class="large-12 columns prueba">
 
-			<!--p>Hay {{ $datos->lastPage() }} pagina(s)</p-->
-			<!--p>Hay {{ $datos->total() }} registro(s)</p-->
-			<br>
+			{!! Form::label('concepto', 'Concepto') !!}
+			{!! Form::text('nombre',  $coti_padre->concepto) !!}
+
+			{!! Form::label('monto', 'Monto') !!}
+			{!! Form::text('descripcion', $coti_padre->monto) !!}
 
 			<table cellspacing="0">
 
 				<tr>
 					<th>#</th>
-					<th>Concepto</th>
-					<th>Monto</th>
-					<th>Estado</th>
+					<th>Cantidad</th>
+					<th>Precio</th>
 				</tr>
 				<!--{{ $i=0 }}-->
 				@foreach ($datos as $dato)
 				<tr>
 					<td>{{ $i = $i + 1 }}</td>
-					<td>{{ $dato->concepto }}</td>
-					<td>{{ $dato->monto }}</td>
-					<td>
-						@if ( $dato->estado == 1 )
-							<a href="{{ route('detalle_coti', ['id_cotizacion' => $dato->id]) }}">Pagar</a>
-						@endif
-						@if ( $dato->estado == 0 )
-							<a href="{{ route('detalle_coti', ['id_cotizacion' => $dato->id]) }}">Detalle</a>
-						@endif
-					</td>
-					
+					<td>{{ $dato->cantidad }}</td>
+					<td>{{ $dato->precio_unitario }}</td>
 				</tr>
 				@endforeach
 
 			</table>
+
 			{!! $datos->render() !!}
 
+			<!--a href="{{ URL::previous() }}"> Atras </a-->
+			<a href="{{ url('cotizacion_list') }}"> Atras </a>
+
 		</div>
+
+
 		
 	</div>
 	

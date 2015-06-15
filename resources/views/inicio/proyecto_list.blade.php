@@ -11,21 +11,22 @@
 		<div class="large-12 columns prueba">
 
 			<!--p>Hay {{ $datos->lastPage() }} pagina(s)</p-->
-			<p>Hay {{ $datos->total() }} registro(s)</p>
+			<!--p>Hay {{ $datos->total() }} registro(s)</p-->
+			<br>
 
 			<table cellspacing="0">
 
 				<tr>
 					<th>#</th>
-					<th># :)</th>
+					<!--th># :)</th-->
 					<th>Nombre</th>
 					<th>Descripcion</th>
 					<th>Acciones</th>
 				</tr>
-				{{ $i=0 }}
+				<!--{{ $i=0 }}-->
 				@foreach ($datos as $dato)
 				<tr>
-					<td>{{ $dato->id }}</td>
+					<!--td>{{ $dato->id }}</td-->
 					<td>{{ $i = $i + 1 }}</td>
 					<td>{{ $dato->nombre }}</td>
 					<td>{{ $dato->descripcion }}</td>

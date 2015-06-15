@@ -61,6 +61,10 @@ Route::get('home', 'HomeController@index');
 		Route::get('felix/{one?}/{dos?}', 'CotizacionController@felix');
 		Route::get('nuevo/{one?}', 'CotizacionController@nuevo');
 
+		Route::get('save_all', ['as' => 'save_all', 'uses' => 'CotizacionController@save_all']);
+
+		Route::get('detalle_coti', ['as' => 'detalle_coti', 'uses' => 'CotizacionController@detalle_coti']);
+
 
 	});
 
