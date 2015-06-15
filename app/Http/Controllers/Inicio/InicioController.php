@@ -3,6 +3,7 @@
 use Tdvsa\Http\Requests;
 use Tdvsa\Http\Controllers\Controller;
 
+use Tdvsa\Producto; //para el modelo
 use Tdvsa\Proyecto; //para el modelo
 use Tdvsa\Empresa; //para el modelo
 use Tdvsa\User; //para el modelo
@@ -42,6 +43,9 @@ class InicioController extends Controller {
 	 */
 	public function index()
 	{
+		$var_cot = 0;
+		$datos_cot = "";
+		return view('inicio.bienvenido', compact('datos_cot', 'var_cot'));
 		return view('inicio.bienvenido');
 	}
 
@@ -97,7 +101,11 @@ class InicioController extends Controller {
 	/* Funciones de Cotizacion */
 		public function cotizacion_list()
 		{
-			return view('inicio.cotizacion_list');
+			$var_cot = 0;
+			$datos_cot = "";
+			
+			return view('inicio.cotizacion_list', compact('datos_cot', 'var_cot'));
+			//return view('inicio.cotizacion_list');
 		}
 
 		public function cotizacion_hand()
@@ -108,22 +116,52 @@ class InicioController extends Controller {
 
 	public function catalogo()
 	{
-		return view('inicio.catalogo');
+		//return view('inicio.catalogo');
+
+		$camaras 		= Producto::where('tipo', 1)->lists('nombre', 'id');
+		$lentes 		= Producto::where('tipo', 2)->lists('nombre', 'id');
+		$monturas 		= Producto::where('tipo', 3)->lists('nombre', 'id');
+		$fuentes		= Producto::where('tipo', 4)->lists('nombre', 'id');
+
+		$camaras1 		= Producto::where('tipo', 1)->select('id', 'nombre', 'descripcion_basica', 'imagen')->get();
+		$lentes1		= Producto::where('tipo', 2)->select('id', 'nombre', 'descripcion_basica', 'imagen')->get();
+		$monturas1 		= Producto::where('tipo', 3)->select('id', 'nombre', 'descripcion_basica', 'imagen')->get();
+		$fuentes1		= Producto::where('tipo', 4)->select('id', 'nombre', 'descripcion_basica', 'imagen')->get();
+
+		$felix = 1;
+
+
+		$var_cot = 0;
+		$datos_cot = "";
+
+		return view("inicio.catalogo", compact('datos_cot', 'var_cot', 'felix', 'camaras', 'lentes', 'monturas', 'fuentes', 'camaras1', 'lentes1', 'monturas1', 'fuentes1'));
 	}
 
 	public function reporte_pago()
 	{
-		return view('inicio.reporte_pago');
+		$var_cot = 0;
+		$datos_cot = "";
+		
+		return view('inicio.reporte_pago', compact('datos_cot', 'var_cot'));
+		//return view('inicio.reporte_pago');
 	}
 
 	public function perfil()
 	{
-		return view('inicio.perfil');
+		$var_cot = 0;
+		$datos_cot = "";
+		
+		return view('inicio.perfil', compact('datos_cot', 'var_cot'));
+		//return view('inicio.perfil');
 	}
 
 	public function soporte()
 	{
-		return view('inicio.soporte');
+		$var_cot = 0;
+		$datos_cot = "";
+		
+		return view('inicio.soporte', compact('datos_cot', 'var_cot'));
+		//return view('inicio.soporte');
 	}
 
 }

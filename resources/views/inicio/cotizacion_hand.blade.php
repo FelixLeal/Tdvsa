@@ -7,6 +7,7 @@
 @section('contentInicio')
 
 	<style type="text/css">
+<<<<<<< HEAD
 	    .box{
 	        padding: 20px;
 	        display: none;
@@ -25,6 +26,12 @@
 	    #montura {display: none;}
 	    #alimentacion {display: none;}
 
+=======
+	    .camara {display: none;}
+	    .lente {display: none;}
+	    .montura {display: none;}
+	    .alimentacion {display: none;}
+>>>>>>> 576b1f80d672f33d83131b6828dd3d79c532b0e5
 	</style>
 
 	<script type="text/javascript">
@@ -78,14 +85,21 @@
 	    });
 	</script>
 
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 576b1f80d672f33d83131b6828dd3d79c532b0e5
 		<div class="row panel" style="font-weight: bold; background-color: #ffffff;">
 			<div class="large-12 columns" style="font-weight: bold !important;">
 				<h3>Cotizacion</h3>
 			</div>
+<<<<<<< HEAD
 			<!--div class="large-12 columns prueba"-->
 
             	<div class="large-12 columns" style="font-weight: bold !important; padding:15px;">
+=======
+            	<div class="large-4 columns" style="font-weight: bold !important;">
+>>>>>>> 576b1f80d672f33d83131b6828dd3d79c532b0e5
             		<h7><strong>Seleccione una categoria: </strong></h7>
             	</div>
             	<div class="large-12 columns" style="font-weight: bold !important; margin-bottom: 20px;">
@@ -116,18 +130,18 @@
 						</div>
 					
 				</div>
-
 				<br>
+<<<<<<< HEAD
 
 
 				<div id="camara">
 
+=======
+				<div class="camara">
+>>>>>>> 576b1f80d672f33d83131b6828dd3d79c532b0e5
 					<div class="tabs-content">
-
 						<div class="large-12 columns" style="margin-bottom: 50px;"></div>
-
 						@foreach ($camaras1 as $dato)
-
 							<div class="large-3 columns">
 								<div class="large-12 columns productos cams" style="width: 100%;">
 									<!--img src="img/m15-slide-300x175.png"-->
@@ -139,23 +153,21 @@
 								</a>
 								<!--{!! $dato->descripcion_basica !!}-->
 							</div>
-
 						@endforeach
-
 					</div>
-
 				</div>
+<<<<<<< HEAD
 
 
 
 				<div id="lente">
 
+=======
+				<div class="lente">
+>>>>>>> 576b1f80d672f33d83131b6828dd3d79c532b0e5
 					<div class="tabs-content">
-
 						<div class="large-12 columns" style="margin-bottom: 50px;"></div>
-
 						@foreach ($lentes1 as $dato)
-
 							<div class="large-3 columns">
 								<div class="large-12 columns productos cams" style="width: 100%;">
 									<!--img src="img/m15-slide-300x175.png"-->
@@ -166,11 +178,8 @@
 								</a>
 								<!--{!! $dato->descripcion_basica !!}-->
 							</div>
-
 						@endforeach
-
 					</div>
-
 				</div>
 
 

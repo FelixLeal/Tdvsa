@@ -46,6 +46,7 @@
 				<div class="large-12 columns" style="padding: 0px;">
 
 					@if ($felix == 1)
+<<<<<<< HEAD
 						<div class="large-12 columns">
 							<strong>Lentes</strong>
 							<div class="large-12 columns" style="padding: 0px; ">
@@ -53,26 +54,58 @@
 									<option value=""></option>
 									<option value=""></option>
 								</select>
+=======
+
+						@if ($nro_lentes == 2)
+
+							<div class="large-4 columns">
+								<strong>Lente 1</strong>
+								<div class="large-12 columns" style="padding: 0px; ">
+									{!! Form::select('id_lente', ['0' => 'Seleccione...'] + $lentes, 0) !!}
+								</div>
+								<strong>Lente 2</strong>
+								<div class="large-12 columns" style="padding: 0px; ">
+									{!! Form::select('id_lente1', ['0' => 'Seleccione...'] + $lentes, 0) !!}
+								</div>
+>>>>>>> 576b1f80d672f33d83131b6828dd3d79c532b0e5
 							</div>
-						</div>
+
+						@else
+
+							<div class="large-4 columns">
+								<strong>Lente</strong>
+								<div class="large-12 columns" style="padding: 0px; ">
+									{!! Form::select('id_lente', ['0' => 'Seleccione...'] + $lentes, 0) !!}
+								</div>
+							</div>
+
+						@endif
 
 						<div class="large-12 columns">
 							<strong>Montura</strong>
 							<div class="large-12 columns" style="padding: 0px;">
+<<<<<<< HEAD
 								<select class="large-3 columns" style="font-weight: bold; background-color: #ffffff; ">
 									<option value=""></option>
 									<option value=""></option>
 								</select>
+=======
+								{!! Form::select('id_montura', ['0' => 'Seleccione...'] + $monturas, 0) !!}
+>>>>>>> 576b1f80d672f33d83131b6828dd3d79c532b0e5
 							</div>
 						</div>
 
 						<div class="large-12 columns">
 							<strong>Accesorios</strong>
 							<div class="large-12 columns" style="padding: 0px;">
+<<<<<<< HEAD
 								<select class="large-3 columns" style="font-weight: bold; background-color: #ffffff; ">
 									<option value=""></option>
 									<option value=""></option>
 								</select>
+=======
+								{!! Form::select('id_fuente', ['0' => 'Seleccione...'] + $fuentes, 0) !!}
+>>>>>>> 576b1f80d672f33d83131b6828dd3d79c532b0e5
 							</div>
 						</div>
 					@endif
@@ -81,8 +114,6 @@
 						
 						<div class="large-2 columns" >
 							<strong>Cantidad</strong>
-							<input type="number" value="01" style="background-color: #ffffff; ">
-
 							{!! Form::number('cantidad') !!}
 						</div>
 						<div class="large-10 columns" >
