@@ -61,7 +61,7 @@
 	    });
 	</script>
 
-	<div class="row panel" style="font-weight: bold; background-color: #ffffff;">
+	
 		<div class="large-12 columns" style="font-weight: bold !important;">
 			<h3>Catalogo</h3>
 		</div>
@@ -161,6 +161,6 @@
 				@endforeach
 			</div>
 		</div>
-	</div>
+	
 	
 @endsection

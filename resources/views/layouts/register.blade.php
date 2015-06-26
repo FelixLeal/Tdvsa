@@ -16,7 +16,7 @@
 	</head>
 	<body>
 
-		<div class="row" id="principal"> 
+		<div class="row" id="principal_registrer"> 
 			<div class="row">
 				<div class="small-3 small-centered columns">
 					<!--img  id ="imagen2" src="img/logo-tdvsa-med2.png"-->

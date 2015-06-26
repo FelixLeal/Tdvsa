@@ -6,7 +6,7 @@
 
 @section('contentInicio')
 
-	<div class="row" style="margin-top: 15px;">
+	
 
 		<div class="small-11 large-6 large-centered columns hide-for-small-only" > 
 
@@ -29,6 +29,6 @@
 
 		</div>
 
-	</div>
+	
 	
 @endsection

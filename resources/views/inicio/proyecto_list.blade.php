@@ -5,34 +5,27 @@
 @endsection
 
 @section('contentInicio')
-
-<<<<<<< HEAD
-	
-		<div class="row panel" style="font-weight: bold; background-color: #ffffff;">
-			<div class="large-12 columns" style="font-weight: bold !important;"><h3>Proyectos</h3></div>
-			<div class="large-12 columns prueba">
-=======
-	<div class="row panel" style="font-weight: bold; background-color: #ffffff;">
+		<script type="text/javascript">
+				$(document).ready(function(){
+				    	$("#side2").removeClass("efecto");
+				    		    		        
+				    });
+		</script>
 		<div class="large-12 columns" style="font-weight: bold !important;"><h3>Proyectos</h3></div>
 		<div class="large-12 columns prueba">
->>>>>>> 576b1f80d672f33d83131b6828dd3d79c532b0e5
 
 			<!--p>Hay {{ $datos->lastPage() }} pagina(s)</p-->
 			<!--p>Hay {{ $datos->total() }} registro(s)</p-->
 			<br>
 
-<<<<<<< HEAD
-				<table cellspacing="0">
-=======
 			<table cellspacing="0">
->>>>>>> 576b1f80d672f33d83131b6828dd3d79c532b0e5
 
-				<tr>
-					<th>#</th>
+				<tr class="encabezado">
+					<th><h6>#</h6></th>
 					<!--th># :)</th-->
-					<th>Nombre</th>
-					<th>Descripcion</th>
-					<th>Acciones</th>
+					<th><h6>Nombre</h6></th>
+					<th><h6>Fecha</h6></th>
+					<th><h6>Acciones</h6></th>
 				</tr>
 				<!--{{ $i=0 }}-->
 				@foreach ($datos as $dato)
@@ -66,11 +59,7 @@
 			<!--button type="submit" id="buttona" class="button large btn_crear" style="text-transform: uppercase;">Nuevo</button-->
 
 		</div>
-<<<<<<< HEAD
-	
-=======
 		
-	</div>
->>>>>>> 576b1f80d672f33d83131b6828dd3d79c532b0e5
+	
 	
 @endsection

@@ -6,7 +6,7 @@
 
 @section('contentInicio')
 
-    <div class="row panel" style="font-weight: bold; background-color: #ffffff;">
+   
         <div class="large-12 columns" style="pading: 0px"><h3>Reporte de Pago</h3></div>
         <div class="large-8 columns" style="padding: 0px;">
             <div class="large-6 columns" style="font-weight: bold !important;">
@@ -68,6 +68,6 @@
                 <textarea style="height: 200px;" placeholder="Escribir mensaje"></textarea>
             </div>
         </div>
-    </div>
+  
 	
 @endsection

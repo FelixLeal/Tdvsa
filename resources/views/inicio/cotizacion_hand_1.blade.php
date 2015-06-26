@@ -5,8 +5,14 @@
 @endsection
 
 @section('contentInicio')
+		<script type="text/javascript">
+					$(document).ready(function(){
+					    	$("#side2").removeClass("efecto");
+					    		    		        
+					    });
+		</script>
 
-		<div class="row panel" style="font-weight: bold; background-color: #ffffff;">
+	
 			<div class="large-12 columns" style="font-weight: bold !important;">
 				<h3>Cotizacion</h3>
 			</div>

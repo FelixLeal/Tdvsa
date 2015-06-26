@@ -1,8 +1,23 @@
+/*
+Theme Name: Ecosum
+Theme URI: http://www.mandarinagrafica.com
+Version: 2.1.268
+Description: Smart. Flexible. Beautiful.
+Author: Mandarina Grafica
+Author URI: http://www.mandarinagrafica.com
+*/
+tbody h6{
+	font-size: 14px !important;
+	color: #FFFFFF !important;
+	font-weight: bold;
+}
 .alert {
   padding: 15px;
   margin-bottom: 20px;
   border: 1px solid transparent;
-  border-radius: 4px; }
+  border-radius: 4px; 
+}
+
 
 .alert-danger {
   background-color: #f2dede;
@@ -30,24 +45,21 @@ ul#avmenu a:hover {
 	color: #222 !important; }
   
 ul#avmenu li.current a {
-<<<<<<< HEAD
-	border:1px solid #777 !important;
-}
-
-
-
-#principal{
-	font-family: 'Open Sans', sans-serif !important;
-	max-width: initial;
-}
-=======
 	border:1px solid #777 !important; }
 
 #principal {
 	font-family: 'Open Sans', sans-serif !important;
-	max-width: initial; }
+	max-width: initial; 
+	font-size: 14px !important;
+}
+#principal button{
+	font-family: 'Open Sans', sans-serif !important;
+	
+}
+#principal2{
+	background-color: #F0F0F0;
+}
 
->>>>>>> 576b1f80d672f33d83131b6828dd3d79c532b0e5
 h1,h2,h3,h4,h4,h5,h6,a,p {
 	font-family: 'Open Sans', sans-serif !important; }
 
@@ -82,9 +94,9 @@ h1,h2,h3,h4,h4,h5,h6,a,p {
 	font-size: 22px !important;
 	text-align: center;
 	font-weight: bold;
-	color: #2844AB; }
+	color: #E11727; }
 
-#content_login img {
+img {
 }
 
 #encabezado_2 {
@@ -131,16 +143,13 @@ h1,h2,h3,h4,h4,h5,h6,a,p {
 #buttona {
 	background-color: #D10927;
 	font-weight: bold;
-<<<<<<< HEAD
-	font-size: 16px !important;
-	
+	font-size: 14px !important; 
+	padding: 10px 20px;
+	text-transform: uppercase;
+	color: #FFFFFF !important;
 }
-#buttona:hover{
-=======
-	font-size: 16px !important; }
 
 #buttona:hover {
->>>>>>> 576b1f80d672f33d83131b6828dd3d79c532b0e5
 	transition: all 0.75s;
 	background-color: #91061B; }
 
@@ -148,22 +157,12 @@ h1,h2,h3,h4,h4,h5,h6,a,p {
 	border-left: 8px solid #D10927 !important;
 	padding-left: 5px;
 	font-size: 15px;
-<<<<<<< HEAD
-	color: #666666;
-}
-#button_login{
-	background-color: #43D9E8;
-}
-#panel_izq{
-
-=======
 	color: #666666; }
 
 #button_login {
 	background-color: #43D9E8; }
 
 #panel_izq {
->>>>>>> 576b1f80d672f33d83131b6828dd3d79c532b0e5
 	background-color: #6A8B99;
 	padding-left: 0px; 
 	padding-right: 0px; 
@@ -178,19 +177,10 @@ h1,h2,h3,h4,h4,h5,h6,a,p {
 	padding-left: 3%;
 	color: #9EC0E8;
 	font-family: 'Open Sans', sans-serif !important;
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: bold; }
 
-<<<<<<< HEAD
-}
-#items_izq li a{
-	padding-left: 0px;
-
-}
-.select{
-=======
 .select {
->>>>>>> 576b1f80d672f33d83131b6828dd3d79c532b0e5
 	background-color: #9EC0E8;
 	height: 40px; }
 
@@ -201,73 +191,36 @@ h1,h2,h3,h4,h4,h5,h6,a,p {
 #panel_central {
 	height: 100% !important;
 	background-color: #F0F0F0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-	color: 	#014CA7 !important;
-	padding: 30px !important;
-}
-#panel_central strong{
-	
-	color: #014CA7;
-}
-#panel_central h3{
-=======
-	color: 	#014CA7 !important; }
-=======
 	color: 	#014CA7 !important;
 	padding: 30px !important; }
->>>>>>> 2f73615f15df49737d99b8a5325c06df01267db3
 
 #panel_central strong {
-	color: #014CA7; }
+	color: #D10927; }
 
 #panel_central h3 {
->>>>>>> 576b1f80d672f33d83131b6828dd3d79c532b0e5
-	color: #0B4EA0 !important;
+	color: #0F0F0F  !important;
 	font-weight: bold; }
 
 #panel_der {
 	height: 100% !important;
 	background-color: #F0F0F0;
 	text-align: right;
-<<<<<<< HEAD
-	font-family: 'Open Sans', sans-serif !important;
-}
-#panel_central input,#panel_central textarea,#panel_central select{
-	background-color: #E3E3E3;
-}
-.btn_crear{
-	width: 20%;
-}
-#panel_central li a{
-	font-size: 15px;
-	
-}
-table th{
-=======
 	font-family: 'Open Sans', sans-serif !important; }
 
 #panel_central input, #panel_central textarea, #panel_central select {
 	background-color: #E3E3E3; }
 
-.btn_crear {
-	width: 20%; }
+
 
 #panel_central li a {
 	font-size: 15px; }
 
 table th {
->>>>>>> 576b1f80d672f33d83131b6828dd3d79c532b0e5
 	font-size: 18px !important;
 	font-weight: bold;
 	text-align: center !important;
 	background-color: #01C8F1;
-<<<<<<< HEAD
-	color: #fff !important;
-}
-=======
 	color: #fff !important; }
->>>>>>> 576b1f80d672f33d83131b6828dd3d79c532b0e5
 
 table td {
 	font-weight: 500; }
@@ -293,31 +246,29 @@ table thead {
 #img2 {
 	width: 60%;
 	margin-left: 19%; }
-
+#img input{
+	box-shadow: none !important; 
+	margin-bottom: -1px !important;
+	height: 50px !important;
+}
+#img a{
+	transition: all 0.75s;
+	text-align: center;
+	width: 100% !important;
+	margin: 0 auto;
+}
+#img button{
+	text-transform: uppercase;
+}
+#img a:hover{
+	transition: all 0.75s;
+	text-decoration: underline;
+}
 .sub-menus h5 {
 	margin-left: 20%; }
 
 .select_menu {
 	background-color: #B8C8DF;
-<<<<<<< HEAD
-	color: #7A848E;
-}
-.select_menu h5{
-	color: #7A848E !important;
-}
-.sub_menu{
-	margin-bottom: 0px !important;
-}
-.detalle{
-	padding: 0px;
-}
-.prueba form{
-	width: 100%;
-	max-width: 400px; 
- 	
-}
-.prueba2{
-=======
 	color: #7A848E; }
 
 .select_menu h5 {
@@ -334,7 +285,6 @@ table thead {
 	max-width: 400px; }
 
 .prueba2 {
->>>>>>> 576b1f80d672f33d83131b6828dd3d79c532b0e5
 	overflow: auto;
  	height: 220px; }
 
@@ -342,56 +292,6 @@ table thead {
 	margin-top: 20px; 
 	text-align: right; 
 	margin-right: 2%; 
-<<<<<<< HEAD
-	color: #C72C36;
-}
-.marco{
-	position: relative;
-	padding: 0px;
-	
-}
-.side_fixed{
-	position: fixed;
-	padding: 0px;
-	background-color: #6A8B99;
-	height: 100% !important;
-}
-.side_fixed2{
-	position: fixed;
-	padding: 0px;
-	height: 100% !important;
-}
-
-.in_radio{
-	padding: 0px;
-}
-.radios input[type="radio"]:checked{
-    visibility:hidden;
-}
-.in_radio input[type="radio"]{
-	display: none;
-}
-.radios label{
-	text-align: center;
-	padding: 10px;
-	background: #008CBA;
-	color: #FFFFFF;
-
-}
-.radios label:hover{
-	transition: all 0.75s;
-	background: #007096;
-}
-.radios input[type="radio"]:checked + label{
-    background: #007096;
-}
-#titulo{
-	padding: 0px;
-}
-.selecc{
-	background-color: #007096 !important;
-}
-=======
 	color: #C72C36; }
 
 .marco {
@@ -407,14 +307,11 @@ table thead {
 .side_fixed2 {
 	position: fixed;
 	padding: 0px;
-<<<<<<< HEAD
-	height: 100% !important; } 
->>>>>>> 576b1f80d672f33d83131b6828dd3d79c532b0e5
-=======
 	height: 100% !important; }
 
 .in_radio {
-	padding: 0px; }
+	padding: 0px; 
+}
 
 .radios input[type="radio"]:checked {
     visibility:hidden; }
@@ -425,12 +322,12 @@ table thead {
 .radios label {
 	text-align: center;
 	padding: 10px;
-	background: #008CBA;
+	background: #6A8B99;
 	color: #FFFFFF; }
 
 .radios label:hover {
 	transition: all 0.75s;
-	background: #007096; }
+	background: #3B4C54; }
 
 .radios input[type="radio"]:checked + label {
     background: #007096; }
@@ -439,6 +336,68 @@ table thead {
 	padding: 0px; }
 	
 .selecc {
-	background-color: #007096 !important; }
+	background-color: #3B4C54 !important; }
 
->>>>>>> 2f73615f15df49737d99b8a5325c06df01267db3
+#items_izq ul li h5{
+	color: #FFFFFF;
+	font-weight: normal;
+}
+#items_izq .sub_menu:hover{
+	background-color: rgba(0,0,0,0.1);
+	transition: all 0.75s;
+}
+.efecto{
+	height:0px; 
+	transition-property:height;
+	transition-duration:1s; 
+	overflow:hidden;
+}
+#items_izq .menu_hide ul{
+	margin: -13px;
+}
+
+#items_izq .menu_hide:hover ul{
+	height: 207.3px;
+}
+
+.menu_hide{
+	margin-bottom: 0px !important;
+}
+.menu_hide:hover ul{
+	transition: all 0.75s !important;
+}
+
+.logo_space{
+	background-color: #3B4C54; 
+	padding: 30px;
+}
+.ver_mi_cuenta{
+	background-color: rgb(240, 240, 240); 
+	padding-top: 30px; 
+	padding-right: 20px;
+}
+.left_float{
+	float: left !important;
+}
+[class*="column"] + [class*="column"]:last-child{
+	float: left !important;
+}
+.encabezado th{
+	padding: 5px 2px 1px 2px !important;
+	background-color: #678794;
+}
+table a{
+	color: #678794;
+}
+#panel_der a{
+	color: #6A8B99 !important;
+}
+.ver_mi{
+	font-weight: bold;
+}
+#principal_registrer{
+	padding: 3% !important;
+}
+.sombra{
+	box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2) !important;
+}

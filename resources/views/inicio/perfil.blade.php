@@ -6,7 +6,7 @@
 
 @section('contentInicio')
 
-	<div class="row panel" style="font-weight: bold; background-color: #ffffff;">
+	
 
         <div class="large-12 columns" style="font-weight: bold !important;"><h3>Responsable</h3></div>
 
@@ -85,6 +85,6 @@
             <div class="large-3 button">Editar Clave</div>
         </div>
 
-    </div>
+   
 	
 @endsection
