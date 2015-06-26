@@ -1,4 +1,3 @@
-
 <div class="large-12 columns productos cams" style="width: 100%;">
 	<img src="img/m15-slide-300x175.png">
 </div>

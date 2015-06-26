@@ -5,29 +5,32 @@
 @endsection
 
 @section('contentInicio')
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#side2").removeClass("efecto");		    		    		        
+		});
+	</script>
 
 	{!! Form::open( ['route' => 'inte.cotiz.store', 'id' => 'form_2', 'class' => 'small-12'] ) !!}
-		<div class="row panel" style="font-weight: bold; background-color: #ffffff;">
-			<div class="large-12 columns" style="font-weight: bold !important;"><h3>Detalles del Producto</h3></div>
-			<div class="large-4 columns" style="font-weight: bold !important;">
-				<!--img src="img/m15-slide-300x175.png"-->
-				{!! Form::image($perro->imagen, $perro->id, ['width' => '128px', 'height' => '128px']) !!}
+		<div class="large-12 columns" style="font-weight: bold !important;"><h3>Detalles del Producto</h3></div>
+		<div class="large-4 columns" style="font-weight: bold !important;">
+			<!--img src="img/m15-slide-300x175.png"-->
+			{!! Form::image($perro->imagen, $perro->id, ['width' => '128px', 'height' => '128px']) !!}
 
-				{!! Form::hidden('id_producto', $perro->id) !!}
-				{!! Form::hidden('precio_unitario', $perro->precio) !!}
+			{!! Form::hidden('id_producto', $perro->id) !!}
+			{!! Form::hidden('precio_unitario', $perro->precio) !!}
 
-				{!! Form::hidden('id_cotizacion', $id2) !!}
-				<!--{!! $id1 !!}-->
+			{!! Form::hidden('id_cotizacion', $id2) !!}
+			<!--{!! $id1 !!}-->
+		</div>
+		<div class="large-8 columns" style="font-weight: bold !important; margin-top: 30px; !important">
+			<div class="large-6 columns" style="font-weight: bold !important;">
+				<strong>Nombre:</strong>
+				<br>{!! $perro->nombre !!}
 			</div>
-			<div class="large-8 columns" style="font-weight: bold !important; margin-top: 30px; !important">
-				<div class="large-6 columns" style="font-weight: bold !important;">
-					<strong>Nombre:</strong>
-					<br>{!! $perro->nombre !!}
-				</div>
-				<div class="large-6 columns" style="font-weight: bold !important;">
-					<strong>Modelo:</strong>
-					<br>{!! $perro->modelo !!}
-				</div>
+			<div class="large-6 columns" style="font-weight: bold !important;">
+				<strong>Modelo:</strong>
+				<br>{!! $perro->modelo !!}
 			</div>
 		</div>
 		<div class="large-12 columns" style="padding: 0px;">

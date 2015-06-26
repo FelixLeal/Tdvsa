@@ -1,13 +1,26 @@
+/*
+	Theme Name: Ecosum
+	Theme URI: http://www.mandarinagrafica.com
+	Version: 2.1.268
+	Description: Smart. Flexible. Beautiful.
+	Author: Mandarina Grafica
+	Author URI: http://www.mandarinagrafica.com
+*/
+tbody h6 {
+	font-size: 14px !important;
+	color: #FFFFFF !important;
+	font-weight: bold; }
+
 .alert {
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 4px; }
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px; }
 
 .alert-danger {
-  background-color: #f2dede;
-  border-color: #ebccd1;
-  color: #a94442; }
+	background-color: #f2dede;
+	border-color: #ebccd1;
+	color: #a94442; }
 
 ul#avmenu {
 	margin: 35px 0 !important;
@@ -34,7 +47,14 @@ ul#avmenu li.current a {
 
 #principal {
 	font-family: 'Open Sans', sans-serif !important;
-	max-width: initial; }
+	max-width: initial;
+	font-size: 14px !important; }
+
+#principal button {
+	font-family: 'Open Sans', sans-serif !important; }
+
+#principal2 {
+	background-color: #F0F0F0; }
 
 h1,h2,h3,h4,h4,h5,h6,a,p {
 	font-family: 'Open Sans', sans-serif !important; }
@@ -70,9 +90,9 @@ h1,h2,h3,h4,h4,h5,h6,a,p {
 	font-size: 22px !important;
 	text-align: center;
 	font-weight: bold;
-	color: #2844AB; }
+	color: #E11727; }
 
-#content_login img {
+img {
 }
 
 #encabezado_2 {
@@ -119,7 +139,10 @@ h1,h2,h3,h4,h4,h5,h6,a,p {
 #buttona {
 	background-color: #D10927;
 	font-weight: bold;
-	font-size: 16px !important; }
+	font-size: 14px !important; 
+	padding: 10px 20px;
+	text-transform: uppercase;
+	color: #FFFFFF !important; }
 
 #buttona:hover {
 	transition: all 0.75s;
@@ -149,7 +172,7 @@ h1,h2,h3,h4,h4,h5,h6,a,p {
 	padding-left: 3%;
 	color: #9EC0E8;
 	font-family: 'Open Sans', sans-serif !important;
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: bold; }
 
 .select {
@@ -167,10 +190,10 @@ h1,h2,h3,h4,h4,h5,h6,a,p {
 	padding: 30px !important; }
 
 #panel_central strong {
-	color: #014CA7; }
+	color: #D10927; }
 
 #panel_central h3 {
-	color: #0B4EA0 !important;
+	color: #0F0F0F !important;
 	font-weight: bold; }
 
 #panel_der {
@@ -181,9 +204,6 @@ h1,h2,h3,h4,h4,h5,h6,a,p {
 
 #panel_central input, #panel_central textarea, #panel_central select {
 	background-color: #E3E3E3; }
-
-.btn_crear {
-	width: 20%; }
 
 #panel_central li a {
 	font-size: 15px; }
@@ -219,6 +239,24 @@ table thead {
 #img2 {
 	width: 60%;
 	margin-left: 19%; }
+
+#img input {
+	box-shadow: none !important; 
+	margin-bottom: -1px !important;
+	height: 50px !important; }
+
+#img a {
+	transition: all 0.75s;
+	text-align: center;
+	width: 100% !important;
+	margin: 0 auto; }
+
+#img button {
+	text-transform: uppercase; }
+
+#img a:hover {
+	transition: all 0.75s;
+	text-decoration: underline; }
 
 .sub-menus h5 {
 	margin-left: 20%; }
@@ -277,12 +315,12 @@ table thead {
 .radios label {
 	text-align: center;
 	padding: 10px;
-	background: #008CBA;
+	background: #6A8B99;
 	color: #FFFFFF; }
 
 .radios label:hover {
 	transition: all 0.75s;
-	background: #007096; }
+	background: #3B4C54; }
 
 .radios input[type="radio"]:checked + label {
     background: #007096; }
@@ -291,5 +329,64 @@ table thead {
 	padding: 0px; }
 	
 .selecc {
-	background-color: #007096 !important; }
+	background-color: #3B4C54 !important; }
 
+#items_izq ul li h5 {
+	color: #FFFFFF;
+	font-weight: normal; }
+
+#items_izq .sub_menu:hover {
+	background-color: rgba(0,0,0,0.1);
+	transition: all 0.75s; }
+
+.efecto {
+	height:0px; 
+	transition-property:height;
+	transition-duration:1s; 
+	overflow:hidden; }
+
+#items_izq .menu_hide ul {
+	margin: -13px; }
+
+#items_izq .menu_hide:hover ul {
+	height: 207.3px; }
+
+.menu_hide {
+	margin-bottom: 0px !important; }
+
+.menu_hide:hover ul {
+	transition: all 0.75s !important; }
+
+.logo_space {
+	background-color: #3B4C54; 
+	padding: 30px; }
+
+.ver_mi_cuenta {
+	background-color: rgb(240, 240, 240); 
+	padding-top: 30px; 
+	padding-right: 20px; }
+
+.left_float {
+	float: left !important; }
+
+[class*="column"] + [class*="column"]:last-child {
+	float: left !important; }
+
+.encabezado th {
+	padding: 5px 2px 1px 2px !important;
+	background-color: #678794; }
+
+table a {
+	color: #678794; }
+
+#panel_der a {
+	color: #6A8B99 !important; }
+
+.ver_mi {
+	font-weight: bold; }
+
+#principal_registrer {
+	padding: 3% !important; }
+
+.sombra {
+	box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2) !important; }
