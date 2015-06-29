@@ -6,7 +6,13 @@
 
 @section('contentInicio')
 
-	
+	<script type="text/javascript">
+                    $(document).ready(function(){
+                            
+                            $("#7").addClass("oscuro");
+                                                    
+                        });
+        </script>
 
         <div class="large-12 columns" style="font-weight: bold !important;"><h3>Responsable</h3></div>
 

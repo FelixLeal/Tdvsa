@@ -6,7 +6,13 @@
 
 @section('contentInicio')
 
-   
+   <script type="text/javascript">
+                    $(document).ready(function(){
+                           
+                            $("#6").addClass("oscuro");
+                                                    
+                        });
+        </script>
         <div class="large-12 columns" style="pading: 0px"><h3>Reporte de Pago</h3></div>
         <div class="large-8 columns" style="padding: 0px;">
             <div class="large-6 columns" style="font-weight: bold !important;">

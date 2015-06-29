@@ -8,6 +8,7 @@
 	<script type="text/javascript">
 					$(document).ready(function(){
 					    	$("#side2").removeClass("efecto");
+					    	$("#4").addClass("oscuro");
 					    		    		        
 					    });
 		</script>
@@ -26,6 +27,9 @@
 					<th><h6>#</h6></th>
 					<th><h6>Concepto</h6></th>
 					<th><h6>Monto</h6></th>
+					<th><h6>Fecha</h6></th>
+					<th><h6>Proyecto</h6></th>
+					<th><h6>Cant. Productos</h6></th>
 					<th><h6>Estado</h6></th>
 				</tr>
 				<!--{{ $i=0 }}-->
@@ -34,6 +38,9 @@
 					<td>{{ $i = $i + 1 }}</td>
 					<td>{{ $dato->concepto }}</td>
 					<td>{{ $dato->monto }}</td>	
+					<td></td>
+					<td></td>
+					<td></td>
 					<td>
 						@if ( $dato->estado == 1 )
 							<a href="{{ route('detalle_coti', ['id_cotizacion' => $dato->id]) }}">Pagar</a>

@@ -5,7 +5,13 @@
 @endsection
 
 @section('contentInicio')
-
+<script type="text/javascript">
+					$(document).ready(function(){
+					    	
+					    	$("#8").addClass("oscuro");
+					    		    		        
+					    });
+		</script>
 	
 		<div class="large-12 columns" style="font-weight: bold !important;"><h3>Files Support</h3></div>
 		<div class="large-12 columns prueba">

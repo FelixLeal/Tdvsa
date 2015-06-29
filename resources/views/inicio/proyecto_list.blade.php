@@ -8,6 +8,7 @@
 		<script type="text/javascript">
 				$(document).ready(function(){
 				    	$("#side2").removeClass("efecto");
+				    	$("#2").addClass("oscuro");
 				    		    		        
 				    });
 		</script>
@@ -26,6 +27,7 @@
 					<th><h6>Nombre</h6></th>
 					<th><h6>Fecha</h6></th>
 					<th><h6>Acciones</h6></th>
+					<th><h6>Estado</h6></th>
 				</tr>
 				<!--{{ $i=0 }}-->
 				@foreach ($datos as $dato)
@@ -46,6 +48,9 @@
 
 						@endif
 
+					</td>
+					<td>
+						
 					</td>
 					
 				</tr>
