@@ -4,7 +4,7 @@
 
 
 {!! Form::label('nombre', 'Título del Proyecto') !!}
-{!! Form::text('nombre', null, ['placeholder' => 'Coloque un titulo a su proyecto' ] ) !!}
+{!! Form::text('nombre', null, ['placeholder' => 'Coloque un título a su proyecto' ] ) !!}
 <!--
 {!! Form::label('descripcion', 'Descripcion') !!}
 {!! Form::text('descripcion', null, ['placeholder' => 'Descripcion del Proyecto' ] ) !!} -->

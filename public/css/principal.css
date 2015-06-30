@@ -256,6 +256,7 @@ table thead {
 	text-align: center;
 	width: 100% !important;
 	margin: 0 auto;
+	margin: 15%;
 }
 #img button{
 	text-transform: uppercase;

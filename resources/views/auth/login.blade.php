@@ -25,7 +25,7 @@
 						<input type="password" class="form-control" name="password" placeholder="CONTRASEÑA" style="margin-bottom: 0px;">
 						<button type="submit" class="button expand">ingresar</button>
 						<div class="small-12 small-centered columns">
-						<a href="{{ url('/auth/register') }}" >¿No tienes cuenta? Regístrate aca</a>
+						<a href="{{ url('/auth/register') }}" >¿No tienes cuenta? Regístrate aquí</a>
 						</div>
 					</form>
 
