@@ -7,17 +7,19 @@
 @section('contentInicio')
 	
 	<script type="text/javascript">
-		$(document).ready(function(){
-			$("#side2").removeClass("efecto");		    		    		        
-		});
-	</script>
+ 				$(document).ready(function(){
+ 				    	$("#side2").removeClass("efecto");
+				    	$("#2").addClass("oscuro");
+ 				    		    		        
+ 				    });
+ 		</script>
 
 	<div class="large-12 columns" style="font-weight: bold !important;"><h3>Proyectos</h3></div>
 	<div class="large-12 columns prueba">
 
 		<!--p>Hay {{ $datos->lastPage() }} pagina(s)</p-->
 		<!--p>Hay {{ $datos->total() }} registro(s)</p-->
-		<br>
+		
 
 		<table cellspacing="0">
 
@@ -37,13 +39,13 @@
 				<td>{{ $dato->updated_at->format('d-m-Y') }}</td>
 				<td>
 					@if ( $dato->estado_espera == 2 )
-						<p>Aprobado</p>
+						Aprobado
 					@elseif ( $dato->estado_espera == 3 )
-						<p>Rechazado</p>
+						Rechazado
 					@elseif ( $dato->estado_espera == 4 )
-						<p>Finalizado</p>
+						Finalizado
 					@else
-						<p>En espera</p>
+						En espera
 					@endif
 				</td>
 				<!--td>{{--{{ $dato->descripcion }} --}}</td-->
@@ -67,7 +69,7 @@
 		</table>
 		{!! $datos->render() !!}
 
-		<a href="{{ url('inte/proyecto/create') }}" class="button large btn_crear" id="buttona" >Crear Nueva Cotización</a>
+		<a href="{{ url('inte/proyecto/create') }}" class="button large btn_crear" id="buttona" >Crear Nuevo proyecto</a>
 
 	</div>
 	

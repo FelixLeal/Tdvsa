@@ -16,7 +16,6 @@
 					Estas en la ventana principal de nuestra pagina, en donde podras realizar operaciones sencillas sobre tu perfil, gestionar proyectos y gestionar cotizaciones.
 				</p>
 			</div>
-			<br><br>
 		</div>
 
 		<!--a href="{{ url('/auth/logout') }}" id="buttona"class="button large" style="text-transform: uppercase;">Aceptar</a-->
