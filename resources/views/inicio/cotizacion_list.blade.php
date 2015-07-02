@@ -22,8 +22,9 @@
 
 			<tr class="encabezado">
 				<th><h6>#</h6></th>
-				<th><h6>Concepto</h6></th>
+				<th><h6>Proyecto</h6></th>
 				<th><h6>Monto</h6></th>
+				<th><h6>Fecha</h6></th>
 				<th><h6>Estado</h6></th>
 			</tr>
 			<!--{{ $i=0 }}-->
@@ -32,6 +33,7 @@
 				<td>{{ $i = $i + 1 }}</td>
 				<td>{{ $dato->concepto }}</td>
 				<td>{{ $dato->monto }}</td>
+				<td>{{ $dato->updated_at->format('d-m-Y') }}</td>
 				<td>
 					@if ( $dato->estado == 1 )
 						<a href="{{ route('detalle_coti', ['id_cotizacion' => $dato->id]) }}">Pagar</a>

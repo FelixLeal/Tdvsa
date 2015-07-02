@@ -25,7 +25,9 @@
 
 		{!! Form::select('size',$datos) !!}
 
-		{!! Form::submit('Cotizar') !!}
+		@if ( !empty($datos) )
+			{!! Form::submit('Cotizar') !!}
+		@endif
 
 	{!! Form::close() !!}
 

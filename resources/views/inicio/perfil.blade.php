@@ -9,71 +9,71 @@
     <div class="large-12 columns" style="font-weight: bold !important;"><h3>Responsable</h3></div>
 
     <div class="large-4 columns">
-        Nombre y Apellido
-        <input type="text" style="margin-top: 10px;">
+        {!! Form::label('nombre_persona', 'Nombre y Apellido') !!}
+        {!! Form::text('nombre_persona', $empresa->nombre_persona, ['disabled' => true]) !!}
     </div>
 
     <div class="large-4 columns">
-        Telefono
-        <input type="text" style="margin-top: 10px;">
+        {!! Form::label('telf_persona', 'Telefono') !!}
+        {!! Form::text('telf_persona', $empresa->telf_persona, ['disabled' => true]) !!}
     </div>
 
     <div class="large-4 columns">
-        Correo Electrónico
-        <input type="text" style="margin-top: 10px;">
+        {!! Form::label('email', 'Correo Electronico') !!}
+        {!! Form::text('email', $user->email, ['disabled' => true]) !!}
     </div>
 
     <div class="large-4 columns">
-        Empresa
-        <input type="text" style="margin-top: 10px;">
+        {!! Form::label('res_razon_social', 'Empresa') !!}
+        {!! Form::text('res_razon_social', $empresa->razon_social, ['disabled' => true]) !!}
     </div>
 
     <div class="large-4 columns">
-        Codigo de afiliación
-        <input type="text" style="margin-top: 10px;">
+        {!! Form::label('codigo_afiliacion', 'Codigo de afiliación') !!}
+        {!! Form::text('codigo_afiliacion', $empresa->codigo_afiliacion, ['disabled' => true]) !!}
     </div>
 
     <div class="large-12 columns" style="font-weight: bold !important;"><h3>Empresa</h3></div>
     <div class="large-4 columns">
-        Razon Social
-        <input type="text" style="margin-top: 10px;">
+        {!! Form::label('razon_social', 'Razon Social') !!}
+        {!! Form::text('razon_social', $empresa->razon_social, ['disabled' => true]) !!}
     </div>
 
     <div class="large-4 columns">
-        RIF
-        <input type="text" style="margin-top: 10px;">
+        {!! Form::label('rif', 'RIF') !!}
+        {!! Form::text('rif', $empresa->rif, ['disabled' => true]) !!}
     </div>
 
     <div class="large-4 columns">
-    	Correo Electronico
-        <input type="text" style="margin-top: 10px;">
+    	{!! Form::label('email_empresa', 'Correo Electronico') !!}
+        {!! Form::text('email_empresa', $empresa->email_empresa, ['disabled' => true]) !!}
     </div>
 
     <div class="large-4 columns">
-        Direccion
-        <input type="text" style="margin-top: 10px;">
+        {!! Form::label('direccion', 'Direccion') !!}
+        {!! Form::text('direccion', $empresa->direccion, ['disabled' => true]) !!}
     </div>
 
     <div class="large-4 columns">
-        Telefono
-        <input type="text" style="margin-top: 10px;">
+        {!! Form::label('telf_empresa', 'Telefono') !!}
+        {!! Form::text('telf_empresa', $empresa->telf_empresa, ['disabled' => true]) !!}
     </div>
 
     <div class="large-4 columns">
-        Registro Mercantil
-        <input type="text" style="margin-top: 10px;">
+        {!! Form::label('registro_mercantil', 'Registro Mercantil') !!}
+        {!! Form::text('registro_mercantil', $empresa->registro_mercantil, ['disabled' => true]) !!}
     </div>
     
      <!-- Otro Div -->
     <div class="large-12 columns" style="font-weight: bold !important;"><h3>Usuario</h3></div>
     <div class="large-4 columns">
-        Nombre de Usuario
-        <input type="text" style="margin-top: 10px;">
+        {!! Form::label('name', 'Nombre de Usuario') !!}
+        {!! Form::text('name', $user->name, ['disabled' => true]) !!}
     </div>
 
     <div class="large-4 columns">
-        Correo Electronico
-        <input type="text" style="margin-top: 10px;">
+        {!! Form::label('email', 'Correo Electronico') !!}
+        {!! Form::text('email', $user->email, ['disabled' => true]) !!}
     </div>
 
     <div class="large-12 columns">

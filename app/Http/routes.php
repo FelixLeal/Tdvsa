@@ -47,6 +47,7 @@ Route::get('home', 'HomeController@index');
 
 	Route::get('Cotisss_nuevo', array('as' => 'profile', 'uses' => 'Inicio\CotizacionController@getCotisss'));
 
+	Route::post('save_pago', array('as' => 'pago', 'uses' => 'Inicio\InicioController@save_pago'));
 
 
 

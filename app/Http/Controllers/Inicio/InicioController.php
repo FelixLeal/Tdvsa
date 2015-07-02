@@ -8,6 +8,7 @@ use Tdvsa\Producto; //para el modelo
 use Tdvsa\Proyecto; //para el modelo
 use Tdvsa\Empresa; //para el modelo
 use Tdvsa\User; //para el modelo
+use Tdvsa\Pago; //para el modelo
 
 use Auth; // para buscar el usuario actual.
 
@@ -154,8 +155,13 @@ class InicioController extends Controller {
 	{
 		$var_cot = 0;
 		$datos_cot = "";
+
+		$uId = Auth::id();
+		$user = User::whereId($uId)->first();
+
+		$empresa = Empresa::whereId($user->id_empresa)->first();
 		
-		return view('inicio.perfil', compact('datos_cot', 'var_cot'));
+		return view('inicio.perfil', compact('datos_cot', 'var_cot', 'user', 'empresa'));
 		//return view('inicio.perfil');
 	}
 
@@ -167,5 +173,12 @@ class InicioController extends Controller {
 		return view('inicio.soporte', compact('datos_cot', 'var_cot'));
 		//return view('inicio.soporte');
 	}
+
+	public function save_pago(Request $request)
+	{
+		$IdPago = Pago::insertGetId( $request->except('_token') );
+		return view('inicio.pago_exitoso');
+	}
+
 
 }

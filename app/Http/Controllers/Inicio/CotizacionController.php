@@ -446,7 +446,10 @@ class CotizacionController extends Controller {
 		$coti_padre = Cotizacion::whereId($request->id_cotizacion)->first();
 
 		$datos = Cotizacion_Producto::where('id_cotizacion', $request->id_cotizacion)->paginate();
-		return view('inicio.cotizacion_detalle_list', compact('datos', 'coti_padre'));
+
+		$productos = Producto::all();
+
+		return view('inicio.cotizacion_detalle_list', compact('datos', 'coti_padre', 'productos'));
 	}
 
 	/**

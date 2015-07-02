@@ -27,7 +27,7 @@
 					<ul class="side-nav" style="padding-top: 0px;">
 
 						<li class="menu_hide">
-							<a href="">
+							<a href="{{ url('inte/proyecto') }}">
 								<h5>Proyectos</h5>
 							</a>
 							<ul class="side-nav efecto" id="side2"> 
@@ -40,7 +40,7 @@
 							</ul>
 						</li>
 
-						<li class="sub_menu"> <a href="{{ url('/catalogo') }}"> <h5>Catálogo</h5> </a> </li>
+						<!--li class="sub_menu"> <a href="{{ url('/catalogo') }}"> <h5>Catálogo</h5> </a> </li-->
 						<li class="sub_menu"> <a href="{{ url('/reporte_pago') }}"> <h5>Reporte de pago</h5> </a> </li>
 						<li class="sub_menu"> <a href="{{ url('/perfil') }}"> <h5>Mi cuenta</h5> </a> </li>
 						<li class="sub_menu"> <a href="{{ url('/soporte') }}"> <h5>Soporte</h5> </a> </li>
@@ -62,7 +62,7 @@
 					<div class="row">
 						<!--EN ESTE DIV SE RENDIZARÁ EL NOMBRE DE LA PERSONA A CONSULTAREL CUAL VENDRA DE LA BD-->
 						<!--    -->
-						<div class="large-12" style="font-weight: bold;"></div>
+						<div class="large-12" style="font-weight: bold;"> {{ Auth::user()->name }} </div>
 						<div class="large-12 ver_mi">Ver mi cuenta</div>
 						<div class="large-12" style="font-size: 14px !important; border-bottom: 1px solid black;">
 							<a href="{{ url('/auth/logout') }}">Cerrar sesión</a>

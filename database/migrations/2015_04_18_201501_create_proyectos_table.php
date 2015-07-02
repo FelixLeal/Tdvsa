@@ -16,10 +16,10 @@ class CreateProyectosTable extends Migration {
 		{
 			//Datos del Proyecto
 			$table->increments('id');
-			$table->string('nombre', 15);
+			$table->string('nombre', 50);
 			$table->string('descripcion', 200);
 			$table->string('nro_control', 11);
-			$table->string('nombre_empresa', 15);
+			$table->string('nombre_empresa', 50);
 			$table->string('requerimientos', 300);
 			$table->integer('estado_espera')->default(0);
 

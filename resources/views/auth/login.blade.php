@@ -15,7 +15,7 @@
 				<div class="small-12 columns" id="img">
 					<div class="small-12 small-centered columns" id="encabezados_login">
 						<h2>INTEGRADORES TDVSA</h2>
-						<p class="subheader">Inicia sesion para acceder a tu cuenta</p>
+						<p class="subheader">Iniciar sesión para acceder a tu cuenta</p>
 					</div>
 				</div>
 				<div class="small-12 columns" id="img">
