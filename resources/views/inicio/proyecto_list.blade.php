@@ -6,7 +6,7 @@
 
 @section('contentInicio')
 	
-	<script type="text/javascript">
+		<script type="text/javascript">
  				$(document).ready(function(){
  				    	$("#side2").removeClass("efecto");
 				    	$("#2").addClass("oscuro");
@@ -56,7 +56,7 @@
 
 					@if ( $dato->estado_espera == 1 )
 
-						<a href="{{ route('inte.cotiz.create', ['id_proyecto' => $dato->id, 'concepto' => $dato->nombre]) }}">Cotizar</a>
+					- <a href="{{ route('inte.cotiz.create', ['id_proyecto' => $dato->id, 'concepto' => $dato->nombre]) }}">Cotizar</a>
 						<!--a href="{{ url('inte/nuevo', $dato) }}">Cotizar</a-->
 
 					@endif

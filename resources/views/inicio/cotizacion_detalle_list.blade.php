@@ -6,7 +6,6 @@
 
 @section('contentInicio')
 
-	<div class="row panel" style="font-weight: bold; background-color: #ffffff;">
 		<div class="large-12 columns" style="font-weight: bold !important;"><h3>Cotizaciones</h3></div>
 		<div class="large-12 columns prueba">
 
@@ -45,6 +44,6 @@
 
 
 		
-	</div>
+	
 	
 @endsection

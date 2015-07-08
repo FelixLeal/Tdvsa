@@ -8,9 +8,18 @@
 		<script type="text/javascript">
 					$(document).ready(function(){
 					    	$("#side2").removeClass("efecto");
-					    	$("#4").addClass("oscuro");
-					    		    		        
+					    	$("#4").addClass("oscuro");  
+					 
 					    });
+					  function detalle() {
+
+					   						el = document.getElementById("modal");
+											el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+											}
+					
+
+
+					
 		</script>
 
 	<div class="large-12 columns" style="font-weight: bold !important;"><h3>Mis Cotizaciones</h3></div>
@@ -39,7 +48,8 @@
 				<td>{{ $dato->updated_at->format('d-m-Y') }}</td>
 				<td>{{ $dato->monto }}</td>
 				<td>
-					<a href="{{ route('inte.proyecto.edit', $dato->id) }}">Ver detalles</a>
+					<a href="#" onclick="detalle()">Ver detalles</a>
+					
 				</td>
 				
 			</tr>
@@ -48,6 +58,9 @@
 		</table>
 		{!! $datos->render() !!}
 
+		
 	</div>
+
+	
 		
 @endsection
