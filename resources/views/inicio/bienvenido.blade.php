@@ -6,7 +6,7 @@
 
 @section('contentInicio')
 
-	<div class="small-11 large-6 large-centered columns hide-for-small-only" > 
+	<div class="small-11 large-6 large-centered columns" > 
 
 		<div class="row" style="margin-top: 20%;">
 
