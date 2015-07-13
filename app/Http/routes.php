@@ -64,7 +64,10 @@ Route::get('home', 'HomeController@index');
 
 		Route::get('save_all', ['as' => 'save_all', 'uses' => 'CotizacionController@save_all']);
 
+		//Route::get('detalle_coti', ['as' => 'detalle_coti', 'uses' => 'CotizacionController@detalle_coti']);
+
 		Route::get('detalle_coti', ['as' => 'detalle_coti', 'uses' => 'CotizacionController@detalle_coti']);
+		//Route::get('projects/jsModal', 'ProjectsController@loadJsModalForm');
 
 
 	});

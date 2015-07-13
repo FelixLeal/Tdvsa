@@ -47,8 +47,9 @@ class InicioController extends Controller {
 	{
 		$var_cot = 0;
 		$datos_cot = "";
-		return view('inicio.bienvenido', compact('datos_cot', 'var_cot'));
-		return view('inicio.bienvenido');
+		$name_person = Empresa::whereId(Auth::user()->id_empresa)->first()->nombre_persona;
+		return view('inicio.bienvenido', compact('datos_cot', 'var_cot', 'name_person'));
+		//return view('inicio.bienvenido');
 	}
 
 	/*public function espera()
