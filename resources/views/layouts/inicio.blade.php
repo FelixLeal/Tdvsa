@@ -151,13 +151,7 @@
 			</div>
 		</div>
 
-		<div class="small-12 columns marco hide-for-large-up" id="panel_central_mob" style="padding-top: 30px; height: 1000px;">
-			<div class="row panel sombra" style="font-weight: bold; background-color: #ffffff;">
-			@yield('contentInicio')
-			</div>
-		</div>
-
-		<div class="large-8 columns marco show-for-large-up" id="panel_central" style="padding-top: 30px; height: 1000px;">
+		<div class="large-8 columns marco" id="panel_central" style="padding-top: 30px; height: 1000px;">
 			<div class="row panel sombra" style="font-weight: bold; background-color: #ffffff;">
 			@yield('contentInicio')
 			</div>
@@ -256,9 +250,7 @@
 		</div>
 
 	
-		<script src="/js/foundation.min.js"></script>
-		<script src="/js/vendor/jquery.js"></script>
-		<script src="/js/vendor/fastclick.js"></script>
+		<script type="text/javascript" src="/js/proyecto_list.js"></script>
 		
 	</body>
 	
