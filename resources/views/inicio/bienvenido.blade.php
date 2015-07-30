@@ -19,8 +19,6 @@
 			<br><br>
 		</div>
 
-		<!--a href="{{ url('/auth/logout') }}" id="buttona"class="button large" style="text-transform: uppercase;">Aceptar</a-->
-
 	</div>
 	
 @endsection

@@ -24,7 +24,7 @@ class CreateEmpresasTable extends Migration {
 			$table->string('direccion', 200);
 			$table->string('codigo_postal', 5);
 			//Datos de la afiliacion
-			$table->string('codigo_afiliacion', 60);
+			$table->string('codigo_afiliacion', 60)->default('0');
 			$table->date('fecha_afiliacion');
 			$table->integer('id_tipo_cliente'); //Relacionado con tabla Tipo clientes que contiene un descuento.
 			//Datos Personales

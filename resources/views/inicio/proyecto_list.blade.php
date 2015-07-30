@@ -36,27 +36,29 @@
 				<td>{{ $dato->nombre }}</td>
 				<td>{{ $dato->updated_at->format('d-m-Y') }}</td>
 				<td>
-					@if ( $dato->estado_espera == 2 )
+					@if ( $dato->estado_espera == 1 )
 						<p>Aprobado</p>
-					@elseif ( $dato->estado_espera == 3 )
+					@elseif ( $dato->estado_espera == 2 )
 						<p>Rechazado</p>
-					@elseif ( $dato->estado_espera == 4 )
+					@elseif ( $dato->estado_espera == 3 )
 						<p>Finalizado</p>
 					@else
 						<p>En espera</p>
 					@endif
 				</td>
-				<!--td>{{--{{ $dato->descripcion }} --}}</td-->
 				<td>
-					<a href="{{ route('inte.proyecto.edit', $dato->id) }}">Editar</a>
-					<!--a href="{{ url('inte/proyecto') }}">Eliminar1</a      se puede usar asi o asi abajo         --> 
-					<!--a href="{{ route('inte.proyecto.destroy', $dato) }}">Eliminar</a-->
+					@if ( $dato->estado_espera != 3 )
 
-					@if ( $dato->estado_espera == 1 )
+						<a href="{{ route('inte.proyecto.edit', $dato->id) }}">Editar</a>
+						<!--a href="{{ url('inte/proyecto') }}">Eliminar1</a      se puede usar asi o asi abajo         --> 
+						<!--a href="{{ route('inte.proyecto.destroy', $dato) }}">Eliminar</a-->
 
-						<a href="{{ route('inte.cotiz.create', ['id_proyecto' => $dato->id, 'concepto' => $dato->nombre]) }}">Cotizar</a>
-						<!--a href="{{ url('inte/nuevo', $dato) }}">Cotizar</a-->
+						@if ( $dato->estado_espera == 1 )
 
+							<a href="{{ route('inte.cotiz.create', ['id_proyecto' => $dato->id, 'concepto' => $dato->nombre]) }}">Cotizar</a>
+							<!--a href="{{ url('inte/nuevo', $dato) }}">Cotizar</a-->
+
+						@endif
 					@endif
 
 				</td>
@@ -67,7 +69,7 @@
 		</table>
 		{!! $datos->render() !!}
 
-		<a href="{{ url('inte/proyecto/create') }}" class="button large btn_crear" id="buttona" >Crear Nueva Cotización</a>
+		<a href="{{ url('inte/proyecto/create') }}" class="button large btn_crear" id="buttona" >Crear Nuevo Proyecto</a>
 
 	</div>
 	

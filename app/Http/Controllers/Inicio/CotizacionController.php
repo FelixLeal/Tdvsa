@@ -356,6 +356,8 @@ class CotizacionController extends Controller {
 			$felix = 1;
 		}
 
+		Session::flash('new_product', 'Se ha agregado satisfactoriamente a su cotización');
+		Session::flash('new_product1', 'puede seguir cotizando o ver su cotización');
 
 		return view("inicio.cotizacion_hand", compact('datos_cot', 'var_cot', 'cotiz', 'felix', 'camaras', 'lentes', 'monturas', 'fuentes', 'camaras1', 'lentes1', 'monturas1', 'fuentes1'));
 

@@ -45,11 +45,15 @@ class InicioController extends Controller {
 	 */
 	public function index()
 	{
-		$var_cot = 0;
-		$datos_cot = "";
-		$name_person = Empresa::whereId(Auth::user()->id_empresa)->first()->nombre_persona;
-		return view('inicio.bienvenido', compact('datos_cot', 'var_cot', 'name_person'));
-		//return view('inicio.bienvenido');
+		if (Auth::user()->type == 1) {
+			$name_user = Auth::user()->name;
+			return view('admin.bienvenido', compact('name_user'));
+		} else {
+			$var_cot = 0;
+			$datos_cot = "";
+			$name_person = Empresa::whereId(Auth::user()->id_empresa)->first()->nombre_persona;
+			return view('inicio.bienvenido', compact('datos_cot', 'var_cot', 'name_person'));
+		};
 	}
 
 	/*public function espera()
@@ -120,7 +124,7 @@ class InicioController extends Controller {
 		}
 	/* Fin de Cotizacion */
 
-	public function catalogo()
+	/*public function catalogo()
 	{
 		//return view('inicio.catalogo');
 
@@ -141,7 +145,7 @@ class InicioController extends Controller {
 		$datos_cot = "";
 
 		return view("inicio.catalogo", compact('datos_cot', 'var_cot', 'felix', 'camaras', 'lentes', 'monturas', 'fuentes', 'camaras1', 'lentes1', 'monturas1', 'fuentes1'));
-	}
+	}*/
 
 	public function reporte_pago()
 	{

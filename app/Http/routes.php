@@ -24,8 +24,11 @@ Route::get('home', 'HomeController@index');
 	Route::get('proyecto_hand', 'Inicio\InicioController@proyecto_hand');
 	Route::get('cotizacion_list', 'Inicio\InicioController@cotizacion_list');
 	Route::get('cotizacion_hand', 'Inicio\InicioController@cotizacion_hand');
-	Route::get('catalogo', 'Inicio\InicioController@catalogo');
-	Route::get('reporte_pago', 'Inicio\InicioController@reporte_pago');
+	//Route::get('catalogo', 'Inicio\InicioController@catalogo');
+	//Route::get('reporte_pago', 'Inicio\InicioController@reporte_pago');
+
+	Route::get('reporte_pago', ['as' => 'reporte_pago', 'uses' => 'Inicio\InicioController@reporte_pago']);
+
 	Route::get('perfil', 'Inicio\InicioController@perfil');
 	Route::get('soporte', 'Inicio\InicioController@soporte');
 	Route::get('cotiz_create', 'Inicio\CotizacionController@getCreate');
@@ -70,6 +73,37 @@ Route::get('home', 'HomeController@index');
 		//Route::get('projects/jsModal', 'ProjectsController@loadJsModalForm');
 
 
+	});
+
+
+	Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
+		Route::get('empresas', ['as' => 'empresas', 'uses' => 'AdminUserController@empresasList']);
+		Route::get('empresa/editar/{one?}', ['as' => 'empresas.edit', 'uses' => 'AdminUserController@empresaEdit']);
+		Route::get('empresa/detalle/{one?}', ['as' => 'empresas.detalle', 'uses' => 'AdminUserController@empresaDetalle']);
+		Route::get('empresa/afiliar/{one?}', ['as' => 'empresas.afiliar', 'uses' => 'AdminUserController@empresaAfiliar']);
+		Route::post('empresa/afiliar/{empresa}', ['as' => 'empresas.afiliar.store', 'uses' => 'AdminUserController@empresaAfiliarStore']);
+
+
+
+		Route::get('usuarios', ['as' => 'usuarios', 'uses' => 'AdminUserController@usuariosList']);
+		Route::get('usuario/detalle/{one?}', ['as' => 'usuarios.detalle', 'uses' => 'AdminUserController@usuarioDetalle']);
+		Route::get('usuario/nuevo', ['as' => 'usuarios.nuevo', 'uses' => 'AdminUserController@usuarioNuevo']);
+		Route::post('usuario/nuevo/{user}', ['as' => 'usuarios.nuevo.store', 'uses' => 'AdminUserController@usuarioNuevoStore']);
+
+		Route::get('pagos', ['as' => 'pagos', 'uses' => 'AdminUserController@pagosList']);
+		Route::get('pago/detalle/{one?}', ['as' => 'pago.detalle', 'uses' => 'AdminUserController@pagoDetalle']);
+
+
+		Route::get('proyectos', ['as' => 'proyectos', 'uses' => 'AdminUserController@proyectosList']);
+		Route::get('proyecto/detalle/{one?}', ['as' => 'proyecto.detalle', 'uses' => 'AdminUserController@proyectoDetalle']);
+		Route::get('proyecto/verificar/{one?}', ['as' => 'proyecto.verificar', 'uses' => 'AdminUserController@proyectoVerificar']);
+		Route::post('proyecto/verificar/{proyecto}', ['as' => 'proyecto.verificar.store', 'uses' => 'AdminUserController@proyectoVerificarStore']);
+		Route::get('proyecto/finalizar/{one?}', ['as' => 'proyecto.finalizar', 'uses' => 'AdminUserController@proyectoFinalizar']);
+
+		Route::get('proyecto/cotizaciones/{one?}', ['as' => 'proyecto.cotizaciones', 'uses' => 'AdminUserController@proyectoCotizaciones']);
+		Route::get('proyecto/cotizacion/detalle/{one?}', ['as' => 'proyecto.cotizacion.detalle', 'uses' => 'AdminUserController@proyectoCotizacionDetalle']);
+		Route::get('proyecto/cotizacion/pagar/{one?}', ['as' => 'proyecto.cotizacion.pagar', 'uses' => 'AdminUserController@proyectoCotizacionPagar']);
+		Route::get('proyecto/cotizacion/finalizar/{one?}', ['as' => 'proyecto.cotizacion.finalizar', 'uses' => 'AdminUserController@proyectoCotizacionFinalizar']);
 	});
 
 	
