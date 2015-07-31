@@ -76,6 +76,7 @@
 						<li class="" id="6mobile"> <a href="{{ url('/reporte_pago') }}"> <h5>Reporte de pago</h5> </a> </li>
 						<li class="" id="7mobile"> <a href="{{ url('/perfil') }}"> <h5>Mi cuenta</h5> </a> </li>
 						<li class="" id="8mobile"> <a href="{{ url('/soporte') }}"> <h5>Soporte</h5> </a> </li>
+						<li class="" id="9mobile"> <a href="{{ url('/soporte_tecnico') }}"> <h5>Soporte Tecnico</h5> </a> </li>
 
 					</ul>
 				</div>
@@ -104,21 +105,16 @@
 						<li class="sub_menu hover" id="6"> <a href="{{ url('/reporte_pago') }}"> <h5>Reporte de pago</h5> </a> </li>
 						<li class="sub_menu hover" id="7"> <a href="{{ url('/perfil') }}"> <h5>Mi cuenta</h5> </a> </li>
 						<li class="sub_menu hover" id="8"> <a href="{{ url('/soporte') }}"> <h5>Soporte</h5> </a> </li>
+						<li class="sub_menu hover" id="9"> <a href="{{ url('/soporte_tecnico') }}"> <h5>Soporte Tecnico</h5> </a> </li>
 
 					</ul>
 				</div>
 			</div>
 		</div>
-	
-		<div class="small-12 columns marco hide-for-large-up" id="panel_central_mob" style="padding-top: 30px; height: 1000px;">
-			<div class="row panel sombra" style="font-weight: bold; background-color: #ffffff;">
- 				@yield('contentInicio')
-			</div>
-		</div>
 
-		<div class="large-8 columns marco show-for-large-up" id="panel_central" style="padding-top: 30px; height: 1000px;">
+		<div class="large-8 columns marco" id="panel_central" style="padding-top: 30px; height: 1000px;">
 			<div class="row panel sombra" style="font-weight: bold; background-color: #ffffff;">
- 				@yield('contentInicio')
+			@yield('contentInicio')
 			</div>
 		</div>
 
@@ -266,5 +262,6 @@
 		<script src="/js/foundation.min.js"></script>
 		<script src="/js/vendor/jquery.js"></script>
 		<script src="/js/vendor/fastclick.js"></script>
+		<script type="text/javascript" src="/js/proyecto_list.js"></script>
 	</body>
 </html>

@@ -13,7 +13,7 @@
 			<div id="leyenda_2" style="font-size: 18px;">
 				<h3 style="font-weight: bold; color: #264A96;">Gracias!</h3>
 				<p>
-					Su pago fue realizado exitosamente...
+					Su ticket de Soporte Tecnico fue realizado exitosamente...
 				</p>
 			</div>
 			<br><br>

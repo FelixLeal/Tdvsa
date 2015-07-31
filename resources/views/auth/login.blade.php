@@ -19,7 +19,7 @@
 					</div>
 				</div>
 				<div class="small-12 columns" id="img">
-					<form class="small-5 small-centered columns show-for-large-only" action="{{ url('/auth/login') }}" method="POST" >
+					<form class="small-5 small-centered columns show-for-large-up" action="{{ url('/auth/login') }}" method="POST">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input type="email" class="form-control" name="email" placeholder="EMAIL" style="margin-bottom: 0px;">
 						<input type="password" class="form-control" name="password" placeholder="CONTRASEÑA" style="margin-bottom: 0px;">
@@ -40,16 +40,6 @@
 					</form>
 
 					<form class="small-12 small-centered columns show-for-small-only" action="{{ url('/auth/login') }}" method="POST" >
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-						<input type="email" class="form-control" name="email" placeholder="EMAIL" style="margin-bottom: 0px;">
-						<input type="password" class="form-control" name="password" placeholder="CONTRASEÑA" style="margin-bottom: 0px;">
-						<button type="submit" class="button expand">ingresar</button>
-						<div class="small-12 small-centered columns">
-							<a href="{{ url('/auth/register') }}" >¿No tienes cuenta? Regístrate aquí</a>
-						</div>
-					</form>
-
-					<form class="small-6 small-centered columns show-for-xlarge-only" action="{{ url('/auth/login') }}" method="POST" >
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input type="email" class="form-control" name="email" placeholder="EMAIL" style="margin-bottom: 0px;">
 						<input type="password" class="form-control" name="password" placeholder="CONTRASEÑA" style="margin-bottom: 0px;">

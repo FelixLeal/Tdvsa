@@ -71,11 +71,6 @@ class AdminUserController extends Controller {
 		return view('admin.empresa_list', compact( 'datos'));
 	}
 
-
-
-
-
-
 	public function usuariosList()
 	{
 		$datos = User::where('type','!=',1)->paginate();
@@ -124,7 +119,6 @@ class AdminUserController extends Controller {
 		}	
 	}
 
-
 	public function pagosList()
 	{
 		// ['id_user', 'forma_pago', 'nro_documento', 'monto', 'fecha_transaccion', 'comentario'];
@@ -137,12 +131,6 @@ class AdminUserController extends Controller {
 		$datos = Pago::FindOrFail($id);
 		return view('admin.pago_detalle', compact('datos')); // este 'datos' tambien se usa en el Form::model del proyecto edit
 	}
-
-
-
-
-
-
 
 	public function proyectosList()
 	{
@@ -216,24 +204,6 @@ class AdminUserController extends Controller {
 		$datos_cotizaciones = Cotizacion::where('id_proyecto', $dato->id_proyecto)->paginate();
 		return view('admin.proyecto_cotizaciones_list', compact( 'datos_cotizaciones', 'datos_proyecto'));
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	public function usuarioEdit($id)
 	{

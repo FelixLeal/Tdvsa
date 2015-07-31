@@ -30,21 +30,11 @@ class UserController extends Controller {
 		return "Daniel...";
 	}
 
-
-
-
-	
-
-
-
-
 	public function getSoporte()
 	{
 		$var_cot = 0;
 		$datos_cot = "";
-		
 		$datos = Soporte::paginate();
-		//return view('inicio.soporte', compact('datos', 'datos_cot', 'var_cot'));
 		return view('inicio.soporte', compact('datos'));
 	}
 

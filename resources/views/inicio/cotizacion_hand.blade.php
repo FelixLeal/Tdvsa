@@ -15,10 +15,10 @@
 
 	<script type="text/javascript">
 	    $(document).ready(function(){
-	    	*$("#side2").removeClass("efecto");
+	    	$("#side2").removeClass("efecto");
 			$("#2").addClass("oscuro");
 			document.getElementById("rad1").className = "selecc";
-	        $('input[type="radio"]').click(function(){
+	    	$('input[type="radio"]').click(function(){
 	            if($(this).attr("value")=="1"){
 	            	$valor = 1;
 	                $("#camara").show();
