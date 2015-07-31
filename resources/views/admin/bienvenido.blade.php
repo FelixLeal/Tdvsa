@@ -1,10 +1,10 @@
-@extends('layouts.inicio')
+@extends('layouts.admin')
 
-@section('titleInicio')
+@section('titleInicioAdmin')
 	Bienvenido | Mobotix
 @endsection
 
-@section('contentInicio')
+@section('contentInicioAdmin')
 
 	<div class="small-11 large-6 large-centered columns"> 
 

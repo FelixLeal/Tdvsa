@@ -19,7 +19,7 @@
 					</div>
 				</div>
 				<div class="small-12 columns" id="img">
-					<form class="small-5 small-centered columns show-for-large-up" action="{{ url('/auth/login') }}" method="POST" >
+					<form class="small-5 small-centered columns show-for-large-up" action="{{ url('/auth/login') }}" method="POST">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input type="email" class="form-control" name="email" placeholder="EMAIL" style="margin-bottom: 0px;">
 						<input type="password" class="form-control" name="password" placeholder="CONTRASEÑA" style="margin-bottom: 0px;">
@@ -48,8 +48,6 @@
 							<a href="{{ url('/auth/register') }}" >¿No tienes cuenta? Regístrate aquí</a>
 						</div>
 					</form>
-
-					
 				</div>
 			</div>
 

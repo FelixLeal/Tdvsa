@@ -5,12 +5,12 @@
 @endsection
 
 @section('contentInicio')
-        <script type="text/javascript">
-                    $(document).ready(function(){
-                            $("#6").addClass("oscuro");
-                                                    
-                        });
-        </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#6").addClass("oscuro");
+        });
+    </script>
 
     <div class="large-12 columns" style="pading: 0px"><h3>Reporte de Pago</h3></div>
     {!! Form::open( ['route' => 'pago', 'id' => 'form_2', 'class' => 'large-12' ] ) !!}
@@ -36,16 +36,14 @@
             <div class="large-12 columns" style="font-weight: bold !important;">
                 <div class="large-12 columns" style="font-weight: bold !important; padding: 0px;">
                     <!--a href="pago" class="button large" id="buttona" >Enviar</a-->
-                    
+                    <!--button type="submit" id="buttona" class="button large" style="text-transform: uppercase;">Enviar</button-->
                 </div>
             </div>
-
-
             <div class="large-12 columns" style="font-weight: bold !important;">
                 {!! Form::label('comentario', 'Comentario (opcional)') !!}
                 {!! Form::textarea('comentario', '', ['placeholder' => 'Breve comentario acerca de la transacción' ] ) !!}
             </div>
-             <div class="large-12 columns" style="font-weight: bold !important;">
+            <div class="large-12 columns" style="font-weight: bold !important;">
                 <button type="submit" id="buttona" class="button large" style="text-transform: uppercase;">Enviar</button>
             </div>
         </div>

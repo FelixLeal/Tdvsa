@@ -5,22 +5,19 @@
 @endsection
 
 @section('contentInicio')
-		<script type="text/javascript">
-					$(document).ready(function(){
-					    	$("#side2").removeClass("efecto");
-					    	$("#5").addClass("oscuro");
-					    		    		        
-					    });
-		</script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#side2").removeClass("efecto");		    		    		        
+		});
+	</script>
 
-	<div class="large-12 columns" >
-		<h3>Nueva Cotización</h3>
+	<div class="large-12 columns" style="font-weight: bold !important;">
+		<h3>Cotizacion</h3>
 	</div>
-	<div class="large-12 columns">
-		<h7 class="titulo_rojo">Por favor seleccionar el proyecto al que desea agregar una nueva cotización:</h7>
+	<div class="large-4 columns" style="font-weight: bold !important;">
+		<h7><strong>Seleccione una categoria: </strong></h7>
 	</div>
-	
-	<div class="large-5 columns form_loco">
+
 	{!! Form::open(array('url' => 'nuevo_coti', 'method' => 'get')) !!}
 	
 		{{--{!! Form::open(array('url' => 'foo/bar')) !!}--}}
@@ -33,6 +30,5 @@
 		@endif
 
 	{!! Form::close() !!}
-	</div>
 
 @endsection

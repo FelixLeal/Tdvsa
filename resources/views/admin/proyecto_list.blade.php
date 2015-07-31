@@ -1,15 +1,14 @@
-@extends('layouts.inicio')
+@extends('layouts.admin')
 
-@section('titleInicio')
+@section('titleInicioAdmin')
 	Bienvenido | Mobotix
 @endsection
 
-@section('contentInicio')
-	
+@section('contentInicioAdmin')
+
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$("#side2").removeClass("efecto");		
-			$("#2").addClass("oscuro");    		    		        
+			$("#side2").removeClass("efecto");		    		    		        
 		});
 	</script>
 
@@ -38,30 +37,23 @@
 				<td>{{ $dato->updated_at->format('d-m-Y') }}</td>
 				<td>
 					@if ( $dato->estado_espera == 1 )
-						Aprobado
+						<p>Verificado</p>
 					@elseif ( $dato->estado_espera == 2 )
-						Rechazado
+						<p>Rechazado</p>
 					@elseif ( $dato->estado_espera == 3 )
-						Finalizado
+						<p>Finalizado</p>
 					@else
-						En espera
+						<p>En espera</p>
 					@endif
 				</td>
 				<td>
-					@if ( $dato->estado_espera != 3 )
-
-						<a href="{{ route('inte.proyecto.edit', $dato->id) }}">Editar</a>
-						<!--a href="{{ url('inte/proyecto') }}">Eliminar1</a      se puede usar asi o asi abajo         --> 
-						<!--a href="{{ route('inte.proyecto.destroy', $dato) }}">Eliminar</a-->
-
-						@if ( $dato->estado_espera == 1 )
-
-							- <a href="{{ route('inte.cotiz.create', ['id_proyecto' => $dato->id, 'concepto' => $dato->nombre]) }}">Cotizar</a>
-							<!--a href="{{ url('inte/nuevo', $dato) }}">Cotizar</a-->
-
-						@endif
+					<a href="{{ route('proyecto.detalle', $dato->id) }}">Ver</a>
+					@if ( $dato->estado_espera == 0 )
+						<a href="{{ route('proyecto.verificar', $dato->id) }}">Verificar</a>
 					@endif
-
+					@if ( $dato->estado_espera == 1 )
+						<a href="{{ route('proyecto.finalizar', $dato->id) }}">Finalizar</a>
+					@endif
 				</td>
 				
 			</tr>
@@ -70,8 +62,6 @@
 		</table>
 		{!! $datos->render() !!}
 
-		<a href="{{ url('inte/proyecto/create') }}" class="button large btn_crear" id="buttona" >Crear Nuevo Proyecto</a>
-
 	</div>
-	
+
 @endsection

@@ -8,7 +8,7 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$("#side2").removeClass("efecto");
-			$("#2").addClass("oscuro");		    		    		        
+			$("#2").addClass("oscuro");
 		});
 	</script>
 
@@ -25,21 +25,16 @@
 			<!--{!! $id1 !!}-->
 		</div>
 		<div class="large-8 columns" style="font-weight: bold !important; margin-top: 30px; !important">
-			
 		</div>
 		<div class="large-12 columns prod" style="padding: 0px;">
 			@if ($felix == 1)
 				@if ($nro_lentes == 2)
 					<div class="large-12 columns">
-						<div class="large-12 columns" style="padding: 0px; ">
-						<label>Lente 1</label> 
-						</div>
+						<label>Lente 1</label>
 						<div class="large-12 columns" style="padding: 0px; ">
 							{!! Form::select('id_lente', ['0' => 'Seleccione...'] + $lentes, 0, ['class' => 'large-6 columns']) !!}
 						</div>
-						<div class="large-12 columns" style="padding: 0px; ">
 						<label>Lente 2</label>
-						</div>
 						<div class="large-12 columns" style="padding: 0px; ">
 							{!! Form::select('id_lente1', ['0' => 'Seleccione...'] + $lentes, 0, ['class' => 'large-6 columns']) !!}
 						</div>
@@ -75,10 +70,7 @@
 				</div>
 			</div>
 			<div class="large-12 columns detalle" >
-				
-					<!--a href="15.html" class="button large btn_crear" id="buttona" >Cotizar</a-->
-					<button type="submit" id="buttona" class="button large" style="text-transform: uppercase;">Agregar a la cotización</button>
-				
+				<button type="submit" id="buttona" class="button large" style="text-transform: uppercase;">Agregar a la cotización</button>
 				<div class="large-9 columns" >
 					<div class="large-12 columns" ></div>
 				</div>
