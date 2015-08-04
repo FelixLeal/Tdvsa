@@ -104,7 +104,7 @@
 						</li>
 						<li class="sub_menu hover" id="6"> <a href="{{ url('/reporte_pago') }}"> <h5>Reporte de pago</h5> </a> </li>
 						<li class="sub_menu hover" id="7"> <a href="{{ url('/perfil') }}"> <h5>Mi cuenta</h5> </a> </li>
-						<li class="sub_menu hover" id="8"> <a href="{{ url('/soporte') }}"> <h5>Soporte</h5> </a> </li>
+						<li class="sub_menu hover" id="8"> <a href="{{ url('/soporte') }}"> <h5>Pagos</h5> </a> </li>
 						<li class="sub_menu hover" id="9"> <a href="{{ url('/soporte_tecnico') }}"> <h5>Soporte Tecnico</h5> </a> </li>
 
 					</ul>

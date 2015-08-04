@@ -44,7 +44,7 @@
 					<!--a href="{{ route('detalle_coti', ['id_cotizacion' => $dato->id]) }}">Detalle</a-->
 					<a href="#" onclick="detalle()">Detalles</a>
 					@if ( $dato->estado == 0 )
-						<a href="{{ route('reporte_pago') }}">Pagar</a>
+						- <a href="{{ route('reporte_pago') }}">Pagar</a>
 					@elseif ( $dato->estado == 1 )
 						<p>Pagada</p>
 					@endif

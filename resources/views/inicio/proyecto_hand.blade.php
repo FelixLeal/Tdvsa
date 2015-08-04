@@ -7,9 +7,11 @@
 @section('contentInicio')
 
 	<script type="text/javascript">
-		$(document).ready(function(){
-			$("#side2").removeClass("efecto");		    		    		        
-		});
+					$(document).ready(function(){
+					    	$("#side2").removeClass("efecto");
+					    	$("#3").addClass("oscuro");
+					    		    		        
+					    });
 	</script>
 
 	<div class="large-12 columns" style=""><h3>Nuevo Proyecto</h3></div>
