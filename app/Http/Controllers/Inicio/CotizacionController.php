@@ -237,6 +237,45 @@ class CotizacionController extends Controller {
 		return view('inicio.cotizacion_detalle_list', compact('datos', 'coti_padre', 'productos'));
 	}
 
+
+
+
+
+
+
+
+	public function detalle_cotiDetalle(Request $request)
+	{
+		$productos = Producto::all();
+
+		$datos = cotizacion_temp::paginate();		
+
+		return view('inicio.cotizacion_detalle_list_uno', compact('datos', 'productos'));
+	}
+
+	public function detalle_cotiDetalleModificar($id)
+	{
+		$productos = Producto::all();
+
+		$datos = cotizacion_temp::whereId($id)->first();
+
+		return view('inicio.coti_detalle_list_uno_edit', compact('datos', 'productos'));
+	}
+
+	public function detalle_cotiDetalleUpdate($id, Request $request)
+	{
+		$datos = cotizacion_temp::FindOrFail($id);
+		$datos->fill($request->except('_token', 'id_cotizacion', 'id_producto', 'nombre', 'precio_unitario'));
+		$datos->save();
+		Session::flash('message', 'El registro fue actualizado');
+
+		$productos = Producto::all();
+
+		$datos = cotizacion_temp::paginate();		
+
+		return view('inicio.cotizacion_detalle_list_uno', compact('datos', 'productos'));
+	}
+
 	public function show($id)
 	{
 		//

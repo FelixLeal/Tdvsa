@@ -27,29 +27,6 @@
 	</script>
 
 	<body id="principal2">
-		<div id="modal" class="large-10 columns marco">
-			<div class="mod-container">
-				<h3> Cotizacion N° </h3>
-				<table cellspacing="0">
-					<tr class="modal_table">
-						<th></th>
-						<th>Producto</th>
-						<th>Cantidad</th>
-						<th>Precio</th>
-						<th>Total</th>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-				</table>
-				<div class="total_cot" style="float:right; padding: 10px;">Total cotizacion = <strong>1400,00 bsf</strong></div>
-				<a id="buttona" onclick="detalle()" class="button large btn_crear btn_modal">Volver a Mis Cotizaciones</a>
-			</div>
-		</div>
-
 		<div id="mobiFijo" class="small-12 medium-12 columns hide-for-large-up">
 			<div class="small-12 medium-12 columns menu_desp hide-for-large-up">
 				<a id="menu_mobile"><img src="{{ asset('/img/menu.png') }}"> Menu</a>
@@ -74,9 +51,10 @@
 						</li>
 
 						<li class="" id="6mobile"> <a href="{{ url('/reporte_pago') }}"> <h5>Reporte de pago</h5> </a> </li>
-						<li class="" id="7mobile"> <a href="{{ url('/perfil') }}"> <h5>Mi cuenta</h5> </a> </li>
-						<li class="" id="8mobile"> <a href="{{ url('/soporte') }}"> <h5>Soporte</h5> </a> </li>
-						<li class="" id="9mobile"> <a href="{{ url('/soporte_tecnico') }}"> <h5>Soporte Tecnico</h5> </a> </li>
+						<li class="" id="7mobile"> <a href="{{ route('pagos.inicio', Auth::id()) }}"> <h5>Mis Pagos</h5> </a> </li>
+						<li class="" id="8mobile"> <a href="{{ url('/perfil') }}"> <h5>Mi cuenta</h5> </a> </li>
+						<li class="" id="9mobile"> <a href="{{ url('/soporte') }}"> <h5>Soporte</h5> </a> </li>
+						<li class="" id="10mobile"> <a href="{{ url('/soporte_tecnico') }}"> <h5>Soporte Tecnico</h5> </a> </li>
 
 					</ul>
 				</div>
@@ -103,9 +81,10 @@
 							</ul>
 						</li>
 						<li class="sub_menu hover" id="6"> <a href="{{ url('/reporte_pago') }}"> <h5>Reporte de pago</h5> </a> </li>
-						<li class="sub_menu hover" id="7"> <a href="{{ url('/perfil') }}"> <h5>Mi cuenta</h5> </a> </li>
-						<li class="sub_menu hover" id="8"> <a href="{{ url('/soporte') }}"> <h5>Soporte</h5> </a> </li>
-						<li class="sub_menu hover" id="9"> <a href="{{ url('/soporte_tecnico') }}"> <h5>Soporte Tecnico</h5> </a> </li>
+						<li class="sub_menu hover" id="7"> <a href="{{ route('pagos.inicio', Auth::id()) }}"> <h5>Mis Pagos</h5> </a> </li>
+						<li class="sub_menu hover" id="8"> <a href="{{ url('/perfil') }}"> <h5>Mi cuenta</h5> </a> </li>
+						<li class="sub_menu hover" id="9"> <a href="{{ url('/soporte') }}"> <h5>Soporte</h5> </a> </li>
+						<li class="sub_menu hover" id="10"> <a href="{{ url('/soporte_tecnico') }}"> <h5>Soporte Tecnico</h5> </a> </li>
 
 					</ul>
 				</div>
@@ -128,33 +107,57 @@
 						<div class="large-12 medium-12" style="font-size: 14px !important; border-bottom: 1px solid #A4A4A4;">
 							<a href="{{ url('/auth/logout') }}">Cerrar sesión</a>
 						</div>
-						<div class="large-12 top medium-12" style="font-weight: bold;">Mi cotización</div>
+						<div class="large-12 medium-12" style="font-weight: bold;">Mi cotización</div>
 
-						{{-- @if ($var_cot == 1)
+						@if ( !empty( DB::table('proyecto_actuals')->where('id_user', '=', Auth::id())->first() ) )
+							@if ( !is_null( DB::table('cotizacion_temps')->first() ) )
+								<table cellspacing="0">
+									<tr>
+										<th>Cantidad</th>
+									</tr>
+									<tr>
+										<td>
+											Tiene 
+											<!--{{ $cant = 0 }}-->
+											<!--{{ $d_cots = DB::table('cotizacion_temps')->paginate() }}-->
+											@foreach ($d_cots as $dato) 
+												<!-- {{ $cant = $cant + $dato->cantidad }} -->
+											@endforeach
+											{!! $cant !!}
+											Productos cotizados!
+										</td>
+									</tr>
+								</table>
 
-							<p>Hay {{ $datos_cot->total() }} registro(s)</p>
+								<a href="{{ url('inte/detalle_coti/detalle') }}" class="button large" id="buttona" >Ver Detalles</a>
+							@else
+								<table cellspacing="0">
 
+									<tr>
+										<th>Cantidad</th>
+									</tr>
+									<tr>
+										<td>
+											Tiene 0 Productos cotizados!
+										</td>
+									</tr>
+
+								</table>
+							@endif
+						@else
 							<table cellspacing="0">
 
 								<tr>
-									<th>#</th>
-									<th>Descripcion</th>
-									<th>Cant * Precio</th>
+									<th>Cantidad</th>
 								</tr>
-								{{ $i=0 }}
-								@foreach ($datos_cot as $dato)
 								<tr>
-									<td>{{ $i = $i + 1 }}</td>
-									<td>{{ $dato->id_producto }}</td>
-									<td>{{ $dato->cantidad * $dato->precio_unitario }}</td>							
+									<td>Aun no inicia una Cotización</td>
 								</tr>
-								@endforeach
 
 							</table>
-							{!! $datos_cot->render() !!}
+						@endif
 
-						@endif --}}
-
+						<!--div class="large-12" style="font-size: 14px;">No hay items añadidos por el momento</div-->
 					</div>
 					<div class="row">
 					</div>
@@ -175,11 +178,9 @@
 						<br>
 						<div class="large-12 medium-12" style="font-weight: bold;">Mi cotización</div>
 
-						
 						@if ( !empty( DB::table('proyecto_actuals')->where('id_user', '=', Auth::id())->first() ) )
 							@if ( !is_null( DB::table('cotizacion_temps')->first() ) )
 								<table cellspacing="0">
-
 									<tr>
 										<th>Cantidad</th>
 									</tr>
@@ -195,8 +196,9 @@
 											Productos cotizados!
 										</td>
 									</tr>
-
 								</table>
+
+								<a href="{{ url('inte/detalle_coti/detalle') }}" class="button large" id="buttona" >Ver Detalles</a>
 							@else
 								<table cellspacing="0">
 
@@ -210,9 +212,7 @@
 									</tr>
 
 								</table>
-
 							@endif
-							Felix
 						@else
 							<table cellspacing="0">
 
@@ -225,31 +225,6 @@
 
 							</table>
 						@endif
-						{{-- @if ($var_cot == 1)
-						@if ( !empty($datos) )
-
-							<p>Hay {{ $datos_cot->total() }} registro(s)</p>
-
-							<table cellspacing="0">
-
-								<tr>
-									<th>#</th>
-									<th>Descripcion</th>
-									<th>Cant * Precio</th>
-								</tr>
-								{{ $i=0 }}
-								@foreach ($datos_cot as $dato)
-								<tr>
-									<td>{{ $i = $i + 1 }}</td>
-									<td>{{ $dato->id_producto }}</td>
-									<td>{{ $dato->cantidad * $dato->precio_unitario }}</td>							
-								</tr>
-								@endforeach
-
-							</table>
-							{!! $datos_cot->render() !!}
-
-						@endif --}}
 
 						<!--div class="large-12" style="font-size: 14px;">No hay items añadidos por el momento</div-->
 					</div>

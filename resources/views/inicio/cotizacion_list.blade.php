@@ -41,8 +41,8 @@
 				<td>{{ $dato->monto }}</td>
 				<td>{{ $dato->updated_at->format('d-m-Y') }}</td>
 				<td>
-					<!--a href="{{ route('detalle_coti', ['id_cotizacion' => $dato->id]) }}">Detalle</a-->
-					<a href="#" onclick="detalle()">Detalles</a>
+					<a href="{{ route('detalle_coti', ['id_cotizacion' => $dato->id]) }}" >Detalles</a>
+					<!--a href="#" onclick="detalle()">Detalles</a-->
 					@if ( $dato->estado == 0 )
 						<a href="{{ route('reporte_pago') }}">Pagar</a>
 					@elseif ( $dato->estado == 1 )
@@ -56,6 +56,29 @@
 		</table>
 		{!! $datos->render() !!}
 
+	</div>
+
+	<div id="modal" class="large-10 columns marco">
+		<div class="mod-container">
+			<h3> Cotizacion N° </h3>
+			<table cellspacing="0">
+				<tr class="modal_table">
+					<th></th>
+					<th>Producto</th>
+					<th>Cantidad</th>
+					<th>Precio</th>
+					<th>Total</th>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			<div class="total_cot" style="float:right; padding: 10px;">Total cotizacion = <strong>1400,00 bsf</strong></div>
+			<a id="buttona" onclick="detalle()" class="button large btn_crear btn_modal">Volver a Mis Cotizaciones</a>
+		</div>
 	</div>
 		
 @endsection

@@ -49,6 +49,17 @@ Route::group(['prefix' => 'inte', 'namespace' => 'Inicio'], function(){
 	Route::get('nuevo/{one?}', 'CotizacionController@nuevo');
 	Route::get('save_all', ['as' => 'save_all', 'uses' => 'CotizacionController@save_all']);
 	Route::get('detalle_coti', ['as' => 'detalle_coti', 'uses' => 'CotizacionController@detalle_coti']);
+
+	Route::get('detalle_coti/detalle', ['as' => 'detalle_coti.detalle', 'uses' => 'CotizacionController@detalle_cotiDetalle']);
+	Route::get('detalle_coti/detalle/{one?}', ['as' => 'detalle_coti.detalle.modificar', 'uses' => 'CotizacionController@detalle_cotiDetalleModificar']);
+	Route::post('detalle_coti/detalle/{cotizacion}', ['as' => 'detalle_coti.detalle.modificar.update', 'uses' => 'CotizacionController@detalle_cotiDetalleUpdate']);
+	
+
+
+
+	Route::get('pagos/{one?}', ['as' => 'pagos.inicio', 'uses' => 'InicioController@pagosList']);
+	Route::get('pagos/create', ['as' => 'pagos.inicio.create', 'uses' => 'InicioController@pagosCreate']);
+	Route::get('pago/detalle/{one?}', ['as' => 'pago.inicio.detalle', 'uses' => 'InicioController@pagoDetalle']);
 });
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
