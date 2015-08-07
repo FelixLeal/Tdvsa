@@ -24,6 +24,7 @@
 				$("#efectomob").toggleClass("mostr2");
 			});
 		});
+		
 	</script>
 
 	<body id="principal2">
@@ -51,11 +52,11 @@
 						</li-->
 
 						<!--li class="" id="6mobile"> <a href="{{ url('/reporte_pago') }}"> <h5>Reporte de pago</h5> </a> </li-->
-						<li class="" id="5mobile"> <a href="{{ url('admin/proyectos') }}"> <h5>Mis Proyectos</h5> </a> </li>
-						<li class="" id="5mobile"> <a href="{{ url('admin/pagos') }}"> <h5>Mis Pagos</h5> </a> </li>
+						<li class="" id="5mobile"> <a href="{{ url('admin/proyectos') }}"> <h5>Proyectos</h5> </a> </li>
+						<li class="" id="5mobile"> <a href="{{ url('admin/pagos') }}"> <h5>Pagos</h5> </a> </li>
 						<li class="" id="6mobile"> <a href="{{ url('admin/usuario/nuevo') }}"> <h5>Nuevo Usuario</h5> </a> </li>
-						<li class="" id="7mobile"> <a href="{{ url('admin/usuarios') }}"> <h5>Usuarios</h5> </a> </li>
-						<li class="" id="8mobile"> <a href="{{ url('admin/empresas') }}"> <h5>Mis Empresas</h5> </a> </li>
+						<li class="" id="7mobile"> <a href="{{ url('admin/usuarios') }}"> <h5>Clientes</h5> </a> </li>
+						<li class="" id="8mobile"> <a href="{{ url('admin/empresas') }}"> <h5>Empresas</h5> </a> </li>
 
 					</ul>
 				</div>
@@ -82,11 +83,11 @@
 							</ul>
 						</li-->
 						<!--li class="sub_menu hover" id="6"> <a href="{{ url('/reporte_pago') }}"> <h5>Reporte de pago</h5> </a> </li-->
-						<li class="sub_menu hover" id="4"> <a href="{{ url('admin/proyectos') }}"> <h5>Mis Proyectos</h5> </a> </li>
-						<li class="sub_menu hover" id="5"> <a href="{{ url('admin/pagos') }}"> <h5>Mis Pagos</h5> </a> </li>
+						<li class="sub_menu hover" id="4"> <a href="{{ url('admin/proyectos') }}"> <h5>Proyectos</h5> </a> </li>
+						<li class="sub_menu hover" id="5"> <a href="{{ url('admin/pagos') }}"> <h5>Pagos</h5> </a> </li>
 						<li class="sub_menu hover" id="6"> <a href="{{ url('admin/usuario/nuevo') }}"> <h5>Nuevo Usuario</h5> </a> </li>
-						<li class="sub_menu hover" id="7"> <a href="{{ url('admin/usuarios') }}"> <h5>Usuarios</h5> </a> </li>
-						<li class="sub_menu hover" id="8"> <a href="{{ url('admin/empresas') }}"> <h5>Mis Empresas</h5> </a> </li>
+						<li class="sub_menu hover" id="7"> <a href="{{ url('admin/usuarios') }}"> <h5>Clientes</h5> </a> </li>
+						<li class="sub_menu hover" id="8"> <a href="{{ url('admin/empresas') }}"> <h5>Empresas</h5> </a> </li>
 
 					</ul>
 				</div>

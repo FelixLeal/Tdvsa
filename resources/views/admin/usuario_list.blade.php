@@ -8,8 +8,9 @@
 	
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$("#side2").removeClass("efecto");		    		    		        
-		});
+            
+            $("#7").addClass("oscuro");                             
+        });
 	</script>
 
 	<div class="large-12 columns" style="font-weight: bold !important;"><h3>Usuarios</h3></div>
@@ -40,13 +41,13 @@
 				<td>{{ $dato->updated_at->format('d-m-Y') }}</td>
 				<td>
 					@if ( $dato->estado_registro == 0 )
-						<p>1er Paso</p>
+						1er Paso
 					@elseif ( $dato->estado_registro == 1 )
-						<p>2do Paso</p>
+						2do Paso
 					@elseif ( $dato->estado_registro == 2 )
-						<p>En Espera</p>
+						En Espera
 					@else ( $dato->estado_registro == 3 )
-						<p>Activo</p>
+						Activo
 					@endif
 				</td>
 				<td>

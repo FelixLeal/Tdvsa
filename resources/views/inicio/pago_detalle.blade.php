@@ -1,23 +1,19 @@
-@extends('layouts.admin')
+@extends('layouts.inicio')
 
-@section('titleInicioAdmin')
+@section('titleInicio')
 	Bienvenido | Mobotix
 @endsection
 
-@section('contentInicioAdmin')
+@section('contentInicio')
 	
 	<script type="text/javascript">
         $(document).ready(function() {
-            $("#5").addClass("oscuro");
+            $("#8").addClass("oscuro");
         });
     </script>
 
     <div class="report perfil large-12 columns">
         <div class="large-12 columns" style="font-weight: bold !important;"><h3> Detalles de Pago </h3></div>
-        <div class="large-12 columns" >
-            {!! Form::label('nombre_empresa', 'Realizado por') !!} 
-            {!! Form::text('nombre_empresa', \DB::table('empresas')->where('id', '=', (\DB::table('users')->whereId($datos->id_user)->first()->id_empresa))->first()->razon_social, ['readonly']) !!}
-        </div>
 
         <div class="large-12 columns">
             {!! Form::label('nro_documento', 'Nro del Documento') !!}

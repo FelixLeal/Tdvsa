@@ -8,11 +8,12 @@
 	
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$("#side2").removeClass("efecto");		    		    		        
-		});
+            
+            $("#6").addClass("oscuro");                             
+        });
 	</script>
 
-	<div class="large-12 columns" style="pading: 0px"><h3>Nuevo Usuario Administrador</h3></div>
+	<div class="large-12 columns" style="pading: 0px"><h3>Nuevo Usuario Administrador</h3>
 		@if ( Session::has('message'))
 			<p class="alert alert-success">{{ Session::get('message') }}</p>
 		@endif
@@ -30,9 +31,9 @@
                 <label>Contraseña</label>
 				<input type="password" name="password" placeholder="Escribe tu contraseña">
 
-	            <div class="large-12 columns" style="font-weight: bold !important;">
+	            
 	                <button type="submit" id="buttona" class="button large" style="text-transform: uppercase;">Enviar</button>
-	            </div>
+	            
 	        </div>
 		</form>
 

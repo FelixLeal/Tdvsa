@@ -1,16 +1,16 @@
-@extends('layouts.admin')
+@extends('layouts.inicio')
 
-@section('titleInicioAdmin')
+@section('titleInicio')
 	Bienvenido | Mobotix
 @endsection
 
-@section('contentInicioAdmin')
+@section('contentInicio')
 	
 	<script type="text/javascript">
 		$(document).ready(function(){
-            
-            $("#5").addClass("oscuro");                             
-        });
+			
+			$("#8").addClass("oscuro");    		    		        
+		});
 	</script>
 
 	<div class="large-12 columns" style="font-weight: bold !important;"><h3>Pagos</h3></div>
@@ -41,13 +41,15 @@
 				<td>{{ $dato->monto }}</td>
 				<td>{{ $dato->fecha_transaccion }}</td>
 				<td>
-					<a href="{{ route('pago.detalle', $dato->id) }}">Ver</a>
+					<a href="{{ route('pago.inicio.detalle', $dato->id) }}">Ver</a>
 				</td>
 			</tr>
 			@endforeach
 
 		</table>
 		{!! $datos->render() !!}
+
+		<a href="{{ url('/reporte_pago') }}" class="button large btn_crear" id="buttona" >Crear Nuevo Pago</a>
 
 	</div>
 	

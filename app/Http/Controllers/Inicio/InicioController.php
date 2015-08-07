@@ -97,6 +97,23 @@ class InicioController extends Controller {
 		return view('inicio.pago_exitoso');
 	}
 
+	public function pagosList($id)
+	{
+		$datos = Pago::where('id_user', $id)->paginate();
+		return view('inicio.pago_list', compact('datos'));
+	}
+
+	public function pagosCreate()
+	{
+		return view('inicio.reporte_pago');
+	}
+
+	public function pagoDetalle($id)
+	{
+		$datos = Pago::FindOrFail($id);
+		return view('inicio.pago_detalle', compact('datos')); // este 'datos' tambien se usa en el Form::model del proyecto edit
+	}
+
 	public function soporteTecnico()
 	{
 		return view('inicio.soporte_tecnico');

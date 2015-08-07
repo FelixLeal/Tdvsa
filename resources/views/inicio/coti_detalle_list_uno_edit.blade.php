@@ -12,16 +12,16 @@
 		});
 	</script>
 
-	<div class="large-12 columns" style="font-weight: bold !important;"><h3>Editar Proyecto: {{ $datos->nombre }}</h3></div>
+	<div class="large-12 columns" style="font-weight: bold !important;"><h3>Editar Producto</h3></div>
 	<div class="large-12 columns prueba">
 
 		@if ( Session::has('message'))
 			<p class="alert alert-success">{{ Session::get('message') }}</p>
 		@endif
 
-		{!! Form::model( $datos, ['route' => ['inte.proyecto.update', $datos->id], 'method' => 'PUT', 'id' => 'form_2', 'class' => 'small-10 large-4 columns'] ) !!}
-			@include('inicio.partials.formProyecto')
-			<button type="submit" id="buttona" class="button large" style="text-transform: uppercase;">Crear</button>
+		{!! Form::model( $datos, ['route' => ['detalle_coti.detalle.modificar.update', $datos->id], 'method' => 'POST', 'id' => 'form_2', 'class' => 'small-10 large-4 columns'] ) !!}
+			@include('inicio.partials.formProducto')
+			<button type="submit" id="buttona" class="button large" style="text-transform: uppercase;">Editar</button>
 		{!! Form::close() !!}
 	</div>
 	

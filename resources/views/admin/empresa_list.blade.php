@@ -8,8 +8,9 @@
 	
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$("#side2").removeClass("efecto");		    		    		        
-		});
+            
+            $("#8").addClass("oscuro");                             
+        });
 	</script>
 
 	<div class="large-12 columns" style="font-weight: bold !important;"><h3>Empresas</h3></div>
@@ -37,16 +38,16 @@
 				<td>{{ $dato->updated_at->format('d-m-Y') }}</td>
 				<td>
 					@if ( $dato->codigo_afiliacion == 0 )
-						<p>Sin Licencia</p>
+						Sin Licencia
 					@else ( $dato->estado_espera == 1 )
-						<p>Con Licencia</p>
+						Con Licencia
 					@endif
 				</td>
 				<td>
 					@if ( $dato->codigo_afiliacion == 0 )
-						<a href="{{ route('empresas.afiliar', $dato->id) }}">Afiliar</a>
+						<a href="{{ route('empresas.afiliar', $dato->id) }}">Afiliar</a> -
 					@endif
-					<a href="{{ route('empresas.detalle', $dato->id) }}">Ver</a>
+						<a href="{{ route('empresas.detalle', $dato->id) }}">Ver</a>
 				</td>
 			</tr>
 			@endforeach

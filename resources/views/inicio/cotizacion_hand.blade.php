@@ -188,7 +188,7 @@
 
 		@if ( $felix == 1)
 			<!--a  class="button large" id="buttona" href="{{ route('inte.cotiz.create', $dato) }}">Cotizar</a-->
-			<a  class="button large" id="buttona" href="{{ route('save_all', ['id_cotizacion' => $cotiz]) }}">finalizar cotización</a>
+			<a  class="button large" id="buttona" href="{{ route('save_all', ['id_cotizacion' => $cotiz]) }}">Cotizar</a>
 		{{--@elseif ($felix == 1)--}}
 			<!--a href="{{ route('inte.cotiz.create', $dato) }}">No jombre</a-->
 		@endif

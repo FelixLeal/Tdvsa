@@ -5,19 +5,13 @@
 @endsection
 
 @section('contentInicio')
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$("#side2").removeClass("efecto");		
-			$("#4").addClass("oscuro");    		    		        
-		});
-	</script>
+
 	<div class="large-12 columns" style="font-weight: bold !important;"><h3>Cotizaciones</h3></div>
 	<div class="large-12 columns prueba">
-	<div class="proy_titulo">
-		<div class="tit">{!! Form::label('concepto', 'Titulo del Proyecto:') !!}</div>
-		{!! Form::label('nombre',  $coti_padre->concepto) !!}
 
-	</div>
+		<!--p>Hay {{ $datos->lastPage() }} pagina(s)</p-->
+		<!--p>Hay {{ $datos->total() }} registro(s)</p-->
+		<br>
 
 		<table cellspacing="0">
 
@@ -26,26 +20,30 @@
 				<th>Producto</th>
 				<th>Cantidad</th>
 				<th>Precio</th>
+				<th>Acciones</th>
 			</tr>
 			<!--{{ $i=0 }}-->
+			<!--{{ $total=0 }}-->
 			@foreach ($datos as $dato)
 			<tr>
 				<td>{{ $i = $i + 1 }}</td>
 				<td>{{ $productos->where('id', $dato->id_producto)->first()->nombre }}</td>
 				<td>{{ $dato->cantidad }}</td>
 				<td>{{ $dato->precio_unitario }}</td>
+				<td><a href="{{ route('detalle_coti.detalle.modificar', $dato->id) }}">Editar</a></td>
+				<!-- {{ $total =  $total + ($dato->cantidad * $dato->precio_unitario) }} -->
 			</tr>
 			@endforeach
-
+			<tr>
+				<td></td>
+				<td></td>
+				<td>Total</td>
+				<td>{{ $total }}</td>
+				<td></td>
+			</tr>
 		</table>
-
 		{!! $datos->render() !!}
-
-		<!--a href="{{ URL::previous() }}"> Atras </a-->
-		<a href="{{ url('cotizacion_list') }}" class="button large btn_crear" id="buttona" > Atras </a>
-		<div class="detalles_monto">
-		{!! Form::label('descripcion', $coti_padre->monto) !!}
-		</div>
+		<a href="{{ URL::previous() }}" class="button large btn_crear" id="buttona" > Atras </a>
 	</div>
 	
 @endsection

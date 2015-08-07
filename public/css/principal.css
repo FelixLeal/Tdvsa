@@ -664,4 +664,31 @@ table tr td{
 .perfil .campos{
 	margin-bottom: 15px;
 }
-
+.detalles_monto label{
+	cursor: default;
+	font-size: 24px;
+	font-weight: bold;
+	float: right;
+	margin-right: 70px;
+}
+.detalles_monto{
+	width: 400px;
+	float: right;
+}
+.proy_titulo{
+	margin-bottom: 20px;
+}
+.proy_titulo .tit label{
+	cursor: default;
+	color: #075485;
+}
+.proy_titulo label{
+	cursor: default;
+}
+.monto{
+	text-align: left !important;
+}
+.carrito{
+	margin-top: 25px;
+	float: right;
+}

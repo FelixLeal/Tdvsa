@@ -8,7 +8,7 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $("#6").addClass("oscuro");
+            $("#8").addClass("oscuro");
         });
     </script>
 
@@ -23,15 +23,15 @@
             </div>
             <div class="large-12 columns alto-estandar" style="font-weight: bold !important;">
                 {!! Form::label('nro_documento', 'Nro de documento') !!}
-                {!! Form::text('nro_documento', '', ['placeholder' => '0101-0202-03-0405060708' ]) !!}
+                {!! Form::text('nro_documento', '', ['placeholder' => 'Número del documento con el que realizó el pago' ]) !!}
             </div>
             <div class="large-12 columns alto-estandar" style="font-weight: bold !important;">
                 {!! Form::label('monto', 'Monto del pago') !!}
-                {!! Form::text('monto', '', ['placeholder' => '2000' ]) !!}
+                {!! Form::text('monto', '', ['placeholder' => 'Introduzca el monto' ]) !!}
             </div>
             <div class="large-12 columns alto-estandar" style="font-weight: bold !important;">
                 {!! Form::label('fecha_transaccion', 'Fecha de transacción') !!}
-                {!! Form::date('fecha_transaccion', '', ['placeholder' => 'YYYY-mm-dd' ]) !!}
+                {!! Form::date('fecha_transaccion', '', ['placeholder' => 'dd-mm-yyyy' ]) !!}
             </div>
             <div class="large-12 columns" style="font-weight: bold !important;">
                 <div class="large-12 columns" style="font-weight: bold !important; padding: 0px;">
@@ -41,7 +41,7 @@
             </div>
             <div class="large-12 columns" style="font-weight: bold !important;">
                 {!! Form::label('comentario', 'Comentario (opcional)') !!}
-                {!! Form::textarea('comentario', '', ['placeholder' => 'Breve comentario acerca de la transacción' ] ) !!}
+                {!! Form::textarea('comentario', '', ['placeholder' => 'Breve comentario acerca del pago' ] ) !!}
             </div>
             <div class="large-12 columns" style="font-weight: bold !important;">
                 <button type="submit" id="buttona" class="button large" style="text-transform: uppercase;">Enviar</button>
