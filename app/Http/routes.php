@@ -21,11 +21,14 @@ Route::get('cotizacion_list', 'Inicio\InicioController@cotizacion_list');
 Route::get('cotizacion_hand', 'Inicio\InicioController@cotizacion_hand');
 Route::get('reporte_pago', ['as' => 'reporte_pago', 'uses' => 'Inicio\InicioController@reporte_pago']);
 Route::get('perfil', 'Inicio\InicioController@perfil');
+Route::post('perfil/update', ['as' => 'perfil.update', 'uses' =>'Inicio\InicioController@perfilUpdate']);
 Route::get('soporte', 'Inicio\InicioController@soporte');
 Route::post('save_pago', array('as' => 'pago', 'uses' => 'Inicio\InicioController@save_pago'));
 Route::post('proyecto_hand', 'Inicio\InicioController@proyecto_handE');
+Route::get('soporte_tecnico/list', ['as' => 'soporte_tecnico.list', 'uses' => 'Inicio\InicioController@soporteTecnicoList']);
+Route::get('soporte_tecnico/detalle/{one?}', ['as' => 'soporte_tecnico.detalle', 'uses' => 'Inicio\InicioController@soporteTecnicoDetalle']);
 Route::get('soporte_tecnico', ['as' => 'soporte_tecnico', 'uses' => 'Inicio\InicioController@soporteTecnico']);
-Route::post('soporte_tecnico', ['as' => 'soporte_tecnico.store', 'uses' => 'Inicio\InicioController@soporteTecnicoStore']);
+Route::post('soporte_tecnico/{soporte_tecnico}', ['as' => 'soporte_tecnico.store', 'uses' => 'Inicio\InicioController@soporteTecnicoStore']);
 
 
 Route::get('cotiz_create', 'Inicio\CotizacionController@getCreate');

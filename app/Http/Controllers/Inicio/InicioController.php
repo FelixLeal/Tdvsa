@@ -3,6 +3,8 @@
 use Tdvsa\Http\Requests;
 use Tdvsa\Http\Controllers\Controller;
 
+use Validator;
+
 use Tdvsa\Cotizacion; //para el modelo
 use Tdvsa\Producto; //para el modelo
 use Tdvsa\Proyecto; //para el modelo
@@ -83,6 +85,18 @@ class InicioController extends Controller {
 		return view('inicio.perfil', compact('datos_cot', 'var_cot', 'user', 'empresa'));
 	}
 
+	public function perfilUpdate(Request $request)
+	{
+		$id = Auth::id();
+		$id_e = Auth::user()->id_empresa;
+		User::whereId($id)->update(['name' => $request->name, 'email' => $request->email]);
+		Empresa::whereId($id_e)->update($request->only('telf_persona', 'email_empresa', 'direccion', 'telf_empresa'));
+
+		$user = User::whereId($id)->first();
+		$empresa = Empresa::whereId($id_e)->first();
+		return view('inicio.perfil', compact('user', 'empresa'));
+	}
+
 	public function soporte()
 	{
 		$var_cot = 0;
@@ -93,6 +107,17 @@ class InicioController extends Controller {
 
 	public function save_pago(Request $request)
 	{
+		$validator = Validator::make($request->only('nro_documento','monto','fecha_transaccion')
+		,[
+			'nro_documento' => 'required|numeric|min:5',
+			'monto' => 'required|numeric',
+			'fecha_transaccion' => 'required'
+		]);
+
+		if ($validator->fails()) {
+			return view('inicio.reporte_pago')->withErrors($validator);
+		}
+		
 		$IdPago = Pago::insertGetId( $request->except('_token') );
 		return view('inicio.pago_exitoso');
 	}
@@ -112,6 +137,28 @@ class InicioController extends Controller {
 	{
 		$datos = Pago::FindOrFail($id);
 		return view('inicio.pago_detalle', compact('datos')); // este 'datos' tambien se usa en el Form::model del proyecto edit
+	}
+
+
+
+
+
+
+
+
+
+
+
+	public function soporteTecnicoList()
+	{
+		$datos = SoporteTecnico::paginate();
+		return view('inicio.soporte_tecnico_list', compact( 'datos'));
+	}
+
+	public function soporteTecnicoDetalle($id)
+	{
+		$datos = SoporteTecnico::whereId($id)->first();
+		return view('inicio.soporte_tecnico_detalle', compact( 'datos'));
 	}
 
 	public function soporteTecnico()

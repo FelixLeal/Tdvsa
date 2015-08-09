@@ -15,7 +15,7 @@
 
 		<table cellspacing="0">
 			<tr>
-				<th>#</th>
+				<th>N°</th>
 				<th>Producto</th>
 				<th>Cantidad</th>
 				<th>Precio</th>
@@ -28,7 +28,7 @@
 				<td>{{ $i = $i + 1 }}</td>
 				<td>{{ $productos->where('id', $dato->id_producto)->first()->nombre }}</td>
 				<td>{{ $dato->cantidad }}</td>
-				<td>{{ $dato->precio_unitario }}</td>
+				<td class="monto">{{ number_format($dato->precio_unitario, 2, ',', '.') }}</td>
 				<td><a href="{{ route('detalle_coti.detalle.modificar', $dato->id) }}">Editar</a></td>
 				<!-- {{ $total =  $total + ($dato->cantidad * $dato->precio_unitario) }} -->
 			</tr>
@@ -37,7 +37,7 @@
 				<td></td>
 				<td></td>
 				<td>Total</td>
-				<td>{{ $total }}</td>
+				<td class="monto">{{ number_format($total, 2, ',', '.') }}</td>
 				<td></td>
 			</tr>
 		</table>

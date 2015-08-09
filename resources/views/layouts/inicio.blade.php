@@ -49,12 +49,10 @@
 								<li class="" id="5mobile"><a href="{{ url('/cotiz_create') }}"><h5>Nueva cotización</h5></a></li>
 							</ul>
 						</li>
-
-						<li class="" id="6mobile"> <a href="{{ url('/reporte_pago') }}"> <h5>Reporte de pago</h5> </a> </li>
-						<li class="" id="7mobile"> <a href="{{ route('pagos.inicio', Auth::id()) }}"> <h5>Mis Pagos</h5> </a> </li>
-						<li class="" id="8mobile"> <a href="{{ url('/perfil') }}"> <h5>Mi cuenta</h5> </a> </li>
-						<li class="" id="9mobile"> <a href="{{ url('/soporte') }}"> <h5>Soporte</h5> </a> </li>
-						<li class="" id="10mobile"> <a href="{{ url('/soporte_tecnico') }}"> <h5>Soporte Tecnico</h5> </a> </li>
+						<li class="" id="6mobile"> <a href="{{ url('/perfil') }}"> <h5>Mi cuenta</h5> </a> </li>
+						<li class="" id="7mobile"> <a href="{{ route('pagos.inicio', Auth::id()) }}"> <h5>Pagos</h5> </a> </li>
+						<li class="" id="8mobile"> <a href="{{ url('/soporte_tecnico/list') }}"> <h5>Soporte Técnico</h5> </a> </li>
+						<li class="" id="9mobile"> <a href="{{ url('/soporte') }}"> <h5>Descarga de Manuales</h5> </a> </li>
 
 					</ul>
 				</div>
@@ -80,11 +78,10 @@
 								<li class="sub-menus sub_menu hover" id="5"><a href="{{ url('/cotiz_create') }}"><h5>Nueva cotización</h5></a></li>
 							</ul>
 						</li>
-						<li class="sub_menu hover" id="6"> <a href="{{ url('/reporte_pago') }}"> <h5>Reporte de pago</h5> </a> </li>
-						<li class="sub_menu hover" id="7"> <a href="{{ route('pagos.inicio', Auth::id()) }}"> <h5>Mis Pagos</h5> </a> </li>
-						<li class="sub_menu hover" id="8"> <a href="{{ url('/perfil') }}"> <h5>Mi cuenta</h5> </a> </li>
-						<li class="sub_menu hover" id="9"> <a href="{{ url('/soporte') }}"> <h5>Soporte</h5> </a> </li>
-						<li class="sub_menu hover" id="10"> <a href="{{ url('/soporte_tecnico') }}"> <h5>Soporte Tecnico</h5> </a> </li>
+						<li class="sub_menu hover" id="6"> <a href="{{ url('/perfil') }}"> <h5>Mi cuenta</h5> </a> </li>
+						<li class="sub_menu hover" id="7"> <a href="{{ route('pagos.inicio', Auth::id()) }}"> <h5>Pagos</h5> </a> </li>
+						<li class="sub_menu hover" id="8"> <a href="{{ url('/soporte_tecnico/list') }}"> <h5>Soporte Técnico</h5> </a> </li>
+						<li class="sub_menu hover" id="9"> <a href="{{ url('/soporte') }}"> <h5>Descargas de Manuales</h5> </a> </li>
 
 					</ul>
 				</div>
@@ -103,7 +100,7 @@
 					<div class="row">
 						<!--EN ESTE DIV SE RENDIZARÁ EL NOMBRE DE LA PERSONA A CONSULTAR, EL CUAL VENDRA DE LA BD-->
 						<div class="large-12 medium-12" style="font-weight: bold;"> {{ Auth::user()->name }}</div>
-						<div class="large-12 ver_mi medium-12">Ver mi cuenta</div>
+						<div class="large-12 ver_mi medium-12"> <a>Ver mi cuenta</a> </div>
 						<div class="large-12 medium-12" style="font-size: 14px !important; border-bottom: 1px solid #A4A4A4;">
 							<a href="{{ url('/auth/logout') }}">Cerrar sesión</a>
 						</div>
@@ -112,7 +109,7 @@
 						@if ( !empty( DB::table('proyecto_actuals')->where('id_user', '=', Auth::id())->first() ) )
 							@if ( !is_null( DB::table('cotizacion_temps')->first() ) )
 								<table cellspacing="0">
-									<tr>
+									<tr class="encabezado">
 										<th>Cantidad</th>
 									</tr>
 									<tr>
@@ -133,7 +130,7 @@
 							@else
 								<table cellspacing="0">
 
-									<tr>
+									<tr class="encabezado">
 										<th>Cantidad</th>
 									</tr>
 									<tr>
@@ -147,7 +144,7 @@
 						@else
 							<table cellspacing="0">
 
-								<tr>
+								<tr class="encabezado">
 									<th>Cantidad</th>
 								</tr>
 								<tr>
@@ -171,7 +168,7 @@
 					<div class="row">
 						<!--EN ESTE DIV SE RENDIZARÁ EL NOMBRE DE LA PERSONA A CONSULTAR, EL CUAL VENDRA DE LA BD-->
 						<div class="large-12 medium-12" style="font-weight: bold;"> {{ \DB::table('empresas')->where('id', '=', Auth::id())->first()->nombre_persona }} </div>
-						<div class="large-12 ver_mi medium-12">Ver mi cuenta</div>
+						<div class="large-12 ver_mi medium-12"> <a href="{{ url('/perfil') }}">Ver mi cuenta</a> </div>
 						<div class="large-12 medium-12" style="font-size: 14px !important; border-bottom: 1px solid #A4A4A4;">
 							<a href="{{ url('/auth/logout') }}">Cerrar sesión</a>
 						</div>
@@ -181,7 +178,7 @@
 						@if ( !empty( DB::table('proyecto_actuals')->where('id_user', '=', Auth::id())->first() ) )
 							@if ( !is_null( DB::table('cotizacion_temps')->first() ) )
 								<table cellspacing="0">
-									<tr>
+									<tr class="encabezado">
 										<th>Cantidad</th>
 									</tr>
 									<tr>
@@ -198,11 +195,11 @@
 									</tr>
 								</table>
 
-								<a href="{{ url('inte/detalle_coti/detalle') }}" class="button large" id="buttona" >Ver Detalles</a>
+								<a class="carrito" href="{{ url('inte/detalle_coti/detalle') }}" >Ver Detalles</a>
 							@else
 								<table cellspacing="0">
 
-									<tr>
+									<tr class="encabezado">
 										<th>Cantidad</th>
 									</tr>
 									<tr>
@@ -216,7 +213,7 @@
 						@else
 							<table cellspacing="0">
 
-								<tr>
+								<tr class="encabezado">
 									<th>Cantidad</th>
 								</tr>
 								<tr>

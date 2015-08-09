@@ -18,7 +18,7 @@
         <table cellspacing="0">
 
             <tr>
-                <th>#</th>
+                <th>N°</th>
                 <th>Producto</th>
                 <th>Cantidad</th>
                 <th>Precio</th>
@@ -29,7 +29,7 @@
                 <td>{{ $i = $i + 1 }}</td>
                 <td>{{ $productos->where('id', $dato->id_producto)->first()->nombre }}</td>
                 <td>{{ $dato->cantidad }}</td>
-                <td>{{ $dato->precio_unitario }}</td>
+                <td class="monto">{{ number_format($dato->precio_unitario, 2, ',', '.') }}</td>
             </tr>
             @endforeach
 

@@ -38,7 +38,7 @@
 				<td class="n_coti"><a href="#" onclick="detalle()">{{ $i = $i + 1 }}</a></td>
 				<!--td>{{ $i = $i + 1 }}</td-->
 				<td>{{ $dato->concepto }}</td>
-				<td>{{ $dato->monto }}</td>
+				<td class="monto">{{ number_format($dato->monto, 2, ',', '.') }}</td>
 				<td>{{ $dato->updated_at->format('d-m-Y') }}</td>
 				<td>
 					<a href="{{ route('detalle_coti', ['id_cotizacion' => $dato->id]) }}" >Detalles</a>
@@ -46,7 +46,7 @@
 					@if ( $dato->estado == 0 )
 						<a href="{{ route('reporte_pago') }}">Pagar</a>
 					@elseif ( $dato->estado == 1 )
-						<p>Pagada</p>
+						Pagada
 					@endif
 				</td>
 				

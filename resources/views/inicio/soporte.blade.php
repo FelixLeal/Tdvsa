@@ -6,6 +6,12 @@
 
 @section('contentInicio')
 
+	<script type="text/javascript">
+        $(document).ready(function(){
+            $("#9").addClass("oscuro");
+        });
+    </script>
+
 	<div class="large-12 columns" style="font-weight: bold !important;"><h3>Files Support</h3></div>
 	<div class="large-12 columns prueba">
 
@@ -15,7 +21,7 @@
 		<table cellspacing="0">
 
 			<tr>
-				<th>#</th>
+				<th>N°</th>
 				<th>Name</th>
 				<th>Address</th>
 				<th>Action</th>

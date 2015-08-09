@@ -8,7 +8,7 @@
 	
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$("#side2").removeClass("efecto");		    		    		        
+			$("#7").addClass("oscuro");
 		});
 	</script>
 
@@ -25,8 +25,7 @@
 		<table cellspacing="0">
 
 			<tr class="encabezado">
-				<th><h6>#</h6></th>
-				<th><h6>Nombre</h6></th>
+				<th><h6>N°</h6></th>
 				<th><h6>Monto</h6></th>
 				<th><h6>Fecha</h6></th>
 				<th><h6>Acciones</h6></th>
@@ -36,8 +35,7 @@
 			<tr>
 				<!--td>{{ $dato->id }}</td-->
 				<td>{{ $i = $i + 1 }}</td>
-				<td>{{ \DB::table('empresas')->where('id', '=', (\DB::table('users')->whereId($dato->id_user)->first()->id_empresa))->first()->razon_social }}</td>
-				<td>{{ $dato->monto }}</td>
+				<td class="monto">{{ number_format($dato->monto, 2, ',', '.') }}</td>
 				<td>{{ $dato->fecha_transaccion }}</td>
 				<td>
 					<a href="{{ route('pago.inicio.detalle', $dato->id) }}">Ver</a>

@@ -73,8 +73,6 @@
 		@if (Session::has('new_product'))
 		    <div data-alert class="alert-box success">
 		    	{{ Session::get('new_product') }}
-		    	<br>
-		    	{{ Session::get('new_product1') }}
 		    	<button tabindex="0" class="close" aria-label="Close Alert">&times;</button>
 		    </div>
 		@endif

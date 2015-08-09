@@ -27,7 +27,7 @@
 
         <div class="large-12 columns">
             {!! Form::label('monto', 'Monto') !!}
-            {!! Form::text('monto', $datos->monto, ['readonly']) !!}
+            {!! Form::text('monto', number_format($datos->monto, 2, ',', '.'), ['readonly']) !!}
         </div>
         
         <div class="large-12 columns">

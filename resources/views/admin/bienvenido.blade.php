@@ -13,7 +13,7 @@
 			<div id="leyenda_2" style="font-size: 18px;">
 				<h3 style="font-weight: bold; color: #264A96;">Bienvenido {{ Auth::user()->name }} </h3>
 				<p>
-					Estas en la ventana principal de nuestra pagina, en donde podras realizar operaciones sencillas sobre tu perfil, gestionar proyectos y gestionar cotizaciones.
+					Aquí podras administrar proyectos y clientes de cotización.
 				</p>
 			</div>
 			<br><br>

@@ -22,7 +22,7 @@
 		<table cellspacing="0">
 
 			<tr class="encabezado">
-				<th><h6>#</h6></th>
+				<th><h6>N°</h6></th>
 				<th><h6>Proyecto</h6></th>
 				<th><h6>Monto</h6></th>
 				<th><h6>Fecha</h6></th>
@@ -35,15 +35,15 @@
 				<!--td>{{ $dato->id }}</td-->
 				<td>{{ $i = $i + 1 }}</td>
 				<td>{{ $dato->concepto }}</td>
-				<td>{{ $dato->monto }}</td>
+				<td class="monto">{{ number_format($dato->monto, 2, ',', '.') }}</td>
 				<td>{{ $dato->updated_at->format('d-m-Y') }}</td>
 				<td>
 					@if ( $dato->estado == 0 )
-						<p>No Pagada</p>
+						No Pagada
 					@elseif ( $dato->estado == 1 )
-						<p>Pagada</p>
+						Pagada
 					@else ( $dato->estado == 2 )
-						<p>Finalizada</p>
+						Finalizada
 					@endif
 				</td>
 				<td>

@@ -1,9 +1,7 @@
-
-
-
-{!! Form::label('nro_control', 'Nro de Control') !!}
-{{--{!! Form::text('nro_control', str_random(5), ['placeholder' => '# Control', 'readonly' ] ) !!}--}}
-{!! Form::text('nro_control', rand(00000, 99999), ['placeholder' => '# Control', 'readonly' ] ) !!}
+{!! Form::label('nro_control', 'Nro de Control:') !!}
+{{--{!! Form::label('nro_control', str_random(5), ['placeholder' => '# Control', 'readonly' ] ) !!}--}}
+{!! Form::label('nro_control', rand(00000, 99999), ['placeholder' => '# Control', 'readonly' ] ) !!}
+<br>
 
 {!! Form::label('nombre_empresa', 'Nombre de la empresa/cliente') !!}
 {!! Form::text('nombre_empresa', null, ['placeholder' => 'Nombre de la Empresa' ] ) !!}

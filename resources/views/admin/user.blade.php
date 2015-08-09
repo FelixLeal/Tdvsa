@@ -21,7 +21,7 @@
 		<table cellspacing="0">
 
 			<tr class="encabezado">
-				<th><h6>#</h6></th>
+				<th><h6>N°</h6></th>
 				<th><h6>Nombre</h6></th>
 				<th><h6>Fecha</h6></th>
 				<th><h6>Estado</h6></th>
@@ -36,13 +36,13 @@
 				<td>{{ $dato->updated_at->format('d-m-Y') }}</td>
 				<td>
 					@if ( $dato->estado_espera == 2 )
-						<p>Aprobado</p>
+						Aprobado
 					@elseif ( $dato->estado_espera == 3 )
-						<p>Rechazado</p>
+						Rechazado
 					@elseif ( $dato->estado_espera == 4 )
-						<p>Finalizado</p>
+						Finalizado
 					@else
-						<p>En espera</p>
+						En espera
 					@endif
 				</td>
 				<!--td>{{--{{ $dato->descripcion }} --}}</td-->
