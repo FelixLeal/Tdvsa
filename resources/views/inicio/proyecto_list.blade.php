@@ -34,7 +34,7 @@
 			<tr>
 				<!--td>{{ $dato->id }}</td-->
 				<td>{{ $i = $i + 1 }}</td>
-				<td>{{ $dato->nombre }}</td>
+				<td><a href="{{ route('inte.proyecto.edit', $dato->id) }}">{{ $dato->nombre }}</a></td>
 				<td>{{ $dato->updated_at->format('d-m-Y') }}</td>
 				<td>
 					@if ( $dato->estado_espera == 1 )
@@ -50,13 +50,13 @@
 				<td>
 					@if ( $dato->estado_espera != 3 )
 
-						<a href="{{ route('inte.proyecto.edit', $dato->id) }}">Editar</a>
+						
 						<!--a href="{{ url('inte/proyecto') }}">Eliminar1</a      se puede usar asi o asi abajo         --> 
 						<!--a href="{{ route('inte.proyecto.destroy', $dato) }}">Eliminar</a-->
 
 						@if ( $dato->estado_espera == 1 )
 
-							- <a href="{{ route('inte.cotiz.create', ['id_proyecto' => $dato->id, 'concepto' => $dato->nombre]) }}">Cotizar</a>
+							<a href="{{ route('inte.cotiz.create', ['id_proyecto' => $dato->id, 'concepto' => $dato->nombre]) }}">Cotizar</a>
 							<!--a href="{{ url('inte/nuevo', $dato) }}">Cotizar</a-->
 
 						@endif

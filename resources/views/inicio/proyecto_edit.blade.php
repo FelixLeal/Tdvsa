@@ -21,7 +21,7 @@
 
 		{!! Form::model( $datos, ['route' => ['inte.proyecto.update', $datos->id], 'method' => 'PUT', 'id' => 'form_2', 'class' => 'small-10 large-4 columns'] ) !!}
 			@include('inicio.partials.formProyecto')
-			<button type="submit" id="buttona" class="button large" style="text-transform: uppercase;">Crear</button>
+			<button type="submit" id="buttona" class="button large" style="text-transform: uppercase;">Guardar cambios</button>
 		{!! Form::close() !!}
 	</div>
 	

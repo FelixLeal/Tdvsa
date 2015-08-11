@@ -65,7 +65,7 @@
 	</script>
 
 	<div class="large-12 columns" style="font-weight: bold !important;">
-		<h3>Cotizacion</h3>
+		<h3>Cotización</h3>
 	</div>
 
 	<!-- Flash Notice -->
@@ -81,7 +81,7 @@
 	</div>
 
 	<div class="large-12 columns" style="font-weight: bold !important; padding:15px;">
-		<h7><strong>Seleccione una categoria: </strong></h7>
+		<h7><strong>Seleccione una categoría: </strong></h7>
 	</div>
 
 	<div class="large-12 columns" style="font-weight: bold !important; margin-bottom: 20px;">
@@ -117,12 +117,14 @@
 		<div class="tabs-content">
 			<div class="large-12 columns" style="margin-bottom: 50px;"></div>
 			@foreach ($camaras1 as $dato)
-				<div class="large-3 columns left_float">
+				<div class="large-3 columns">
 					<a href="{{ url('inte/felix', ['id_producto' => $dato->id, 'id_cotizacion' => $cotiz]) }}">
-						{!! Form::image($dato->imagen, $dato->id, ['width' => '128px', 'height' => '128px']) !!}
+						<div class="imag">
+						{!! Form::image($dato->imagen, $dato->id) !!}
+						</div>
 					</a>
 					<a class="button large large-12 columns" style="font-size: 12px;" href="{{ url('inte/felix', ['id_producto' => $dato->id, 'id_cotizacion' => $cotiz]) }}">
-						{!! $dato->nombre !!}<br>
+						{!! $dato->nombre !!}
 					</a>
 					{{--{!! $dato->descripcion_basica !!}--}}
 				</div>
@@ -136,11 +138,15 @@
 				<div class="large-3 columns left_float">
 					<!--div class="large-12 columns productos cams" style="width: 100%;"-->
 					<a href="{{ url('inte/felix', ['id_producto' => $dato->id, 'id_cotizacion' => $cotiz]) }}">
-						{!! Form::image($dato->imagen, $dato->id, ['width' => '128px', 'height' => '128px']) !!}
+						<div class="imag">
+						{!! Form::image($dato->imagen, $dato->id) !!}
+						</div>
 					</a>
 					<!--/div-->
 					<a class="button large large-12 columns" style="font-size: 12px;" href="{{ url('inte/felix', ['id_producto' => $dato->id, 'id_cotizacion' => $cotiz]) }}">
-						{!! $dato->nombre !!}<br>
+					
+						{!! $dato->nombre !!}
+					
 					</a>
 					{{--{!! $dato->descripcion_basica !!}--}}
 				</div>
@@ -154,11 +160,13 @@
 				<div class="large-3 columns left_float">
 					<!--div class="large-12 columns productos cams" style="width: 100%;"-->
 					<a href="{{ url('inte/felix', ['id_producto' => $dato->id, 'id_cotizacion' => $cotiz]) }}">
-						{!! Form::image($dato->imagen, $dato->id, ['width' => '128px', 'height' => '128px']) !!}
+						<div class="imag">
+						{!! Form::image($dato->imagen, $dato->id) !!}
+						</div>
 					</a>
 					<!--/div-->
 					<a class="button large large-12 columns" style="font-size: 12px;" href="{{ url('inte/felix', ['id_producto' => $dato->id, 'id_cotizacion' => $cotiz]) }}">
-							{!! $dato->nombre !!}<br>
+							{!! $dato->nombre !!}
 					</a>
 					{{--{!! $dato->descripcion_basica !!}--}}
 				</div>
@@ -172,7 +180,9 @@
 				<div class="large-3 columns left_float">
 					<!--div class="large-12 columns productos cams" style="width: 100%;"-->
 					<a href="{{ url('inte/felix', ['id_producto' => $dato->id, 'id_cotizacion' => $cotiz]) }}">
-						{!! Form::image($dato->imagen, $dato->id, ['width' => '128px', 'height' => '128px']) !!}
+						<div class="imag">
+						{!! Form::image($dato->imagen, $dato->id) !!}
+						</div>
 					</a>
 					<!--/div-->
 					<a class="button large large-12 columns" style="font-size: 12px;" href="{{ url('inte/felix', ['id_producto' => $dato->id, 'id_cotizacion' => $cotiz]) }}">
@@ -188,7 +198,7 @@
 
 		@if ( $felix == 1)
 			<!--a  class="button large" id="buttona" href="{{ route('inte.cotiz.create', $dato) }}">Cotizar</a-->
-			<a  class="button large" id="buttona" href="{{ route('save_all', ['id_cotizacion' => $cotiz]) }}">Cotizar</a>
+			<a  class="button large" id="buttona" href="{{ route('save_all', ['id_cotizacion' => $cotiz]) }}">finalizar Cotización</a>
 		{{--@elseif ($felix == 1)--}}
 			<!--a href="{{ route('inte.cotiz.create', $dato) }}">No jombre</a-->
 		@endif

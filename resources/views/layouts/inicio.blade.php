@@ -76,7 +76,7 @@
 						
 						<li class="" id="7mobile"> <a href="{{ url('/perfil') }}"> <h5>Mi cuenta</h5> </a> </li>
 						<li class="sub_menu hover" id="8mobile"> <a href="{{ route('pagos.inicio', Auth::id()) }}"> <h5>Pagos</h5> </a> </li>
-						<li class="" id="9mobile"> <a href="{{ url('/soporte_tecnico') }}"> <h5>Soporte Técnico</h5> </a> </li>
+						<li class="" id="9mobile"> <a href="{{ url('/soporte_tecnico') }}"> <h5>Tickets de Soporte</h5> </a> </li>
 						<li class="" id="6mobile"> <a href="{{ url('/soporte_tecnico') }}"> <h5>Descarga de Manuales</h5> </a> </li>
 
 					</ul>
@@ -106,7 +106,7 @@
 						
 						<li class="sub_menu hover" id="7"> <a href="{{ url('/perfil') }}"> <h5>Mi cuenta</h5> </a> </li>
 						<li class="sub_menu hover" id="8"> <a href="{{ route('pagos.inicio', Auth::id()) }}"> <h5>Pagos</h5> </a> </li>
-						<li class="sub_menu hover" id="9"> <a href="{{ url('/soporte_tecnico') }}"> <h5>Soporte Técnico</h5> </a> </li>
+						<li class="sub_menu hover" id="9"> <a href="{{ url('/soporte_tecnico') }}"> <h5>Tickets de Soporte</h5> </a> </li>
 						<li class="sub_menu hover" id="6"> <a href="{{ url('/soporte_tecnico') }}"> <h5>Descargas de Manuales</h5> </a> </li>
 
 					</ul>
@@ -130,13 +130,13 @@
 						<div class="large-12 medium-12" style="font-size: 14px !important; border-bottom: 1px solid #A4A4A4;">
 							<a href="{{ url('/auth/logout') }}">Cerrar sesión</a>
 						</div>
-						<div class="large-12 top medium-12" style="font-weight: bold;">Mi cotización</div>
+						
 
 						@if ( !empty( DB::table('proyecto_actuals')->where('id_user', '=', Auth::id())->first() ) )
 							@if ( !is_null( DB::table('cotizacion_temps')->first() ) )
 								<table cellspacing="0">
 									<tr class="encabezado">
-										<th>Cantidad</th>
+										<th>Mi Cotización</th>
 									</tr>
 									<tr>
 										<td>
@@ -147,7 +147,7 @@
 												<!-- {{ $cant = $cant + $dato->cantidad }} -->
 											@endforeach
 											{!! $cant !!}
-											Productos cotizados!
+											Productos cotizados
 										</td>
 									</tr>
 								</table>
@@ -157,7 +157,7 @@
 								<table cellspacing="0">
 
 									<tr class="encabezado">
-										<th>Cantidad</th>
+										<th>Mi cotización</th>
 									</tr>
 									<tr>
 										<td>
@@ -171,7 +171,7 @@
 							<table cellspacing="0">
 
 								<tr class="encabezado">
-									<th>Cantidad</th>
+									<th>Mi cotización</th>
 								</tr>
 								<tr>
 									<td>Aun no inicia una Cotización</td>
@@ -196,13 +196,13 @@
 						<div class="large-12 medium-12" style="font-size: 14px !important; border-bottom: 1px solid #A4A4A4;">
 							<a href="{{ url('/auth/logout') }}">Cerrar sesión</a>
 						</div>
-						<div class="large-12 medium-12" style="font-weight: bold;">Mi cotización</div>
+						
 
 						@if ( !empty( DB::table('proyecto_actuals')->where('id_user', '=', Auth::id())->first() ) )
 							@if ( !is_null( DB::table('cotizacion_temps')->first() ) )
 								<table cellspacing="0">
 									<tr class="encabezado">
-										<th>Cantidad</th>
+										<th>Mi cotización</th>
 									</tr>
 									<tr>
 										<td>

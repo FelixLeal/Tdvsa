@@ -24,7 +24,7 @@
 			<tr class="encabezado">
 				<th>N°</th>
 				<th>Producto</th>
-				<th>Cantidad</th>
+				<th class="canti">Cantidad</th>
 				<th>Precio</th>
 			</tr>
 			<!--{{ $i=0 }}-->
@@ -32,7 +32,7 @@
 			<tr>
 				<td>{{ $i = $i + 1 }}</td>
 				<td>{{ $productos->where('id', $dato->id_producto)->first()->nombre }}</td>
-				<td>{{ $dato->cantidad }}</td>
+				<td class="canti">{{ $dato->cantidad }}</td>
 				<td>{{ $dato->precio_unitario }}</td>
 			</tr>
 			@endforeach
@@ -42,7 +42,7 @@
 		{!! $datos->render() !!}
 
 		<!--a href="{{ URL::previous() }}"> Atras </a-->
-		<a href="{{ url('cotizacion_list') }}" class="button large btn_crear" id="buttona" > Atras </a>
+		<a href="{{ url('cotizacion_list') }}" > Atras </a>
 		<div class="detalles_monto">
 		{!! Form::label('descripcion', $coti_padre->monto) !!}
 		</div>
