@@ -6,7 +6,7 @@
 
 @section('contentInicio')
 
-	<div class="large-12 columns" style="font-weight: bold !important;"><h3>Cotizaciones</h3></div>
+	<div class="large-12 columns" style="font-weight: bold !important;"><h3>Cotización Actual</h3></div>
 	<div class="large-12 columns prueba">
 
 		<!--p>Hay {{ $datos->lastPage() }} pagina(s)</p-->
@@ -29,7 +29,7 @@
 				<td>{{ $i = $i + 1 }}</td>
 				<td>{{ $productos->where('id', $dato->id_producto)->first()->nombre }}</td>
 				<td>{{ $dato->cantidad }}</td>
-				<td>{{ $dato->precio_unitario }}</td>
+				<td class="monto"><div class="hola">{{ $dato->precio_unitario }}</div></td>
 				<td><a href="{{ route('detalle_coti.detalle.modificar', $dato->id) }}">Editar</a></td>
 				<!-- {{ $total =  $total + ($dato->cantidad * $dato->precio_unitario) }} -->
 			</tr>

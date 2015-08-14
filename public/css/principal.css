@@ -714,5 +714,12 @@ table tr td{
 }
 #panel_der .encabezado th{
 	text-align: center !important;
-
+}
+.monto{
+	text-align: right !important;
+	
+}
+.hola{
+	margin-left: -23% !important;
+	width: 60% !important;
 }

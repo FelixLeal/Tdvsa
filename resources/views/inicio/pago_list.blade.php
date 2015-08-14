@@ -38,7 +38,7 @@
 				<!--td>{{ $dato->id }}</td-->
 				<td>{{ $i = $i + 1 }}</td>
 				<td>{{ \DB::table('empresas')->where('id', '=', (\DB::table('users')->whereId($dato->id_user)->first()->id_empresa))->first()->razon_social }}</td>
-				<td>{{ $dato->monto }}</td>
+				<td class="monto"><div class="hola">{{ $dato->monto }}</div></td>
 				<td>{{ $dato->fecha_transaccion }}</td>
 				<td>
 					<a href="{{ route('pago.inicio.detalle', $dato->id) }}">Ver</a>

@@ -35,16 +35,15 @@
 			<!--{{ $i=0 }}-->
 			@foreach ($datos as $dato)
 			<tr>
-				<td class="n_coti"><a href="#" onclick="detalle()">{{ $i = $i + 1 }}</a></td>
+				<td class="n_coti">{{ $i = $i + 1 }}</td>
 				<!--td>{{ $i = $i + 1 }}</td-->
-				<td>{{ $dato->concepto }}</td>
-				<td class="monto">{{ $dato->monto }}</td>
+				<td><a href="{{ route('detalle_coti', ['id_cotizacion' => $dato->id]) }}" >{{ $dato->concepto }}</a></td>
+				<td class="monto"><div class="hola">{{ $dato->monto }}</div></td>
 				<td>{{ $dato->updated_at->format('d-m-Y') }}</td>
 				<td>
-					<a href="{{ route('detalle_coti', ['id_cotizacion' => $dato->id]) }}" >Detalles</a>
 					<!--a href="#" onclick="detalle()">Detalles</a-->
 					@if ( $dato->estado == 0 )
-						- <a href="{{ route('reporte_pago') }}">Pagar</a>
+						<a href="{{ route('reporte_pago') }}">Pagar</a>
 					@elseif ( $dato->estado == 1 )
 						<p>Pagada</p>
 					@endif
