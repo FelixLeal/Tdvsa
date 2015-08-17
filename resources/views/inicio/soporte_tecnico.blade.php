@@ -12,7 +12,7 @@
         });
     </script>
 
-    <div class="large-12 columns" style="pading: 0px"><h3>Soporte Tecnico</h3></div>
+    <div class="large-12 columns" style="pading: 0px"><h3>Soporte Técnico</h3></div>
 
     {!! Form::open( ['route' => 'soporte_tecnico.store', 'id' => 'form_2', 'class' => 'large-12' ] ) !!}
         <div class="large-12 columns prod report" style="padding: 0px;">

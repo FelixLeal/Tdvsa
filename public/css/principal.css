@@ -397,6 +397,7 @@ table a {
 	color: #6A8B99 !important; }
 
 .ver_mi {
+	font-size: 14px;
 }
 
 #principal_registrer {
@@ -666,4 +667,37 @@ table tr td {
 
 .carrito {
 	margin-top: 25px;
-	float: right; }
+	float: right;
+	font-size: 14px; }
+
+.imag {
+	height: 180px;
+	position: relative; }
+
+.imag input {
+	max-width: 90%;
+	max-height: 90%;
+	vertical-align: middle;
+	display: table;
+	height: 80%;
+	margin: 0px auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50px,-50px); /* IE 9 */
+    -webkit-transform: translate(50px,-50px); /* Safari */
+	transform: translate(-50%,-50%); }
+
+.canti {
+	text-align: center !important; }
+
+#panel_der .encabezado th {
+	text-align: center !important; }
+
+.hola {
+	margin-left: -23% !important;
+	width: 60% !important; }
+
+.align-number-table {
+	padding-left: 5px !important;
+}

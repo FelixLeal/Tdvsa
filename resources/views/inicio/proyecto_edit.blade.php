@@ -12,7 +12,7 @@
 		});
 	</script>
 
-	<div class="large-12 columns" style="font-weight: bold !important;"><h3>Editar Proyecto: {{ $datos->nombre }}</h3></div>
+	<div class="large-12 columns" style="font-weight: bold !important;"><h3>Editar Proyecto: {{ $datos->nombre_empresa }}</h3></div>
 	<div class="large-12 columns prueba">
 
 		@if ( Session::has('message'))
@@ -20,8 +20,8 @@
 		@endif
 
 		{!! Form::model( $datos, ['route' => ['inte.proyecto.update', $datos->id], 'method' => 'PUT', 'id' => 'form_2', 'class' => 'small-10 large-4 columns'] ) !!}
-			@include('inicio.partials.formProyecto')
-			<button type="submit" id="buttona" class="button large" style="text-transform: uppercase;">Crear</button>
+			@include('inicio.partials.formProyectoEdit')
+			<button type="submit" id="buttona" class="button large" style="text-transform: uppercase;">Guardar cambios</button>
 		{!! Form::close() !!}
 	</div>
 	

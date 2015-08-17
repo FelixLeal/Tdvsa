@@ -12,7 +12,7 @@
 		});
 	</script>
 
-	<div class="large-12 columns" style="font-weight: bold !important;"><h3>Cotizaciones del Proyecto: {{ $datos_proyecto->nombre }} </h3></div>
+	<div class="large-12 columns" style="font-weight: bold !important;"><h3>Cotizaciones del Proyecto: {{ $datos_proyecto->nombre_empresa }} </h3></div>
 	<div class="large-12 columns prueba">
 
 		<!--p>Hay {{ $datos_cotizaciones->lastPage() }} pagina(s)</p-->

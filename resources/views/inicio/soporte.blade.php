@@ -12,19 +12,19 @@
         });
     </script>
 
-	<div class="large-12 columns" style="font-weight: bold !important;"><h3>Files Support</h3></div>
+	<div class="large-12 columns" style="font-weight: bold !important;"><h3>Descargas</h3></div>
 	<div class="large-12 columns prueba">
 
 		<!--p>Hay {{ $datos->lastPage() }} pagina(s)</p-->
-		<p>Hay {{ $datos->total() }} registro(s)</p>
+		<!--p>Hay {{ $datos->total() }} registro(s)</p-->
 
 		<table cellspacing="0">
 
-			<tr>
-				<th>N°</th>
-				<th>Name</th>
-				<th>Address</th>
-				<th>Action</th>
+			<tr class="encabezado">
+				<th><h6 class="align-number-table">N°</h6></th>
+				<th><h6>Nombre</h6></th>
+				<th><h6>Ruta</h6></th>
+				<th><h6>Acciones</h6></th>
 			</tr>
 
 			@foreach ($datos as $dato)

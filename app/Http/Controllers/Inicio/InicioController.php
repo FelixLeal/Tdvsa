@@ -139,16 +139,6 @@ class InicioController extends Controller {
 		return view('inicio.pago_detalle', compact('datos')); // este 'datos' tambien se usa en el Form::model del proyecto edit
 	}
 
-
-
-
-
-
-
-
-
-
-
 	public function soporteTecnicoList()
 	{
 		$datos = SoporteTecnico::paginate();

@@ -61,7 +61,7 @@ class CotizacionController extends Controller {
 		$uId = Auth::id();
 		$user = User::whereId($uId)->first();
 		$idEmpresa = $user->id_empresa;
-		$datos = Proyecto::where('id_empresa', $idEmpresa)->where('estado_espera', 1)->lists('nombre', 'id');
+		$datos = Proyecto::where('id_empresa', $idEmpresa)->where('estado_espera', 1)->lists('nombre_empresa', 'id');
 
 		$var_cot = 0;
 		$datos_cot = "";
@@ -72,7 +72,7 @@ class CotizacionController extends Controller {
 	public function getCoti(Request $request)
 	{
 		$datos = Proyecto::whereId($request->size)->first();
-		return Redirect::route('inte.cotiz.create', ['id_proyecto' => $datos->id, 'concepto' => $datos->nombre]);
+		return Redirect::route('inte.cotiz.create', ['id_proyecto' => $datos->id, 'concepto' => $datos->nombre_empresa]);
 	}
 
 	public function getCotisss(Request $request)
@@ -146,26 +146,32 @@ class CotizacionController extends Controller {
 
 	public function store(Request $request)
 	{
-		$valor_id = cotizacion_temp::insertGetId($request->only('id_producto','precio_unitario', 'id_cotizacion', 'cantidad'));
+		if ( !empty(cotizacion_temp::all()->last()->relacion) ) {
+			$relacion = cotizacion_temp::all()->last()->relacion + 1;
+		} else {
+			$relacion = 1;
+		}
+
+		$valor_id = cotizacion_temp::insertGetId(['relacion' => $relacion] + $request->only('id_producto','precio_unitario', 'id_cotizacion', 'cantidad'));
 
 		if ($request->id_lente != 0) {
 			$precio = Producto::whereId($request->id_lente)->first()->precio;
-			$valor_id = cotizacion_temp::insertGetId(['id_producto' => $request->id_lente] + ['precio_unitario' => $precio] + $request->only('id_cotizacion', 'cantidad'));
+			$valor_id = cotizacion_temp::insertGetId(['relacion' => $relacion] + ['id_producto' => $request->id_lente] + ['precio_unitario' => $precio] + $request->only('id_cotizacion', 'cantidad'));
 		};
 
 		if ($request->id_lente1 != 0) {
 			$precio = Producto::whereId($request->id_lente1)->first()->precio;
-			$valor_id = cotizacion_temp::insertGetId(['id_producto' => $request->id_lente1] + ['precio_unitario' => $precio] + $request->only('id_cotizacion', 'cantidad'));
+			$valor_id = cotizacion_temp::insertGetId(['relacion' => $relacion] + ['id_producto' => $request->id_lente1] + ['precio_unitario' => $precio] + $request->only('id_cotizacion', 'cantidad'));
 		};
 
 		if ($request->id_montura != 0) {
 			$precio = Producto::whereId($request->id_montura)->first()->precio;
-			$valor_id = cotizacion_temp::insertGetId(['id_producto' => $request->id_montura] + ['precio_unitario' => $precio] + $request->only('id_cotizacion', 'cantidad'));
+			$valor_id = cotizacion_temp::insertGetId(['relacion' => $relacion] + ['id_producto' => $request->id_montura] + ['precio_unitario' => $precio] + $request->only('id_cotizacion', 'cantidad'));
 		};
 
 		if ($request->id_fuente != 0) {
 			$precio = Producto::whereId($request->id_fuente)->first()->precio;
-			$valor_id = cotizacion_temp::insertGetId(['id_producto' => $request->id_fuente] + ['precio_unitario' => $precio] + $request->only('id_cotizacion', 'cantidad'));
+			$valor_id = cotizacion_temp::insertGetId(['relacion' => $relacion] + ['id_producto' => $request->id_fuente] + ['precio_unitario' => $precio] + $request->only('id_cotizacion', 'cantidad'));
 		};
 
 		$datos_cot = cotizacion_temp::where('id_cotizacion', $request->id_cotizacion)->paginate();
@@ -236,13 +242,6 @@ class CotizacionController extends Controller {
 		return view('inicio.cotizacion_detalle_list', compact('datos', 'coti_padre', 'productos'));
 	}
 
-
-
-
-
-
-
-
 	public function detalle_cotiDetalle(Request $request)
 	{
 		$productos = Producto::all();
@@ -252,13 +251,138 @@ class CotizacionController extends Controller {
 		return view('inicio.cotizacion_detalle_list_uno', compact('datos', 'productos'));
 	}
 
-	public function detalle_cotiDetalleModificar($id)
+	public function detalle_cotiDetalleModificar($id, Request $request)
 	{
+		$datos = cotizacion_temp::whereId($id)->first();
+		$nro_lentes = Producto::whereId($datos->id_producto)->first()->cant_lentes;
+		$perro = Producto::whereId($datos->id_producto)->first();
+		$felix = $perro->tipo;
+
+		$id2 = $datos->id_cotizacion;
+
+		$relacion = $datos->relacion;
+
+		$lentes 		= Producto::where('tipo', 2)->lists('nombre', 'id');
+		$monturas 		= Producto::where('tipo', 3)->lists('nombre', 'id');
+		$fuentes		= Producto::where('tipo', 4)->lists('nombre', 'id');
+
+		if ($felix == 1) {
+
+			$pro_cot = cotizacion_temp::where('relacion', $relacion)->get();
+
+			foreach ($pro_cot as $p) {
+				if ( Producto::whereId($p->id_producto)->first()->tipo == 3 ) {
+					$montura = Producto::whereId($p->id_producto)->first();
+				}
+
+				if ( Producto::whereId($p->id_producto)->first()->tipo == 4 ) {
+					$fuente = Producto::whereId($p->id_producto)->first();
+				}
+			}
+
+			if ($nro_lentes == 1) {
+				foreach ($pro_cot as $p) {
+					if ( Producto::whereId($p->id_producto)->first()->tipo == 2 ) {
+						$lente1 = Producto::whereId($p->id_producto)->first();
+					}
+				}
+				return view("inicio.cotizacion_new_edit", compact('relacion', 'id2', 'felix', 'perro', 'lente1', 'montura', 'fuente', 'lentes', 'monturas', 'fuentes', 'nro_lentes', 'datos'));
+			} elseif ($nro_lentes == 2) {
+				$lente_piv = 0;
+
+				foreach ($pro_cot as $p) {
+					if ($lente_piv == 0) {
+						if ( Producto::whereId($p->id_producto)->first()->tipo == 2 ) {
+							$lente1 = Producto::whereId($p->id_producto)->first();
+							$lente_piv = 1;
+						}
+					}
+				}
+				$contar = cotizacion_temp::where('relacion', $relacion)
+											->where('id_producto', $lente1->id)->count();
+				if ($contar == 2) {
+					$pro_cot = cotizacion_temp::where('relacion', $relacion)->orderBy('id', 'desc')->get();
+					foreach ($pro_cot as $p) {
+						if ($lente_piv == 1) {
+							if ( Producto::whereId($p->id_producto)->first()->tipo == 2 ) {
+								$lente2 = Producto::whereId($p->id_producto)->first();
+								$lente_piv = 2;
+							}
+						}
+					}
+				} else {
+					foreach ($pro_cot as $p) {
+						if ( $p->id_producto != $lente1->id ) {
+							if ( Producto::whereId($p->id_producto)->first()->tipo == 2 ) {
+								$lente2 = Producto::whereId($p->id_producto)->first();
+							}
+						}
+					}
+				}
+				return view("inicio.cotizacion_new_edit", compact('relacion', 'id2', 'felix', 'perro', 'lente1', 'lente2', 'montura', 'fuente', 'lentes', 'monturas', 'fuentes', 'nro_lentes', 'datos'));
+			}
+
+		} else {
+			return view("inicio.cotizacion_new_edit", compact('relacion', 'id2', 'felix', 'perro', 'lentes', 'monturas', 'fuentes', 'nro_lentes', 'datos'));
+		}
+	}
+
+	public function detalle_cotiDetalleModificarStore(Request $request)
+	{
+		$relacion = $request->relacion;
+
+		cotizacion_temp::where('relacion', $relacion)->where('id_producto', $request->id_producto)->update($request->only('id_producto','precio_unitario', 'cantidad'));
+		
+		if ($request->id_lente != 0) {
+			$precio = Producto::whereId($request->id_lente)->first()->precio;
+			cotizacion_temp::where('relacion', $relacion)->where('id_producto', $request->id_lente_v)->update(['id_producto' => $request->id_lente] + ['precio_unitario' => $precio] + $request->only('cantidad'));
+		};
+
+		if ($request->id_lente1 != 0) {
+			$precio = Producto::whereId($request->id_lente1)->first()->precio;
+			cotizacion_temp::where('relacion', $relacion)->where('id_producto', $request->id_lente1_v)->orderBy('id', 'desc')->first()->update(['id_producto' => $request->id_lente1] + ['precio_unitario' => $precio] + $request->only('cantidad'));
+		};
+
+		if ($request->id_montura != 0) {
+			$precio = Producto::whereId($request->id_montura)->first()->precio;
+			cotizacion_temp::where('relacion', $relacion)->where('id_producto', $request->id_montura_v)->update(['id_producto' => $request->id_montura] + ['precio_unitario' => $precio] + $request->only('cantidad'));
+		};
+
+		if ($request->id_fuente != 0) {
+			$precio = Producto::whereId($request->id_fuente)->first()->precio;
+			cotizacion_temp::where('relacion', $relacion)->where('id_producto', $request->id_fuente_v)->update(['id_producto' => $request->id_fuente] + ['precio_unitario' => $precio] + $request->only('cantidad'));
+		};
+
+		$datos_cot = cotizacion_temp::where('id_cotizacion', $request->id_cotizacion)->paginate();
+		
+		$var_cot = 1;
+
+		$cotiz = $request->get('id_cotizacion');
+
+		$camaras 		= Producto::where('tipo', 1)->lists('nombre', 'id');
+		$lentes 		= Producto::where('tipo', 2)->lists('nombre', 'id');
+		$monturas 		= Producto::where('tipo', 3)->lists('nombre', 'id');
+		$fuentes		= Producto::where('tipo', 4)->lists('nombre', 'id');
+
+		$camaras1 		= Producto::where('tipo', 1)->select('id', 'nombre', 'descripcion_basica', 'imagen')->get();
+		$lentes1		= Producto::where('tipo', 2)->select('id', 'nombre', 'descripcion_basica', 'imagen')->get();
+		$monturas1 		= Producto::where('tipo', 3)->select('id', 'nombre', 'descripcion_basica', 'imagen')->get();
+		$fuentes1		= Producto::where('tipo', 4)->select('id', 'nombre', 'descripcion_basica', 'imagen')->get();
+
+
+		$felix = 0;
+
+		if (cotizacion_temp::first()) {
+			$felix = 1;
+		}
+
+		Session::flash('new_product', 'Se ha editado satisfactoriamente el producto de su cotización');
+
 		$productos = Producto::all();
 
-		$datos = cotizacion_temp::whereId($id)->first();
+		$datos = cotizacion_temp::paginate();		
 
-		return view('inicio.coti_detalle_list_uno_edit', compact('datos', 'productos'));
+		return view('inicio.cotizacion_detalle_list_uno', compact('datos', 'productos'));
 	}
 
 	public function detalle_cotiDetalleUpdate($id, Request $request)

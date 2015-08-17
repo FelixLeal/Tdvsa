@@ -8,12 +8,12 @@
 	
 	<script type="text/javascript">
         $(document).ready(function() {
-            $("#7").addClass("oscuro");
+            $("#4").addClass("oscuro");
         });
     </script>
 
     <div class="report perfil large-12 columns">
-        <div class="large-12 columns" style="font-weight: bold !important;"><h3>Detalles del Proyecto: {{ $datos->nombre }} </h3></div>
+        <div class="large-12 columns" style="font-weight: bold !important;"><h3>Detalles del Proyecto: {{ $datos->nombre_empresa }} </h3></div>
             @if ( Session::has('message'))
                 <p class="alert alert-success">{{ Session::get('message') }}</p>
             @endif
@@ -28,8 +28,8 @@
         </div>
 
         <div class="large-12 columns">
-            {!! Form::label('requerimientos', 'Requerimientos') !!}
-            {!! Form::textarea('requerimientos', $datos->requerimientos, ['placeholder' => 'Requerimientos', 'readonly'] ) !!}
+            {!! Form::label('descripcion', 'Descripción de requerimientos') !!}
+            {!! Form::textarea('descripcion', $datos->descripcion, ['placeholder' => 'Descripción de requerimientos', 'readonly'] ) !!}
         </div>
        
         @if ( $datos->estado_espera == 0 )

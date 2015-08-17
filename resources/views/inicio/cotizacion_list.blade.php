@@ -26,7 +26,7 @@
 		<table cellspacing="0">
 
 			<tr class="encabezado">
-				<th><h6>N°</h6></th>
+				<th><h6 class="align-number-table">N°</h6></th>
 				<th><h6>Proyecto</h6></th>
 				<th><h6>Monto</h6></th>
 				<th><h6>Fecha</h6></th>
@@ -35,13 +35,12 @@
 			<!--{{ $i=0 }}-->
 			@foreach ($datos as $dato)
 			<tr>
-				<td class="n_coti"><a href="#" onclick="detalle()">{{ $i = $i + 1 }}</a></td>
+				<td class="n_coti">{{ $i = $i + 1 }}</td>
 				<!--td>{{ $i = $i + 1 }}</td-->
-				<td>{{ $dato->concepto }}</td>
-				<td class="monto">{{ number_format($dato->monto, 2, ',', '.') }}</td>
+				<td><a href="{{ route('detalle_coti', ['id_cotizacion' => $dato->id]) }}" >{{ $dato->concepto }}</a></td>
+				<td class="monto"><div class="hola">{{ number_format($dato->monto, 2, ',', '.') }}</div></td>
 				<td>{{ $dato->updated_at->format('d-m-Y') }}</td>
 				<td>
-					<a href="{{ route('detalle_coti', ['id_cotizacion' => $dato->id]) }}" >Detalles</a>
 					<!--a href="#" onclick="detalle()">Detalles</a-->
 					@if ( $dato->estado == 0 )
 						<a href="{{ route('reporte_pago') }}">Pagar</a>

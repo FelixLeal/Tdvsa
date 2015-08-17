@@ -33,7 +33,7 @@
 			<tr>
 				<!--td>{{ $dato->id }}</td-->
 				<td>{{ $i = $i + 1 }}</td>
-				<td>{{ $dato->nombre }}</td>
+				<td><a href="{{ route('proyecto.detalle', $dato->id) }}">{{ $dato->nombre_empresa }}</a></td>
 				<td>{{ $dato->updated_at->format('d-m-Y') }}</td>
 				<td>
 					@if ( $dato->estado_espera == 1 )
@@ -47,12 +47,11 @@
 					@endif
 				</td>
 				<td>
-					<a href="{{ route('proyecto.detalle', $dato->id) }}">Ver</a>
 					@if ( $dato->estado_espera == 0 )
-						- <a href="{{ route('proyecto.verificar', $dato->id) }}">Verificar</a>
+						<a href="{{ route('proyecto.verificar', $dato->id) }}">Verificar</a>
 					@endif
 					@if ( $dato->estado_espera == 1 )
-						- <a href="{{ route('proyecto.finalizar', $dato->id) }}">Finalizar</a>
+						<a href="{{ route('proyecto.finalizar', $dato->id) }}">Finalizar</a>
 					@endif
 				</td>
 				

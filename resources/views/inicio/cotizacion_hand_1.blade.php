@@ -13,10 +13,10 @@
 	</script>
 
 	<div class="large-12 columns" style="font-weight: bold !important;">
-		<h3>Cotizacion</h3>
+		<h3>Cotización</h3>
 	</div>
-	<div class="large-4 columns" style="font-weight: bold !important;">
-		<h7><strong>Seleccione una categoria: </strong></h7>
+	<div class="large-6 columns" style="font-weight: bold !important;">
+		<h7><strong>Seleccione un proyecto: </strong></h7>
 	</div>
 
 	{!! Form::open(array('url' => 'nuevo_coti', 'method' => 'get')) !!}
@@ -27,7 +27,7 @@
 		{!! Form::select('size',$datos) !!}
 
 		@if ( !empty($datos) )
-			{!! Form::submit('Cotizar') !!}
+			<button type="submit" id="buttona" class="button large" style="text-transform: uppercase;">Cotizar</button>
 		@endif
 
 	{!! Form::close() !!}

@@ -51,7 +51,7 @@
 						</li>
 						<li class="" id="6mobile"> <a href="{{ url('/perfil') }}"> <h5>Mi cuenta</h5> </a> </li>
 						<li class="" id="7mobile"> <a href="{{ route('pagos.inicio', Auth::id()) }}"> <h5>Pagos</h5> </a> </li>
-						<li class="" id="8mobile"> <a href="{{ url('/soporte_tecnico/list') }}"> <h5>Soporte Técnico</h5> </a> </li>
+						<li class="" id="8mobile"> <a href="{{ url('/soporte_tecnico/list') }}"> <h5>Tickets de Soporte</h5> </a> </li>
 						<li class="" id="9mobile"> <a href="{{ url('/soporte') }}"> <h5>Descarga de Manuales</h5> </a> </li>
 
 					</ul>
@@ -80,7 +80,7 @@
 						</li>
 						<li class="sub_menu hover" id="6"> <a href="{{ url('/perfil') }}"> <h5>Mi cuenta</h5> </a> </li>
 						<li class="sub_menu hover" id="7"> <a href="{{ route('pagos.inicio', Auth::id()) }}"> <h5>Pagos</h5> </a> </li>
-						<li class="sub_menu hover" id="8"> <a href="{{ url('/soporte_tecnico/list') }}"> <h5>Soporte Técnico</h5> </a> </li>
+						<li class="sub_menu hover" id="8"> <a href="{{ url('/soporte_tecnico/list') }}"> <h5>Tickets de Soporte</h5> </a> </li>
 						<li class="sub_menu hover" id="9"> <a href="{{ url('/soporte') }}"> <h5>Descargas de Manuales</h5> </a> </li>
 
 					</ul>
@@ -99,18 +99,19 @@
 				<div class="row panel small-12 medium-12 columns top" style="background-color: #E3E3E3;">
 					<div class="row">
 						<!--EN ESTE DIV SE RENDIZARÁ EL NOMBRE DE LA PERSONA A CONSULTAR, EL CUAL VENDRA DE LA BD-->
-						<div class="large-12 medium-12" style="font-weight: bold;"> {{ Auth::user()->name }}</div>
+						<div class="large-12 medium-12" style="font-weight: bold;">
+							<h4> {{ \DB::table('empresas')->where('id', '=', Auth::id())->first()->nombre_persona }} </h4>
+						</div>
 						<div class="large-12 ver_mi medium-12"> <a>Ver mi cuenta</a> </div>
 						<div class="large-12 medium-12" style="font-size: 14px !important; border-bottom: 1px solid #A4A4A4;">
 							<a href="{{ url('/auth/logout') }}">Cerrar sesión</a>
 						</div>
-						<div class="large-12 medium-12" style="font-weight: bold;">Mi cotización</div>
 
 						@if ( !empty( DB::table('proyecto_actuals')->where('id_user', '=', Auth::id())->first() ) )
 							@if ( !is_null( DB::table('cotizacion_temps')->first() ) )
 								<table cellspacing="0">
 									<tr class="encabezado">
-										<th>Cantidad</th>
+										<th>Mi Cotización</th>
 									</tr>
 									<tr>
 										<td>
@@ -121,7 +122,7 @@
 												<!-- {{ $cant = $cant + $dato->cantidad }} -->
 											@endforeach
 											{!! $cant !!}
-											Productos cotizados!
+											Productos cotizados
 										</td>
 									</tr>
 								</table>
@@ -131,11 +132,11 @@
 								<table cellspacing="0">
 
 									<tr class="encabezado">
-										<th>Cantidad</th>
+										<th>Mi Cotización</th>
 									</tr>
 									<tr>
 										<td>
-											Tiene 0 Productos cotizados!
+											Tiene 0 Productos cotizados
 										</td>
 									</tr>
 
@@ -145,7 +146,7 @@
 							<table cellspacing="0">
 
 								<tr class="encabezado">
-									<th>Cantidad</th>
+									<th>Mi Cotización</th>
 								</tr>
 								<tr>
 									<td>Aun no inicia una Cotización</td>
@@ -167,19 +168,20 @@
 				<div class="row panel large-12 medium-12 columns top" style="background-color: #E3E3E3;">
 					<div class="row">
 						<!--EN ESTE DIV SE RENDIZARÁ EL NOMBRE DE LA PERSONA A CONSULTAR, EL CUAL VENDRA DE LA BD-->
-						<div class="large-12 medium-12" style="font-weight: bold;"> {{ \DB::table('empresas')->where('id', '=', Auth::id())->first()->nombre_persona }} </div>
+						<div class="large-12 medium-12" style="font-weight: bold;">
+							<h4> {{ \DB::table('empresas')->where('id', '=', Auth::id())->first()->nombre_persona }} </h4>
+						</div>
 						<div class="large-12 ver_mi medium-12"> <a href="{{ url('/perfil') }}">Ver mi cuenta</a> </div>
 						<div class="large-12 medium-12" style="font-size: 14px !important; border-bottom: 1px solid #A4A4A4;">
 							<a href="{{ url('/auth/logout') }}">Cerrar sesión</a>
 						</div>
 						<br>
-						<div class="large-12 medium-12" style="font-weight: bold;">Mi cotización</div>
 
 						@if ( !empty( DB::table('proyecto_actuals')->where('id_user', '=', Auth::id())->first() ) )
 							@if ( !is_null( DB::table('cotizacion_temps')->first() ) )
 								<table cellspacing="0">
 									<tr class="encabezado">
-										<th>Cantidad</th>
+										<th>Mi Cotización</th>
 									</tr>
 									<tr>
 										<td>
@@ -190,7 +192,7 @@
 												<!-- {{ $cant = $cant + $dato->cantidad }} -->
 											@endforeach
 											{!! $cant !!}
-											Productos cotizados!
+											Productos cotizados
 										</td>
 									</tr>
 								</table>
@@ -200,11 +202,11 @@
 								<table cellspacing="0">
 
 									<tr class="encabezado">
-										<th>Cantidad</th>
+										<th>Mi Cotización</th>
 									</tr>
 									<tr>
 										<td>
-											Tiene 0 Productos cotizados!
+											Tiene 0 Productos cotizados
 										</td>
 									</tr>
 
@@ -214,7 +216,7 @@
 							<table cellspacing="0">
 
 								<tr class="encabezado">
-									<th>Cantidad</th>
+									<th>Mi Cotización</th>
 								</tr>
 								<tr>
 									<td>Aun no inicia una Cotización</td>

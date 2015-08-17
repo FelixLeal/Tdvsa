@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddTypeToUser extends Migration {
+class AddRelacionToCotizacionTemp extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,9 @@ class AddTypeToUser extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('users', function(Blueprint $table)
+		Schema::table('cotizacion_temps', function(Blueprint $table)
 		{
-			$table->integer('type')->default(0);
+			$table->integer('relacion');
 		});
 	}
 

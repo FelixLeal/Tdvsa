@@ -12,7 +12,7 @@
 		});
 	</script>
 
-	<div class="large-12 columns" style="font-weight: bold !important;"><h3>Soportes</h3></div>
+	<div class="large-12 columns" style="font-weight: bold !important;"><h3>Nuevo Ticket</h3></div>
 		@if ( Session::has('message'))
 			<p class="alert alert-success">{{ Session::get('message') }}</p>
 		@endif
@@ -25,7 +25,7 @@
 		<table cellspacing="0">
 
 			<tr class="encabezado">
-				<th><h6>N°</h6></th>
+				<th><h6 class="align-number-table">N°</h6></th>
 				<th><h6>N° Ticket</h6></th>
 				<th><h6>N° Factura</h6></th>
 				<th><h6>Proveedor</h6></th>

@@ -29,8 +29,6 @@ Route::get('soporte_tecnico/list', ['as' => 'soporte_tecnico.list', 'uses' => 'I
 Route::get('soporte_tecnico/detalle/{one?}', ['as' => 'soporte_tecnico.detalle', 'uses' => 'Inicio\InicioController@soporteTecnicoDetalle']);
 Route::get('soporte_tecnico', ['as' => 'soporte_tecnico', 'uses' => 'Inicio\InicioController@soporteTecnico']);
 Route::post('soporte_tecnico/{soporte_tecnico}', ['as' => 'soporte_tecnico.store', 'uses' => 'Inicio\InicioController@soporteTecnicoStore']);
-
-
 Route::get('cotiz_create', 'Inicio\CotizacionController@getCreate');
 Route::get('nuevo_coti', 'Inicio\CotizacionController@getCoti');
 Route::get('Cotisss_nuevo', 'Inicio\CotizacionController@getCotisss');
@@ -52,14 +50,10 @@ Route::group(['prefix' => 'inte', 'namespace' => 'Inicio'], function(){
 	Route::get('nuevo/{one?}', 'CotizacionController@nuevo');
 	Route::get('save_all', ['as' => 'save_all', 'uses' => 'CotizacionController@save_all']);
 	Route::get('detalle_coti', ['as' => 'detalle_coti', 'uses' => 'CotizacionController@detalle_coti']);
-
 	Route::get('detalle_coti/detalle', ['as' => 'detalle_coti.detalle', 'uses' => 'CotizacionController@detalle_cotiDetalle']);
 	Route::get('detalle_coti/detalle/{one?}', ['as' => 'detalle_coti.detalle.modificar', 'uses' => 'CotizacionController@detalle_cotiDetalleModificar']);
+	Route::post('detalle_coti/detalle/modificar/{cotizacion}', ['as' => 'detalle_coti.detalle.modificar.store', 'uses' => 'CotizacionController@detalle_cotiDetalleModificarStore']);
 	Route::post('detalle_coti/detalle/{cotizacion}', ['as' => 'detalle_coti.detalle.modificar.update', 'uses' => 'CotizacionController@detalle_cotiDetalleUpdate']);
-	
-
-
-
 	Route::get('pagos/{one?}', ['as' => 'pagos.inicio', 'uses' => 'InicioController@pagosList']);
 	Route::get('pagos/create', ['as' => 'pagos.inicio.create', 'uses' => 'InicioController@pagosCreate']);
 	Route::get('pago/detalle/{one?}', ['as' => 'pago.inicio.detalle', 'uses' => 'InicioController@pagoDetalle']);

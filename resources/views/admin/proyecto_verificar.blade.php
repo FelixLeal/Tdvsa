@@ -8,7 +8,7 @@
 	
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$("#side2").removeClass("efecto");		    		    		        
+			$("#4").addClass("oscuro");
 		});
 	</script>
 

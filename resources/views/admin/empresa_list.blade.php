@@ -33,7 +33,7 @@
 			<tr>
 				<!--td>{{ $dato->id }}</td-->
 				<td>{{ $i = $i + 1 }}</td>
-				<td>{{ $dato->razon_social }}</td>
+				<td><a href="{{ route('empresas.detalle', $dato->id) }}">{{ $dato->razon_social }}</a></td>
 				<td>{{ $dato->updated_at->format('d-m-Y') }}</td>
 				<td>
 					@if ( $dato->codigo_afiliacion == 0 )
@@ -43,9 +43,8 @@
 					@endif
 				</td>
 				<td>
-					<a href="{{ route('empresas.detalle', $dato->id) }}">Ver</a>
 					@if ( $dato->codigo_afiliacion == 0 )
-						- <a href="{{ route('empresas.afiliar', $dato->id) }}">Afiliar</a>
+						<a href="{{ route('empresas.afiliar', $dato->id) }}">Afiliar</a>
 					@endif
 				</td>
 			</tr>

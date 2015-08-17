@@ -25,7 +25,7 @@
 		<table cellspacing="0">
 
 			<tr class="encabezado">
-				<th><h6>N°</h6></th>
+				<th><h6 class="align-number-table">N°</h6></th>
 				<th><h6>Monto</h6></th>
 				<th><h6>Fecha</h6></th>
 				<th><h6>Acciones</h6></th>
@@ -35,7 +35,7 @@
 			<tr>
 				<!--td>{{ $dato->id }}</td-->
 				<td>{{ $i = $i + 1 }}</td>
-				<td class="monto">{{ number_format($dato->monto, 2, ',', '.') }}</td>
+				<td class="monto"><div class="hola">{{ number_format($dato->monto, 2, ',', '.') }}</div></td>
 				<td>{{ $dato->fecha_transaccion }}</td>
 				<td>
 					<a href="{{ route('pago.inicio.detalle', $dato->id) }}">Ver</a>
