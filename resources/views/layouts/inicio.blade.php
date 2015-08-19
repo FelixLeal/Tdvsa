@@ -123,11 +123,10 @@
 											@endforeach
 											{!! $cant !!}
 											Productos cotizados
+											<a href="{{ url('inte/detalle_coti/detalle') }}" class="button large" id="buttona" >Ver Detalles</a>
 										</td>
 									</tr>
 								</table>
-
-								<a href="{{ url('inte/detalle_coti/detalle') }}" class="button large" id="buttona" >Ver Detalles</a>
 							@else
 								<table cellspacing="0">
 
@@ -175,8 +174,6 @@
 						<div class="large-12 medium-12" style="font-size: 14px !important; border-bottom: 1px solid #A4A4A4;">
 							<a href="{{ url('/auth/logout') }}">Cerrar sesión</a>
 						</div>
-						<br>
-
 						@if ( !empty( DB::table('proyecto_actuals')->where('id_user', '=', Auth::id())->first() ) )
 							@if ( !is_null( DB::table('cotizacion_temps')->first() ) )
 								<table cellspacing="0">
@@ -193,11 +190,10 @@
 											@endforeach
 											{!! $cant !!}
 											Productos cotizados
+											<a class="carrito" href="{{ url('inte/detalle_coti/detalle') }}" >Ver Detalles</a>
 										</td>
 									</tr>
 								</table>
-
-								<a class="carrito" href="{{ url('inte/detalle_coti/detalle') }}" >Ver Detalles</a>
 							@else
 								<table cellspacing="0">
 

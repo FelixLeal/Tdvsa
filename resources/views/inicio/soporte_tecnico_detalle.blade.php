@@ -37,7 +37,7 @@
                 {!! Form::textarea('comentario', $datos->comentario, ['placeholder' => 'Explique de manera detallada el soporte a solicitar', 'readonly' ] ) !!}
             </div>
             <div class="large-12 columns" style="font-weight: bold !important;">
-                <a href="{{ URL::previous() }}" id="buttona" class="button large" style="text-transform: uppercase;">Atras</a>
+                <a href="{{ URL::previous() }}">Atras</a>
             </div>
         </div>
 	{!! Form::close() !!}

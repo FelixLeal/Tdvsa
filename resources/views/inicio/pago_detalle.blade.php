@@ -41,7 +41,7 @@
         </div>
 
         <div class="large-12 columns">
-            <a href="{{ URL::previous() }}" id="buttona" class="button large" style="text-transform: uppercase;">Atras</a>
+            <a href="{{ URL::previous() }}">Atras</a>
         </div>
     </div>
 	

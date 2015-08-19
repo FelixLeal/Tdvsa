@@ -55,7 +55,7 @@
 		{!! $datos->render() !!}
 		<!--{{ $uno =  DB::table('proyecto_actuals')->where('id_user', '=', Auth::id())->first()->id_proyecto }}-->
 		<!--{{ $dos =  DB::table('proyectos')->whereId($uno)->first()->nombre_empresa }}-->
-		<a href="{{ route('inte.cotiz.create', ['id_proyecto' => $uno, 'concepto' => $dos] ) }}" class="button large btn_crear" id="buttona" > Atras </a>
+		<a href="{{ route('inte.cotiz.create', ['id_proyecto' => $uno, 'concepto' => $dos] ) }}"> Atras </a>
 	</div>
 	
 @endsection
